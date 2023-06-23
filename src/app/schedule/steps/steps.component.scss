@@ -1,0 +1,55 @@
+@import "./src/assets/scss/variables.scss";
+@import "./src/styles.scss";
+
+
+.once-step-form-field {
+	float: left;
+}
+
+.custom-select {
+	float: left;
+	width: 19%;
+}
+
+::ng-deep {
+	.mat-radio-button.mat-accent.mat-radio-checked {
+		.mat-radio-outer-circle {
+			border-color: #428BE6;
+
+		}
+
+	}
+
+	.mat-radio-button.mat-accent .mat-radio-inner-circle {
+		background-color: #428BE6 !important;
+	}
+}
+
+.add-step-field {
+	margin-top: 30px;
+
+	.radio-button-steps {
+		margin: 0px 20px 20px;
+		font-family: CRM-Font-Light;
+		font-size: 14px;
+	}
+
+	.form-field {
+		margin: 20px 0;
+
+		.field {
+			float: left;
+		}
+	}
+}
+
+.message {
+	margin: 15px;
+    font-family: $font-primary;
+    font-size: ($font-size-base + 6);
+    background-color: #FFC527;
+    padding: 30px;
+    border-radius: 5px;
+    color: $white;
+    text-align: center;
+}

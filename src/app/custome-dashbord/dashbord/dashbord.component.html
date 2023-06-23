@@ -1,0 +1,84 @@
+<div class="container">
+
+	<div class="content--header">
+		<div class="row">
+			<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12">
+				<h5>Dashboard
+					<span>Create your dashboard</span>
+				</h5>
+
+			</div>
+			<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12 text-r display-flex" *ngIf="ShowCampaignList">
+				<div class="actions">
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row marginB30">
+		<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12">
+			<mat-form-field class="dashboard-name">
+				<input type="text" matInput placeholder="DashBoard Name" [formControl]="dashbord_name" [(ngModel)]="dashboardObject.name" required>
+				<mat-error *ngIf="dashbord_name.invalid">
+					{{getErrorMessage()}}	
+				</mat-error>
+			</mat-form-field>
+		</div>
+		<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12 text-r">
+
+			<button class="btn btn-primary" matTooltipPosition="above" matTooltip="Save Dashboard" (click)="SaveDashboard()" *ngIf="!dashbordId">
+				<i class="mdi mdi-content-save"></i>
+				<span>SAVE</span>
+			</button>
+			<button class="btn btn-primary marginR0" matTooltipPosition="above" matTooltip="Add DataSet" (click)="openQueryBuilder()">
+				<i class="mdi mdi-database"></i>
+				<span>DATABASE</span>
+			</button>
+			<button class="btn btn-primary marginR0" matTooltipPosition="above" matTooltip="Update Dashboard" (click)="UpdateDashboard()" *ngIf="dashbordId && dashbordId.length>0">
+				<i class="mdi mdi-update"></i>
+				<span>UPDATE</span>
+			</button>
+
+		</div>
+	</div>
+
+
+
+	<gridster [options]="options">
+
+		<gridster-item [item]="item" *ngFor="let item of dashboardObject.wigetList; let i = index">
+
+			<div class="tool-bar">
+				<i class="material-icons" (click)="ckeditorConf(item,i)">edit </i>
+
+				<i class="mdi mdi-file-chart material-icons" (click)="openChartConfig(item,i)"></i>
+				<i class="mdi mdi-close material-icons" (click)="removeWidget(i)"></i>
+			</div>
+			<div *ngIf="!item.loading && !resultset" id="bg-text">
+				<h4>Add Dataset</h4>
+			</div>
+			<div *ngIf="!item.loading && resultset" id="bg-text">
+				<h4>select chart</h4>
+			</div>
+			<div *ngIf="item.loading" style="padding: 15px;height: calc(100% - 50px);">
+
+				<div id="chartdownload" echarts [options]="item.chartConfig.wigetdata" *ngIf="(item.chartConfig.type != 'crosstable' && item.chartConfig.type != 'metriccard' && item.chartConfig.type != 'table' && item.chartConfig.type != 'text')" class="height100-cent"></div>
+
+				<div *ngIf="(item.chartConfig.type == 'crosstable' || item.chartConfig.type == 'metriccard' || item.chartConfig.type == 'table') && item.chartConfig.type != 'text' && item.chartConfig.wigetdata" [innerHtml]="item.chartConfig.wigetdata.series"></div>
+
+				<div *ngIf="item.chartConfig.type == 'text'" [innerHtml]="item.chartConfig.value | safeHtml"></div>
+
+			</div>
+
+		</gridster-item>
+
+	</gridster>
+
+	<div class="add-widgets">
+		<a class="add-but" matTooltipPosition="above" matTooltip="Add Widget">
+			<i class="mdi mdi-plus-circle add-icon" (click)="addWidget()"></i>
+		</a>
+	</div>
+
+</div>

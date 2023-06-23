@@ -1,0 +1,140 @@
+
+@import "./src/assets/scss/variables.scss";
+
+.add-min{
+    color:#4852ED;
+}
+.seg-head{
+    margin-bottom: 6%;
+    ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 20%;
+        text-align: left;
+        color: #7B8696;
+        li:first-child{
+            font-size: 1.4vw;
+            font-family: $font-primary-medium;
+        }
+        li:last-child{
+            font-size: 0.9vw;
+            font-family: $font-primary-medium;
+        }
+    }
+    b{
+        margin: 0;
+        padding: 0;
+        width: 60%;
+        height: 1px;
+        margin-top: 2%;
+        border-bottom: 1px solid #D6D6D6;
+    }
+    button{
+        width: 15%;
+        border: 1px solid #4265ED;
+        color: #4265ED;
+        padding: 0;
+        margin-left: 2%;
+        border-radius: 2.1vw;
+        i{
+            font-size: 1.6vw;
+            color: #4265ED;
+            margin-right: 9%;
+           
+    
+        }
+    }
+}
+
+.first-dd{
+    text-align: left;
+    color: #ADB7C5;
+    font-size: 0.9vw;
+    font-family: $font-primary-SemiBold;
+    margin-bottom: 4%;
+    .mat-select{
+        width: 12%;
+        margin-left: 2%;
+    }
+    .mat-select-placeholder{
+        color: #4265ED;
+        font-size: 1.1vw;
+    }
+}
+.add-rem{
+    margin-bottom: 2%;
+
+    button{
+        border: none;
+        background: transparent;
+        float: left;
+    }
+}
+.fet-can{
+    margin-top: 10%;
+    .ft-btn{
+        border: 1px solid #363636;
+        color: #F5F9FC;
+        background-color: #363636;
+    }
+    
+    button{
+        width: 18%;
+        float: right; 
+        margin-left: 2%;
+        border-radius: 0px;
+        border: 1px solid #363636;
+        color: #363636;
+        background-color: transparent;
+    }
+    
+}
+.inputf-seg{
+    margin-left: 1%;
+    width: 100%;
+    .mat-select{
+        border: 1px solid #BED2FF;
+        margin-right: 2%;
+        text-align: left;
+        padding-top: 0.5%;
+        padding-left: 2%;
+    } 
+    input{
+        border: 1px solid #BED2FF;
+        padding-left: 2%;
+    }
+    input::placeholder{
+        color:#7B8696;
+    }
+}
+
+::ng-deep{
+    .inputf-seg{
+        .mat-select-value-text{
+            color: #7B8696;
+        }
+        .mat-select-arrow{
+            color: #4265ED;
+        }
+    }
+}
+
+
+
+
+::ng-deep{
+    .first-dd{
+        .mat-select-placeholder{
+            color: #4265ED;
+            font-size:14px;
+        }
+        .mat-select-value{
+            color: #4265ED;
+            font-size:14px;            
+        }
+        .mat-select-arrow{
+            color: #4265ED;
+        }
+    }
+}

@@ -1,0 +1,143 @@
+<div class="container height100-cent">
+
+	<div class="content--header">
+		<div class="row">
+			<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12">
+				<h5>
+					Customer Extraction
+					<span *ngIf="psMainObj.type=='Player Selection'">Ability to see Dimensions, metrics and KPIs at a customer level</span>
+					<span *ngIf="psMainObj.type=='Segementation'">Ability to build your own segments</span>
+				</h5>
+			</div>
+			<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12 text-r display-flex">
+				<div class="actions"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row marginB30">
+		<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12">
+
+			<mat-form-field class="marginL0 pull-left">
+				<!-- <input matInput [(ngModel)]="psMainObj.name" [formControl]="valid"  placeholder="name your query"> -->
+				<input matInput [(ngModel)]="psMainObj.name" pattern="(^[a-z-A-Z_0-9 ]*){1,50}$" placeholder="name your query" #uname="ngModel">
+				<mat-error *ngIf="uname.errors?.pattern">
+					Special Charaters are not allowed
+				</mat-error>
+			</mat-form-field>
+
+			<mat-form-field class="pull-left">
+				<mat-select placeholder="Choose Layer" [(ngModel)]="psMainObj.layerID" (selectionChange)="onSelectionFromUi($event.value,'change')">
+					<mat-option *ngFor="let layer of layerList" [value]="layer._id">
+						{{layer.name}}
+					</mat-option>
+				</mat-select>
+			</mat-form-field>
+
+		</div>
+
+		<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12 text-r">
+
+			<button class="btn btn-stroke-black" (click)="save(psMainObj,false)" [disabled]="!psMainObj.name">
+				<b *ngIf="!psMainObj._id && !(uname.errors?.pattern)"> SAVE </b>
+				<b *ngIf="psMainObj._id && !(uname.errors?.pattern)">UPDATE</b>
+			</button>
+
+			<button class="btn btn-stroke-black" *ngIf="psMainObj._id && !(uname.errors?.pattern)" (click)="saveAs(psMainObj)">SAVE AS</button>
+
+			<button class="btn btn-stroke-black" (click)="cancel()" *ngIf="!campaign && psMainObj.name">CANCEL</button>
+
+			<button class="btn btn-stroke-black" (click)="linkClicked()" *ngIf="campaign && psMainObj._id">LINK</button>
+
+			<button class="btn btn-stroke-black" (click)="backClicked()" *ngIf="campaign">BACK</button>
+
+			<button class="btn btn-stroke-black" routerLink="/customerextraction/player/catalog" *ngIf="!psMainObj.name && !campaign">CLOSE</button>
+
+		</div>
+
+	</div>
+
+
+	<div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="20px">
+
+		<div fxFlex="25">
+			<app-elements-collection-list *ngIf="collectionsList.length>0" [collections]="collectionsList">
+			</app-elements-collection-list>
+		</div>
+		<div fxFlex="75%" *ngIf="collectionsf">
+			<div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="20px">
+				<div fxFlex="100%" class="full-width">
+					<div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="20px" *ngIf="psMainObj">
+						<div fxFlex="50%" class="full-width">
+							<div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="20px">
+								<div fxFlex="100%">
+									<h3 fxLayout="row">
+										<div fxFlex="50">FILTER CONDITIONS</div>
+										<div fxFlex="50" fxLayoutAlign="end start" fxLayoutGap="20px">
+											<i class="mdi mdi-delete icon-set" (click)="clear()" *ngIf="(psMainObj.expressions.expressions.length > 0 || psMainObj.return_elements.length > fixedEle.length)"></i>
+											<i class="mdi mdi-code-tags icon-set" (click)="viewSQL(psMainObj)"></i>
+										</div>
+									</h3>
+								</div>
+							</div>
+							<app-filter-panel [expressions]="psMainObj.expressions" (passData)="addToelements($event)"></app-filter-panel>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div *ngIf="collectionsf" fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="0px" style="margin-top: 3%">
+				<div fxFlex="100%" class="full-width">
+					<div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="10px">
+						<div fxFlex="30%">
+							<app-selection-panel [elements]="psMainObj.return_elements" [a]="psMainObj.type=='Player Selection'"></app-selection-panel>
+						</div>
+						<div fxFlex="70%">
+							<h3 *ngIf="psMainObj.type=='Segementation'"> SEGMENT CREATION</h3>
+							<app-query-count *ngIf="psMainObj.type=='Player Selection'" [query]="psMainObj" [resetchart]="psMainObj.expressions"></app-query-count>
+
+							<div class="segmentation-creation">
+								<mat-card *ngIf="psMainObj.type=='Segementation'">
+
+									<div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="10px" class="add-segement">
+										<div fxFlex="100%" (click)="addSlab()">
+											<i class="material-icons"> add_circle_outline</i>
+											<span>Add new segment</span>
+										</div>
+
+									</div>
+									<div fxLayout="row" *ngFor="let salb of psMainObj.sals_arr; let i=index" fxLayoutAlign="start start" fxLayoutGap="10px" class="remove-segment">
+										<div fxFlex="100%">
+											<div (click)="removeSlab(i)">
+												<i class="material-icons" style="float: left;">remove_circle_outline</i>
+												<span style="float: left; margin: 2px 0 0 5px;">Remove segment</span>
+											</div>
+											<div class="clearfix"></div>
+											<app-segmentation-filter [returnelements]="psMainObj.return_elements" [slb]="salb">
+											</app-segmentation-filter>
+										</div>
+									</div>
+								</mat-card>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<br>
+
+		</div>
+	</div>
+
+
+	<div class="result-widgets">
+		<button class="result-button" (click)="getResult(psMainObj)" *ngIf="!campaign">
+			<i class="mdi mdi-export result_md"></i>
+		</button>
+
+		<button class="result-button" (click)="emmittocamp(psMainObj)" *ngIf="campaign">
+			<i class="mdi mdi-export result_md"></i>
+		</button>
+	</div>
+
+
+</div>

@@ -1,0 +1,27 @@
+::ng-deep .dimention {
+    background: rgb(4, 171, 212) !important;
+    box-shadow: none;
+    padding: 5px 15px;
+    text-align: left;
+
+}
+
+::ng-deep .metric {
+    background: rgb(248, 68, 77) !important;
+}
+
+.mat-card {
+    margin-top: 10px;
+    height: 10px;
+}
+
+button {
+    width: 100%;
+    margin-top: 5px;
+    text-align: left;
+
+    mat-icon {
+        float: right;
+        margin-top: 5px;
+    }
+}

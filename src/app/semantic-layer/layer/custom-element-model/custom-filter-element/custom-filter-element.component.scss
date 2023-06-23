@@ -1,0 +1,44 @@
+/*
+.drag-hold:hover{
+  opacity: 0.5;
+
+}
+*/
+.mat-card.drag-hold {
+	margin-top: 2%;
+	border-bottom: 1px solid #8c8c8c;
+	border-radius: 0;
+	padding: 0;
+	box-shadow: none;
+	background-color: transparent;
+
+	&:last-child {
+		border: none;
+	}
+
+	.mat-raised-button {
+		width: 100%;
+		text-align: left !important;
+		min-height: 45px;
+		box-shadow: none !important;
+		color: #fff;
+		background-color: #4265ed;
+		border-radius: 50px;
+
+		.mat-icon {
+			color: #fff;
+			margin-top: 5px;
+		}
+	}
+
+}
+
+.floatL {
+	cursor: pointer;
+	float: right;
+}
+
+.abs {
+	box-shadow: none;
+	margin: 0px 10px 10px;
+}

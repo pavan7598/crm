@@ -1,0 +1,86 @@
+
+  <div class="crm-row seg-head">
+    <ul>
+      <li>SEGMENTATION</li>
+      <li>FOR THE SELECTED SEGMENT</li>
+    </ul>
+    <b></b>
+      <button mat-button class="crm-col-lg-2" (click)="save()"><i class="material-icons">save</i>Save</button>
+  </div>
+  <div class="first-dd crm-row">
+      GET UNIQUE CUSTOMERS 
+       <mat-select placeholder="select type">
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+          </mat-option>
+        </mat-select>
+      OF THE FOLLOWING
+  </div>
+  <div class="crm-row add-rem" *ngFor="let obj of query; let i = index">
+      <button  (click)="Add()" *ngIf="obj.addIcon">
+        <mat-icon class="add-min" matSuffix>add_circle</mat-icon>
+      </button>
+      <button (click)="remove(i)" *ngIf="obj.deleteIcon">
+        <mat-icon class="add-min" matSuffix>remove_circle</mat-icon>
+      </button> 
+    <div class="crm-row inputf-seg">
+          
+          <mat-select placeholder="Select Column" class="crm-col-4">
+              
+            <mat-option>
+                <ngx-mat-select-search ></ngx-mat-select-search>
+            </mat-option>
+            <mat-option *ngFor="let food of foods" [value]="food.value">
+              {{food.viewValue}}
+            </mat-option>
+          </mat-select>
+    
+          
+          <mat-select placeholder="Select Condition" class="crm-col-4">
+            <mat-option *ngFor="let food of foods" [value]="food.value">
+              {{food.viewValue}}
+            </mat-option>
+          </mat-select>
+        OF THE FOLLOWING
+    </div>
+    <div class="crm-row add-rem" *ngFor="let obj of query; let i = index">
+        <button  (click)="Add()" *ngIf="obj.addIcon">
+          <mat-icon class="add-min" matSuffix>add_circle</mat-icon>
+        </button>
+        <button (click)="remove(i)" *ngIf="obj.deleteIcon">
+          <mat-icon class="add-min" matSuffix>remove_circle</mat-icon>
+        </button> 
+      <div class="crm-row inputf-seg">
+            
+            <mat-select placeholder="Select Column" class="crm-col-lg-4">
+                
+              <mat-option>
+                  <ngx-mat-select-search ></ngx-mat-select-search>
+              </mat-option>
+              <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{food.viewValue}}
+              </mat-option>
+            </mat-select>
+      
+            
+            <mat-select placeholder="Select Condition" class="crm-col-lg-4">
+              <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{food.viewValue}}
+              </mat-option>
+            </mat-select>
+        
+            
+            <input placeholder="Value" class="crm-col-lg-4">
+             
+              <!-- <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{food.viewValue}}
+              </mat-option> -->
+            <!-- </mat-select> -->
+
+    </div>
+  </div>
+  <div class="fet-can">
+    <button mat-button (click)="cancelsegments()" >Cancel</button>
+    <button mat-button class="ft-btn">Fetch</button>
+  </div>
+  

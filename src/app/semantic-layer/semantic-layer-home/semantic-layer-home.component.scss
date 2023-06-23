@@ -1,0 +1,20 @@
+.topmargin {
+	margin-top: 10% !important;
+}
+
+mat-divider {
+	margin: 100px;
+}
+
+
+.mat-card:not([class*=mat-elevation-z]) {
+	box-shadow: none;
+}
+
+.mat-toolbar {
+	background: #ffff;
+}
+
+.mat-form-field.top-field {
+	margin-left: 0;
+}

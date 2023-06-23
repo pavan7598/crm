@@ -1,0 +1,59 @@
+@import "./src/assets/scss/variables.scss";
+@import "./src/styles.scss";
+
+.segmentation-view {
+	.container {
+		margin: auto;
+
+		.row {
+			.mat-card {
+				border-radius: 10px;
+				min-width: 60%;
+				margin: 0 30px;
+				text-align: center;
+				position: relative;
+				h3 {
+					color: $white;
+					font-size: ($font-size-base + 28);
+					font-family: $font-primary-Hairline;
+					letter-spacing: 1px;
+					span {
+						font-size: ($font-size-base + 13);
+						font-family: $font-primary-medium;
+						&:last-child {
+							font-size: ($font-size-base + 2);
+							display: block;
+						}
+					}
+				}
+				span {
+					i {
+						font-size: ($font-size-base + 88);
+						opacity: .15;
+						color: $white;
+						position: absolute;
+						top: -30px;
+						left: 0;
+						z-index: 0;
+					}
+				}
+				&.total-customers {
+					background-color: #4265ED;
+					border: 1px solid #1538C1;
+					box-shadow: 0 3px 35px rgba(66,101,237,.3);
+				}
+				&.total-NGR {
+					background-color: #FF3E8B;
+					border: 1px solid #B90C51;
+					box-shadow: 0 3px 35px rgba(255,62,139,.3);
+				}
+				&.total-revenue {
+					background-color: #FFC527;
+					border: 1px solid #C79200;
+					box-shadow: 0 3px 35px rgba(255,197,39,.3);
+				}
+			}
+		}
+	}
+}
+

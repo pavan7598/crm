@@ -1,0 +1,70 @@
+<div mat-dialog-title>
+	<h6>Connection Details</h6>
+</div>
+<mat-dialog-content class="mat-typography">
+    <!-- <app-header></app-header> -->
+    <div class="full-height">
+        <div class="SemanticForm">
+            <form [formGroup]="SemanticForm">
+                <div fxLayout="row" class="margin-gap" fxLayout.xs="column" fxLayoutGap="5%">
+                    <mat-form-field fxFlex="50">
+                        <mat-select placeholder="Select DataBase" formControlName="Connection_type">
+                            <mat-option *ngFor="let con of connectionsList" [value]="con">
+                                {{con}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="SemanticForm.get('Connection_type').invalid">Select connection type</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex="50">
+                        <input matInput placeholder="name" formControlName="name">
+                        <mat-error *ngIf="SemanticForm.get('name').invalid">Enter Name</mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row" class="margin-gap" fxLayout.xs="column" fxLayoutGap="5%">
+                    <mat-form-field fxFlex="50">
+                        <input matInput placeholder="Host" formControlName="host">
+                        <mat-error *ngIf="SemanticForm.get('host').invalid">Enter Host</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex="50">
+                        <input matInput placeholder="Port" formControlName="port">
+                        <mat-error *ngIf="SemanticForm.get('port').invalid">Enter Port Number</mat-error>
+                        <!-- <mat-error NgShow="port == true">Enter Port number</mat-error> -->
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row" class="margin-gap" fxLayout.xs="column" fxLayoutGap="5%">
+                    <mat-form-field fxFlex="50">
+                        <input matInput placeholder="Database" formControlName="data_base">
+                        <mat-error *ngIf="SemanticForm.get('data_base').invalid">Enter Database</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex="50">
+                        <input matInput placeholder="username" autocomplete="nope" formControlName="username">
+                        <!-- <mat-error *ngIf="SemanticForm.get('username').invalid">Enter User Name</mat-error> -->
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row" class="margin-gap" fxLayout.xs="column" fxLayoutGap="5%">
+                    <mat-form-field fxFlex="50">
+                        <input matInput placeholder="Password" autocomplete="new-password" type="password" formControlName="password">
+                        <!-- <mat-error *ngIf="SemanticForm.get('password').invalid">Enter Password</mat-error> -->
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex="50">
+                        <input matInput placeholder="Data packet size" formControlName="data_pack_size">
+                        <mat-error *ngIf="SemanticForm.get('data_pack_size').invalid">Enter Data Packet Size</mat-error>
+                    </mat-form-field>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <!-- <button mat-button mat-dialog-close>Save</button> -->
+    <!-- [disabled]="!SemanticForm.valid" -->
+    <button class="btn btn-black" [disabled]="!SemanticForm.valid" (click)="connection()">Test</button>
+    <button class="btn btn-black" *ngIf="!edit && test" (click)="saveConnection()">Save</button>
+    <button class="btn btn-black" *ngIf="edit && test" (click)="updateConnection()">Update</button>
+</mat-dialog-actions>

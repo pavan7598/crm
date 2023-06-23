@@ -1,0 +1,25 @@
+<div class="container height100-cent">
+
+	<div class="content--header">
+		<div class="row">
+			<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12">
+				<h5>List of Connections
+					<span>Connections that you have</span>
+				</h5>
+
+			</div>
+			<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12 text-r display-flex">
+				<div class="actions">
+					<button class="btn btn-primary" (click)="openConnectionForm()">Add Connection</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="crm-col-lg-12 crm-col-md-12 crm-col-sm-12">
+		<app-connection-list [refreshList]="onconnAdd" (onedit)="editModel($event)"></app-connection-list>
+	</div>
+</div>
+

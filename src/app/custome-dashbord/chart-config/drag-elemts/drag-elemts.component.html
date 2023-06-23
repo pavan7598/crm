@@ -1,0 +1,8 @@
+<div >
+    <div *ngFor="let item of conflist.list | keyvalue">
+        <div class="pop-input">
+            <app-drop-elements [type]="elementMap[item.key]" [placeholder]="placeholder[item.key]"
+                [single]="item.value.only" [confList]="item" (dragElements)="dragElements($event,item.key)"></app-drop-elements>
+        </div>
+    </div>
+</div>

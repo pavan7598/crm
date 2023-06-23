@@ -1,0 +1,26 @@
+<h3 fxLayout="row">
+    <div fxFlex="50">RETURN ELEMENTS</div>
+</h3>
+<mat-card class="example-list" (dragover)="dragOver($event)" (drop)="addElement($event)">
+    <div id="sort-container" cdkDropList cdkDropListLockAxis="y" class="example-list" (cdkDropListDropped)="drop($event)">
+        <div class="element-height" *ngFor="let element of elements;let j=index" fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="10px" cdkDrag>
+            <app-element fxFlex="100%" [showRemove]="true" [isDragable]="false" [data]="element" (onremove)="elementRemove($event)" [index]="j" [canlock]="a"></app-element>
+            <button class="test" mat-raised-button *ngIf="placeHolder&&(placeHolder == j )">test</button>
+        </div>
+    </div>
+</mat-card>
+<!-- <mat-card class="test">
+    <h3>VARIABLES</h3>
+    <mat-accordion>
+        <mat-expansion-panel *ngFor="let collection of collections;let i=index" style="margin:10px">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+                {{collection.collectionname}}
+            </mat-panel-title>
+          </mat-expansion-panel-header >
+          <div class="element-height" fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="10px">
+            <app-element [isDragable]="true" fxFlex="100%" *ngFor="let element of collection.elements;let j=index" [data]="element"  ></app-element>
+            </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-card> -->

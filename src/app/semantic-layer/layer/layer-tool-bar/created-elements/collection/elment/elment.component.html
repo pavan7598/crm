@@ -1,0 +1,5 @@
+<button (click)="editElement($event)" [ngClass]="{
+    'dimention': (element.elementRole=='dimension'),
+    'metric':(element.elementRole=='metric')}" [matTooltip]="'click to edit'" mat-raised-button>{{element.elementLabel}}
+	<mat-icon [matTooltip]="'click to delete the '+element.elementRole" (click)="deleteElement($event)">delete_outline</mat-icon>
+</button>

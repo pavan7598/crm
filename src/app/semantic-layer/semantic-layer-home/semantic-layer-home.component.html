@@ -1,0 +1,37 @@
+<div class="container height100-cent">
+
+	<div class="content--header">
+		<div class="row">
+			<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12">
+				<h5>
+					SemanticLayerHome
+					<span>Build your semantics for customers</span>
+				</h5>
+			</div>
+			<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12 text-r display-flex">
+				<div class="actions"></div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="row marginB30">
+		<div class="crm-col-lg-6 crm-col-sm-6 crm-col-md-6">
+
+			<mat-form-field class="top-field">
+				<input matInput (keyup)="applyFilter(filter)" [(ngModel)]="filter" placeholder="Filter">
+			</mat-form-field>
+
+		</div>
+		<div class="crm-col-lg-6 crm-col-sm-6 crm-col-md-6 text-r">
+			<button class="btn btn-primary" (click)="newLayer()">+ New Layer</button>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="crm-col-lg-12 crm-col-sm-12 crm-col-md-12">
+			<app-layer-list [refresh]="lstrefresh" (onedit)="editLayer($event)"></app-layer-list>
+		</div>
+	</div>
+
+</div>

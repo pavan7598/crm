@@ -1,0 +1,29 @@
+<!-- <ul>
+  <li>Target Group</li>
+  <li>
+    <mat-slider [(ngModel)]="ControlGroup.target"></mat-slider>
+  </li>
+</ul>
+<ul>
+  <li>Control Group</li>
+  <li>
+    <mat-slider [(ngModel)]="ControlGroup.control"></mat-slider>
+  </li>
+</ul> -->
+<!-- <h3>TARGET / CONTROL GROUP</h3>
+<h1>Select TG & CG</h1> -->
+<div class="head-cont">
+  <ul>
+    <li>TARGET / CONTROL GROUP</li>
+    <li>Select  CG & TG </li>
+  </ul>
+</div>
+<div class="body-cont">
+  <ul *ngFor="let arg of sliders; let i=index">
+    <li>
+        <ng5-slider (userChangeEnd)="sliderTotal(arg,i)" [(ngModel)]="arg.value" [options]="arg.options"></ng5-slider>
+      <!-- <mat-slider [(ngModel)]="arg.value"  (change)="sliderTotal(arg,i)" [max]="arg.max">{{arg.value}}</mat-slider> -->
+    </li>
+    <li>{{arg.title}}</li>
+  </ul>
+</div>

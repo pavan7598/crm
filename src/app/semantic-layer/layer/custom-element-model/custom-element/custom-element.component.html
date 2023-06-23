@@ -1,0 +1,9 @@
+<div ng-if="data">
+<button [draggable]="isDragable" (dragstart)="elementDrag($event)"
+ class="test"
+ mat-raised-button
+ [ngClass]="{'metric':data.elementRole!='dimension','dimention':data.elementRole=='dimension'}">
+ {{data.elementLabel}}
+</button>
+</div>
+

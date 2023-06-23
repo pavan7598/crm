@@ -1,0 +1,18 @@
+<div id="draggable" class="ui-widget-content fullWT">
+<app-layer-table
+(ondelete)="deleteSchema($event)"
+  *ngFor="let schema of params.schema;let i = index"
+  [schema]="schema"
+  [index] = "i"
+ [jsPlumbInst]="jsPlumbInstance"
+ (initcomplete) ="checkReload($event)"
+ > </app-layer-table >
+
+    </div>
+
+<!-- div for connection error  -->
+              <div id="Source" >
+              </div>
+<!-- dont remove  -->
+
+

@@ -1,0 +1,46 @@
+<section>
+  <div>
+    <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="10px">
+      <button class="btn md-btn-default" mat-raised-button (click)="downloadbutton()">Download</button>
+      <button class="btn md-btn-default" mat-raised-button (click)="emailSend()">Send Email </button>
+      <button class="btn md-btn-default" mat-raised-button [mat-dialog-close]>Close</button>
+    </div>
+    <div fxLayout="row" fxLayoutGap="0px">
+
+      <div id="chart" fxFlex="100%" fxLayout="column" fxLayoutGap="0px">
+
+        <!-- <div *ngIf="!opt && !opt.series"> -->
+        <!-- </div> -->
+        <div>
+          <div>
+            <div *ngFor="let value of textopt" [innerHtml]="value">
+              {{value}}
+            </div>
+          </div>
+        </div>
+        <div class="graph">
+
+          <div class="divison" *ngFor="let opt of opt1">
+            <div *ngIf="opt">
+              <!-- <mat-progress-bar mode="indeterminate" *ngIf="!opt.series"></mat-progress-bar> -->
+              <!-- <app-chart-options *ngIf="opt && opt.series" [option]="dragdata" [dataset]="dataset" (echartOptions)="echartOptions($event)"></app-chart-options> -->
+              <div echarts [options]="opt" *ngIf="opt.tooltip" style="height:500px;overflow:auto;"></div>
+              <!-- <div echarts [options]="opt" *ngIf="opt.tooltip" style="height:500px;overflow:auto;"></div>
+              <div echarts [options]="opt" *ngIf="opt.tooltip" style="height:500px;overflow:auto;"></div> -->
+              <div *ngIf="!opt.tooltip" [innerHtml]="opt.series"></div>
+            </div>
+          </div>
+
+          <div class="divison table-chart" *ngFor="let topt of tableopt">
+            <div *ngIf="topt">
+              <div [innerHtml]="topt"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>

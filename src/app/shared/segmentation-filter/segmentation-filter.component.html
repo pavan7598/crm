@@ -1,0 +1,28 @@
+<!--<div (click)="addFilter()">
+	<i class="material-icons"> add_circle_outline</i>
+</div>
+
+<div>
+	<label>Create segment</label>
+</div>-->
+
+
+<!--<app-segmentation-slab-filter *ngFor="let filter of slb.filters;let i=index" [returnelements]="returnelements" [slabfilter]="filter" [indx]="i" (removeSlab)="deleteSlab($event)">
+</app-segmentation-slab-filter>-->
+
+<div class="segmentation-filter">
+
+	<div class="filter-inner-content">
+		<ul>
+			<li *ngFor="let filter of slb.filters;let i=index">
+				<!-- <i class="mdi mdi-plus-circle" (click)="addFilter()"></i> -->
+				
+				<app-segmentation-slab-filter [totalIndx]="slb.filters.length" [returnelements]="returnelements" [slabfilter]="filter" [form]="filterArray.controls[i]" [indx]="i" (removeSlab)="deleteSlab($event)" (addSlab)="addFilter($event)"></app-segmentation-slab-filter>
+			</li>
+			
+			<!-- <li>
+				<i class="mdi mdi-minus-circle"></i>
+			</li> -->
+		</ul>
+	</div>
+</div>

@@ -1,0 +1,12 @@
+<mat-card  draggable="true"  class='drag-hold'>
+   <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="10px">
+   <div fxFlex="25%">
+      <button  mat-raised-button [ngClass]="{'metric':data.elementtype!='Dimension','dimention':data.elementtype=='Dimension'}">{{data.elementlabel}}<mat-icon class="floatL" (click)="remove()">close</mat-icon> </button>
+     </div>
+     <div fxFlex="75%">
+        <app-sql-filter [data]="data"></app-sql-filter>
+     </div>
+  </div>
+
+</mat-card>
+

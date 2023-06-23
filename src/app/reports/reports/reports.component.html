@@ -1,0 +1,24 @@
+<div class="">
+
+	<div class="content--header">
+		<div class="row">
+			<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12">
+				<h5>Reports
+					<span>Overview of your entire reports</span>
+				</h5>
+
+			</div>
+			<!--<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12 text-r display-flex" *ngIf="ShowCampaignList">
+				<div class="actions">
+					<a href="JavaScript:Void(0)" class="" (click)="Summary()"><i class="mdi mdi-view-dashboard"></i>
+						Summary</a>
+				</div>
+			</div>-->
+		</div>
+	</div>
+
+
+	<div *ngFor="let option of Data" class="crm-col-lg-6 chart--container-paddings">
+		<app-chart-panel class="chart-panel" [option]="option"></app-chart-panel>
+	</div>
+</div>

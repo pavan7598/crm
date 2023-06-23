@@ -1,0 +1,51 @@
+/*
+.drag-hold:hover{
+  opacity: 0.5;
+
+}
+*/
+.mat-card.drag-hold {
+	border-bottom: 1px solid #8c8c8c;
+	border-radius: 0;
+	padding: 0;
+	box-shadow: none;
+	background-color: transparent;
+	margin-left: 10px;
+
+	&:last-child {
+		border: none;
+	}
+
+	.mat-raised-button {
+		width: 100%;
+		text-align: left !important;
+		min-height: 45px;
+		box-shadow: none !important;
+		color: #fff;
+		background-color: #4265ed;
+		border-radius: 50px;
+		// margin-top: 2px;
+
+		.mat-icon {
+			color: #fff;
+			margin-top: 5px;
+		}
+	}
+
+}
+
+.floatL {
+	cursor: pointer;
+	float: right;
+}
+
+.abs {
+	box-shadow: none;
+	margin: 0px 10px 10px;
+}
+::ng-deep .metric {
+	background: rgb(248, 68, 77) !important;
+}
+::ng-deep .dimention {
+	background: rgb(4, 171, 212) !important;
+}

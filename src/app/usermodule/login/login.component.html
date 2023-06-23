@@ -1,0 +1,41 @@
+<div class="login--wrapper">
+	<div class="login--div">
+	<div class="row">
+		<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12">
+			<div class="login--image">
+				<img src="./assets/img/login-img.svg" alt="CRM Application" title="CRM Application" />
+			</div>
+		</div>
+		
+		<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12">
+			<div class="login--form">
+				<div class="title">Signin</div>
+				<form [formGroup]="Loginform" (ngSubmit)="login()">
+					
+						<mat-form-field class="formfield">
+							<input matInput placeholder="email" formControlName="email">
+							<mat-error *ngIf="Loginform.controls.email.invalid">Enter email</mat-error>
+						</mat-form-field>
+					
+						<mat-form-field class="formfield">
+							<input matInput placeholder="Password" type="password" formControlName="password">
+							<mat-error *ngIf="Loginform.controls.password.invalid">Enter password</mat-error>
+						</mat-form-field>
+					
+						<button mat-raised-button color="primary">Login</button>
+						<!--<button mat-raised-button color="primary" (click)="register()">Register</button>-->
+					
+				</form>
+				<mat-progress-bar *ngIf="loading" class="gap" mode="query"></mat-progress-bar>
+				<div class="login--Or">
+					<span>Or</span>
+					<p><a  (click)="register()" target="_self" title="Signup" alt="Signup">Click here</a> if you don’t have an account</p>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
+
+<app-footer></app-footer>

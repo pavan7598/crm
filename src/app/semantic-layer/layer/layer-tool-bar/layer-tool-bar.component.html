@@ -1,0 +1,60 @@
+<div class="fullWT">
+	<mat-tab-group>
+		<mat-tab label="Tables">
+			<div>
+
+				<div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="2px" class="top-actions">
+
+					<div fxFlex="50%" class="select-div">
+						<mat-select [(value)]="selectedSchema" (selectionChange)="filterBySchema()">
+							<mat-option *ngFor="let schema of Schemas" [value]="schema">
+								{{schema}}
+							</mat-option>
+						</mat-select>
+					</div>
+
+					<div fxFlex="50%" class="search-box">
+						<mat-form-field>
+							<mat-label>Search</mat-label>
+							<input matInput [(ngModel)]="searchString" (change)="filterByString()">
+							 <!--<mat-icon matSuffix><i class="mdi mdi-magnify"></i></mat-icon>-->
+						</mat-form-field>
+					</div>
+
+				</div>
+
+				<div *ngIf="tableViewList.length==0&&!ConnectionError">
+					Retrivieing Tables
+					<mat-progress-bar mode="query"></mat-progress-bar>
+				</div>
+
+				<div class="clearfix"></div>
+
+				<app-schema *ngIf="tableViewList.length>0" [tableList]="tableViewList" [dataID]="dataSorceId"></app-schema>
+
+			</div>
+		</mat-tab>
+		<mat-tab label="Elements">
+			<div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="10px" class="maxWidth btnSpace">
+				<div fxFlex="10%" class="maxWidth">
+					<div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="1px">
+						<div fxFlex="100%">
+							<button class="maxWidth btn " (click)="AddCollection()">Add Collection
+								<mat-icon>add_circle_outline</mat-icon>
+							</button>
+            </div>
+            <!-- <div fxFlex="50%">
+                <button mat-raised-button color="primary" class="maxWidth" (click)="AddCustomeElement()">Add Custom Element
+                  <mat-icon>add_circle_outline</mat-icon>
+                </button>
+              </div> -->
+					</div>
+
+				</div>
+				<div fxFlex="90%" class="maxWidth">
+					<app-created-elements [objects]="objects"> </app-created-elements>
+				</div>
+			</div>
+		</mat-tab>
+	</mat-tab-group>
+</div>

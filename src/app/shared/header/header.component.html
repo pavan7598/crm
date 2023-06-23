@@ -1,0 +1,57 @@
+<section class="header"  [ngClass]="{'full-page-header': fullPage==true}">
+	<mat-toolbar class="ToolBar">
+		<mat-toolbar-row>
+			<div *ngIf="showMenu">
+				<!--<button type="button" mat-button (click)="rotate()" [@rotatedState]='state' (click)="navOpen(flag)">
+					<mat-icon *ngIf="flag">keyboard_tab</mat-icon>
+					<mat-icon *ngIf="!flag">menu</mat-icon>
+				</button>-->
+
+				<div class="con" [ngClass]="{hovered:flag==true}">
+					<div class="" (click)="navOpen(flag)">
+						<div class="bar arrow-top-r"></div>
+						<div class="bar arrow-middle-r"></div>
+						<div class="bar arrow-bottom-r"></div>
+					</div>
+				</div>
+
+			</div>
+
+			<img class="logo" src="assets/img/falcondive.svg" (click)="image()" style="cursor: pointer;" />
+			<!-- 
+            <ul class="landing-bread-crumb">
+                <li><a routerLink="/landing">lobby</a></li>
+                <li><i class="material-icons"><span class="material-icons-vertical">chevron_right</span></i></li> 
+                <li>taxation</li>
+                <li>{{bread_crum}}</li>
+            </ul> -->
+			
+			<app-breadcrumb></app-breadcrumb>
+			<!-- <p><strong>{{idleState}}</strong></p> -->
+			<span class="example-spacer"></span>
+			
+			<button mat-button>
+				<span class="log">logged in as </span>
+				<span class="log2" *ngIf="currentdata">{{currentdata.username}}</span>
+				<mat-icon [matMenuTriggerFor]="menu">more_vert</mat-icon>
+			</button>
+			<mat-menu #menu="matMenu">
+				<button mat-menu-item (click)="accountdetails()">
+					<mat-icon *ngIf="currentdata && !currentdata.image">account_circle</mat-icon>
+					<mat-icon *ngIf="currentdata && currentdata.image">
+						<img src="data:image/png;base64,{{currentdata.image.img}}" style="max-width: 130%;height: 120%;border-radius: 50%;">
+					</mat-icon>
+					<span>Account Details</span>
+				</button>
+				<button mat-menu-item (click)="userlogs()" *ngIf="currentdata && currentdata.username=='SuperAdmin'">
+					<mat-icon>account_circle</mat-icon>
+					<span>User Logs</span>
+				</button>
+				<button mat-menu-item (click)="logout()">
+					<mat-icon>power_settings_new</mat-icon>
+					<span>Log Out</span>
+				</button>
+			</mat-menu>
+		</mat-toolbar-row>
+	</mat-toolbar>
+</section>

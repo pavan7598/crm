@@ -1,0 +1,108 @@
+@import "./src/assets/scss/variables.scss";
+@import "./src/styles.scss";
+
+.fixed-slab {
+	margin: 30px 0 30px 30px;
+
+	.fixed-slab-chart {
+		ul {
+			margin: 0;
+			padding: 0;
+
+			li {
+				margin: 30px auto 20px;
+				padding: 0;
+				list-style: none;
+
+				div {
+					border-radius: 50px;
+					border: 1px solid #BED2FF;
+					background-color: #EAEEF8;
+					height: 40px;
+					width: 50px;
+					text-align: center;
+					padding-top: 10px;
+					cursor: pointer;
+
+					i {
+						font-size: ($font-size-base + 18);
+						color: #0F70E0;
+						margin-top: 5px;
+						display: block;
+					}
+
+					&.active {
+						border: 1px solid #116AD1;
+						background-color: #0F70E0;
+
+						div {
+							i {
+								color: $white;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.error {
+	color: $primary-color-red;
+    font-size: $font-size-base;
+    font-family: $font-primary-medium;
+    margin-left: 15px;
+}
+
+/*.menu {
+	cursor: pointer;
+	margin-left: 82%
+}*/
+
+.mat-expansion-panel {
+	overflow: visible;
+}
+
+.mat-card {
+	margin: 20px 0;
+	box-shadow: none !important;
+
+	h6.card-heading {
+		font-size: 14px;
+		text-transform: uppercase;
+		font-family: CRM-Font-Medium;
+		margin: 10px 0 30px;
+		color: #adb7c5;
+	}
+
+	h6 {
+
+		&.add-segment,
+		&.remove-segment {
+			margin: 0;
+			padding: 0;
+			font-size: ($font-size-base + 2);
+
+			a {
+				cursor: pointer;
+			}
+
+			i {
+				font-size: ($font-size-base + 16);
+			}
+
+			span {
+				display: block;
+				margin: -26px 0 0 35px;
+			}
+		}
+	}
+
+	.box-seperation {
+		border: 1px solid #ececec;
+		border-radius: 3px;
+		margin: 20px 0;
+		padding: 20px;
+	}
+}
+  

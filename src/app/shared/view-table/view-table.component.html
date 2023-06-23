@@ -1,0 +1,17 @@
+<mat-form-field style="width:30%;">
+  <input  matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+</mat-form-field>
+<br>
+<br>
+<br>
+<div>
+  <mat-table #table [dataSource]="dataSource">
+    <ng-container [matColumnDef]="col" *ngFor="let col of displayedColumns">
+      <mat-header-cell *matHeaderCellDef> {{ col }} </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element[col]}} </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator>
+</div>

@@ -1,0 +1,78 @@
+{
+  "conjunction":"AND",
+  "expressions":[
+     {
+        "id":1,
+        "collectionid":1,
+        "collectionname":"TIME",
+        "collectiondescription":"Contains dimensions that will allow you returning or restricting your query results based on the time horizont of your query",
+        "elementrole":"Dimension",
+        "mouseovertext":"Activity Date (Game Date)",
+        "fixedelement":"N",
+        "filterelement":"N",
+        "filtertext":"",
+        "visible":1,
+        "elementid":1,
+        "table_id":"T2",
+        "elementname":"Calendar Date",
+        "eledataelementtype":"Date",
+        "sqlelement":"SANDPIT_CHISQUARE.VIEW_F_CA_DAILY_ACCOUNT_SUMMARY.calendar_date",
+        "schemaname":"SANDPIT_CHISQUARE",
+        "table_name":"VIEW_F_CA_DAILY_ACCOUNT_SUMMARY",
+        "columnname":"calendar_date",
+        "agg_func":"value",
+        "filterName":"=",
+        "value":"2018-12-10T18:30:00.000Z"
+     },
+     {
+        "conjunction":"OR",
+        "expressions":[
+           {
+              "id":74,
+              "collectionid":4,
+              "collectionname":"ACCOUNT TAG",
+              "collectiondescription":"Contains dimensions that will allow you returning or restricting your query results based on Player Tags",
+              "elementrole":"Dimension",
+              "mouseovertext":"VIP Player true or false",
+              "fixedelement":"N",
+              "filterelement":"N",
+              "filtertext":"",
+              "visible":1,
+              "elementid":74,
+              "table_id":"T1",
+              "elementname":"VIP",
+              "eledataelementtype":"Character",
+              "sqlelement":"SANDPIT_CHISQUARE.VIEW_CA_CUSTOMER_DATA_PLATFORM.vip",
+              "schemaname":"SANDPIT_CHISQUARE",
+              "table_name":"VIEW_CA_CUSTOMER_DATA_PLATFORM",
+              "columnname":"vip",
+              "agg_func":"value",
+              "filterName":"=",
+              "value":"test"
+           },
+           {
+              "id":75,
+              "collectionid":4,
+              "collectionname":"ACCOUNT TAG",
+              "collectiondescription":"Contains dimensions that will allow you returning or restricting your query results based on Player Tags",
+              "elementrole":"Dimension",
+              "mouseovertext":"VIP Player Manager",
+              "fixedelement":"N",
+              "filterelement":"N",
+              "filtertext":"",
+              "visible":1,
+              "elementid":75,
+              "table_id":"T1",
+              "elementname":"VIP Manager",
+              "eledataelementtype":"Character",
+              "sqlelement":"SANDPIT_CHISQUARE.VIEW_CA_CUSTOMER_DATA_PLATFORM.vip_manager",
+              "schemaname":"SANDPIT_CHISQUARE",
+              "table_name":"VIEW_CA_CUSTOMER_DATA_PLATFORM",
+              "columnname":"vip_manager",
+              "agg_func":"value",
+              "filterName":"="
+           }
+        ]
+     }
+  ]
+}

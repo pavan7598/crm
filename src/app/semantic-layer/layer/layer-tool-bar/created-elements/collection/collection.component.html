@@ -1,0 +1,18 @@
+<mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <div class="FullWt">
+              {{data.elementLabel}}
+              <div class="float-right">
+              <mat-icon (click)="editCollection()">edit</mat-icon>
+
+              <mat-icon (click)="deleteCollection()">delete_outline</mat-icon>
+            </div>
+          </div>
+
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+  <app-elment *ngFor="let element of data.elements;let i = index" [element]="element" [index]="i" (ondelete)="elementDelete($event)" (onedit)="elementEdit($event)"> </app-elment>
+    </mat-expansion-panel>
+  </mat-accordion>

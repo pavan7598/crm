@@ -1,0 +1,66 @@
+<div *ngIf="ShowSubmit" class="message">
+
+	<span *ngIf="selectedOption=='every'"> This Step will be executed after {{index==0?'Main Step':('Step '+index+2)}} </span>
+	<span *ngIf="selectedOption=='ondate'"> This Step will be executed on {{stepsInput.get('select_date').value |date}}</span>
+
+</div>
+
+<div class="row">
+
+	<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12">
+		<div *ngIf="!ShowSubmit" class="add-step-field">
+
+
+			<mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="selectedOption" (change)="changeVale(selectedOption)">
+				<mat-radio-button class="radio-button-steps" *ngFor="let option of options;let i=index" [value]="option">
+					{{option_display_values[i]}}
+				</mat-radio-button>
+			</mat-radio-group>
+
+
+			<form [formGroup]="stepsInput" class="form-field">
+				<mat-form-field class="field">
+					<input matInput placeholder="Step Name" [disabled]="false" formControlName="step_name">
+				</mat-form-field>
+				<div class="custom-select" *ngIf="selectedOption != 'every'">
+					<mat-form-field class="margin-right">
+						<input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="From Date" formControlName="select_date">
+						<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+						<mat-datepicker #picker></mat-datepicker>
+					</mat-form-field>
+				</div>
+				<div *ngIf="selectedOption != 'ondate'">
+					<mat-form-field class="margin-right">
+						<input matInput placeholder="Every" [disabled]="false" formControlName="wait">
+					</mat-form-field>
+				</div>
+
+			</form>
+
+		</div>
+
+	</div>
+
+	<!--<mat-divider vertical style="height:100px"></mat-divider>-->
+
+	<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12">
+		<div fxFlex="60%">
+
+			<app-segmentation-filter [returnelements]="return_elements" [slb]="filters"></app-segmentation-filter>
+
+		</div>
+	</div>
+
+</div>
+
+<div class="row">
+
+	<div class="crm-col-lg-4 crm-col-md-4 crm-col-sm-12 margin-auto text-c">
+
+		<button class="btn btn-stroke" (click)="cancel()">cancel</button>
+
+		<button class="btn btn-primary marginL20" (click)="Submit()">submit</button>
+		
+	</div>
+	
+</div>

@@ -1,0 +1,405 @@
+.maintable{
+  margin-bottom: 4%;
+}
+.view{
+table {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  tr.example-detail-row {
+    height: 0;
+  }
+ 
+  
+  tr.example-element-row:not(.example-expanded-row):hover {
+    background: #777;
+  }
+  
+  tr.example-element-row:not(.example-expanded-row):active {
+    background: #efefef;
+  }
+  
+  .example-element-row td {
+    border-bottom-width: 0;
+ 
+  }
+  
+  .example-element-detail {
+    overflow: hidden;
+    display: flex;
+  }
+  
+  .example-element-diagram {
+    min-width: 80px;
+    border: 2px solid black;
+    padding: 8px;
+    font-weight: lighter;
+    margin: 8px 0;
+    height: 104px;
+  }
+  
+  .example-element-symbol {
+    font-weight: bold;
+    font-size: 40px;
+    line-height: normal;
+  }
+  
+  .example-element-description {
+    padding: 16px;
+  }
+  
+  .example-element-description-attribution {
+    opacity: 0.5;
+  }
+  
+  .inner-table {
+    width: 100%;
+  }
+  
+  .inner-table mat-form-field {
+    margin-top: 15px;
+    width: 100%;
+  }
+   
+
+
+   .one{
+
+  
+        // align-items: center;
+        // justify-content: flex-end;
+        padding: 7px 8px;
+        // flex-wrap: wrap-reverse;
+        width: 100%;
+     align-items: end;
+ 
+}
+}
+.mat-column-Message {
+  width: 70%; /* Decrease the width of the message column */
+}
+.mat-column-Contacts {
+  // margin-left: 20px; /* Increase the left margin of the Contacts column */
+  width: 15%;
+  padding-left: 30px;
+}
+
+
+.status{
+  width: 100%;
+  display: flex;
+  margin-top: 2%;
+  .chatcard{
+  margin-left: 20px;
+  flex: 1;
+    
+  }
+  .statushead{
+    font-family: "CRM-Font-Heavy";
+    font-size: 22px;
+    margin-left: 15px;
+    text-transform: uppercase;
+    color:  #4265ED;
+  }
+  // .success{
+  //   width: 50%;
+  // }
+  // .statuscard{
+  //   // background-color: green;
+  //   margin: 10px;
+  //   display: flex;
+  //   align-items: center;
+  //   padding: 0;
+  //   border: 1px solid  #0E76AF;
+  //   border-radius: 5px;
+  // }
+  // .bluecard{
+  //   display: flex;
+  //   border-radius: 4px 0px 0px 4px;
+  //   background-color:#4265ED;
+  //   text-align: center;
+  //   width: 50%;
+  //   padding: 10px;
+  //   align-items: center;
+  //   height: 35px;
+  //   p{
+  //     text-align: center;
+  //     color: white;
+  //     display: flex;
+  //     font-size:13px;
+  //     align-items: center;
+  //   }
+  
+  // }
+  // .valuecard{
+  //   text-align: center;
+  //   display: flex;
+  //   padding-left: 35px;
+  //   color: #65ed42;
+   
+  //   h4{
+  //     text-align: center;
+  //     display: flex;
+  //     align-items: center;
+  //     margin-bottom:0px ;
+  //   }
+
+  // }
+  // .fail{
+  //   width: 50%;
+  // }
+  // .failcard{
+    
+  //     text-align: center;
+  //     display: flex;
+  //   color: #FD4141;
+  //     padding-left: 35px;
+  //     h4{
+  //       display: flex;
+  //       align-items: center;
+  //      margin-bottom: 0px;
+  //     }
+  
+  // }
+  .textcard{
+  
+    margin-left:20px ;
+    flex: end;
+  }
+  .t-statushead{
+    // text-align: center;
+    // align-items: center;
+    font-family: "CRM-Font-Heavy";
+    font-size: 22px;
+    text-transform: uppercase;
+    color: #909090;
+  }
+  // .t-success{
+  //   width: 50%;
+  // }
+  // .t-statuscard{
+  //   // background-color: green;
+  //   margin: 10px;
+  //   display: flex;
+  
+  //   align-items: center;
+  //   padding: 0;
+  //   border: 1px solid #909090;
+  //   border-radius: 5px;
+  // }
+  // .t-bluecard{
+  //   display: flex;
+  //   border-radius: 4px 0px 0px 4px;
+  //   background-color: #909090;
+  //   text-align: center;
+  //   width: 50%;
+  //   padding: 10px;
+  //   align-items: center;
+  //   height: 35px;
+  //   p{
+  //     text-align: center;
+  //     color: white;
+  //     display: flex;
+  //     font-size:13px;
+  //     align-items: center;
+  //   }
+  
+  // }
+  // .t-valuecard{
+  //   text-align: center;
+  //   display: flex;
+  // color: #65ed42;
+  //   padding-left: 35px;
+ 
+  //   h4{
+  //     display: flex;
+  //     align-items: center;
+  //     margin-bottom: 0px;
+  //   }
+  // }
+  // .t-fail{
+  //   width: 50%;
+  // }
+  // .t-failcard{
+  //   text-align: center;
+  //   display: flex;
+  // color: #FD4141;
+  //   padding-left: 35px;
+  //   h4{
+  //     display: flex;
+  //     align-items: center;
+  //     margin-bottom: 0px;
+  //   }
+  // }
+  // .t-fail{
+  //   width: 50%;
+  // }
+
+}
+
+
+.refresh{
+  background-color: #909090;
+  width: 10%;
+  height: 35px;
+   margin: 5px;
+   padding-left: 15px;
+   align-items: center;
+   text-align: center;
+   border:none;
+border-radius: 50px !important;
+.ref{
+  font-size: 14px;
+  color: white;
+ padding-top: 5px;
+ padding-left: 5px;
+}
+
+}
+
+
+.mes-but{
+  align-items: center;
+  text-align: center;
+  // margin-bottom: 20px;
+}
+.send{
+  background-color: #4265ED;
+  width: 10%;
+  height: 35px;
+   margin: 5px;
+   padding-left: 15px;
+   align-items: center;
+   text-align: center;
+   border:none;
+border-radius: 50px !important;
+.dis{
+  font-size: 14px;
+  color: white;
+ padding-top: 5px;
+ padding-left: 5px;
+}
+
+  
+
+
+}
+
+
+
+.redcard{
+  background-color: red;
+  text-align: center;
+}
+/* Custom Snackbar Styles */
+.custom-snackbar {
+  background-color: #333;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+ .mat-snack-bar-container {
+  padding: 12px 24px;
+}
+
+ .mat-snack-bar-action {
+  color: #fff;
+}
+
+::ng-deep .success-snackbar {
+  background-color: green;
+}
+
+::ng-deep .error-snackbar {
+  background-color: red;
+}
+
+
+// new table//
+
+.task-table{
+  width:100%;
+ table-layout:fixed;
+}
+.task-table tr,th {
+    height:48px;
+   
+  }
+  .task-table th{
+    color: #495057;
+      font-weight: 500;
+      font-size: 14px;
+      padding:0px 15px 0px 5px !important;
+      line-height: 17px;
+      text-align: center;
+  }
+  .task-table td{
+
+      font-family: "IBM Plex Sans";
+      color: #495057;
+      font-weight: 300;
+      padding:0px 15px 0px 5px !important;
+      font-size: 14px;
+      text-align: center;
+      // text-align: right;
+      // max-width: 60px;
+     
+  }
+
+  tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+
+// inside table 
+
+.cont-table{
+  width:100%;
+ table-layout:fixed;
+}
+.cont-table tr,th {
+    height:48px;
+   
+  }
+  .cont-table th{
+    color: #495057;
+      font-weight: 500;
+      font-size: 14px;
+      padding:0px 15px 0px 5px !important;
+      line-height: 17px;
+      text-align: center;
+  }
+  .cont-table td{
+
+      font-family: "IBM Plex Sans";
+      color: #495057;
+      font-weight: 300;
+      padding:0px 15px 0px 5px !important;
+      font-size: 14px;
+      text-align: center;
+      // text-align: right;
+      // max-width: 60px;
+     
+  }
+
+//   tr:nth-child(odd) {
+//     background-color: #f9f9f9;
+// }
+
+//doughnut chart
+.owel{
+  display: block;
+  height: 250px;
+  width: 300px;
+  // align-items: center;
+  // text-align: center;
+}
+.owel1{
+  display: block;
+  height: 250px;
+  width: 300px;
+  // align-items: center;
+  // text-align: center;
+}

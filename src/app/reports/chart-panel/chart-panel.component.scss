@@ -1,0 +1,46 @@
+@import "./src/assets/scss/variables.scss";
+
+.mat-drawer-container {
+	height: calc(100% - -60px);
+}
+.chart--container {
+	.mat-toolbar {
+		padding: 35px 20px;
+		font-size: 16px;
+		text-transform: uppercase;
+		height: 50px;
+		background: #535e6d;
+		border-radius: 5px;
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+		color: #fff;
+
+		span {
+			letter-spacing: .17px;
+		}
+	}
+	
+
+	.mat-card {
+		margin: 0;
+		padding: 0;
+		height: 100%;
+		&:hover {
+			box-shadow: 0 2px 30px rgba(173, 183, 197, 0.6);
+		}
+	}
+
+	.mat-card:not([class*=mat-elevation-z]) {
+		box-shadow: 0 2px 20px rgba(173, 183, 197, 0.3);
+	}
+}
+
+.toolbar {
+	width: 100%;
+	font-family: $font-primary;
+}
+
+i {
+	float: right;
+	cursor: pointer;
+}

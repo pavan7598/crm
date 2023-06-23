@@ -1,0 +1,206 @@
+
+@font-face {
+    font-family: 'CRM-Font-Semibold';
+    src: url('/assets/fonts/CRM-Font/CRM-Semibold.eot');
+    src: url('/assets/fonts/CRM-Font/CRM-Semibold.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonts/CRM-Font/CRM-Semibold.woff2') format('woff2'),
+        url('/assets/fonts/CRM-Font/CRM-Semibold.woff') format('woff'),
+        url('/assets/fonts/CRM-Font/CRM-Semibold.svg#CRM-Semibold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CRM-Font-Thin';
+    src: url('/assets/fonts/CRM-Font/CRM-Thin.eot');
+    src: url('/assets/fonts/CRM-Font/CRM-Thin.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonts/CRM-Font/CRM-Thin.woff2') format('woff2'),
+        url('/assets/fonts/CRM-Font/CRM-Thin.woff') format('woff'),
+        url('/assets/fonts/CRM-Font/CRM-Thin.svg#CRM-Thin') format('svg');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CRM-Font-Light';
+    src: url('/assets/fonts/CRM-Font/CRM-Light.eot');
+    src: url('/assets/fonts/CRM-Font/CRM-Light.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonts/CRM-Font/CRM-Light.woff2') format('woff2'),
+        url('/assets/fonts/CRM-Font/CRM-Light.woff') format('woff'),
+        url('/assets/fonts/CRM-Font/CRM-Light.svg#CRM-Light') format('svg');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CRM-Font-Black';
+    src: url('/assets/fonts/CRM-Font/CRM-Black.eot');
+    src: url('/assets/fonts/CRM-Font/CRM-Black.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonts/CRM-Font/CRM-Black.woff2') format('woff2'),
+        url('/assets/fonts/CRM-Font/CRM-Black.woff') format('woff'),
+        url('/assets/fonts/CRM-Font/CRM-Black.svg#CRM-Black') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CRM-Font-Bold';
+    src: url('/assets/fonts/CRM-Font/CRM-Bold.eot');
+    src: url('/assets/fonts/CRM-Font/CRM-Bold.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonts/CRM-Font/CRM-Bold.woff2') format('woff2'),
+        url('/assets/fonts/CRM-Font/CRM-Bold.woff') format('woff'),
+        url('/assets/fonts/CRM-Font/CRM-Bold.svg#CRM-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CRM-Font-Ultralight';
+    src: url('/assets/fonts/CRM-Font/CRM-Ultralight.eot');
+    src: url('/assets/fonts/CRM-Font/CRM-Ultralight.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonts/CRM-Font/CRM-Ultralight.woff2') format('woff2'),
+        url('/assets/fonts/CRM-Font/CRM-Ultralight.woff') format('woff'),
+        url('/assets/fonts/CRM-Font/CRM-Ultralight.svg#CRM-Ultralight') format('svg');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CRM-Font-Heavy';
+    src: url('/assets/fonts/CRM-Font/CRM-Heavy.eot');
+    src: url('/assets/fonts/CRM-Font/CRM-Heavy.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonts/CRM-Font/CRM-Heavy.woff2') format('woff2'),
+        url('/assets/fonts/CRM-Font/CRM-Heavy.woff') format('woff'),
+        url('/assets/fonts/CRM-Font/CRM-Heavy.svg#CRM-Heavy') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CRM-Font-Medium';
+    src: url('/assets/fonts/CRM-Font/CRM-Medium.eot');
+    src: url('/assets/fonts/CRM-Font/CRM-Medium.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonts/CRM-Font/CRM-Medium.woff2') format('woff2'),
+        url('/assets/fonts/CRM-Font/CRM-Medium.woff') format('woff'),
+        url('/assets/fonts/CRM-Font/CRM-Medium.svg#CRM-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+
+/*@font-face {
+    font-family: 'Lato-Regular';
+    src: url('/assets/fonts/lato/Lato-Regular.eot') format('embedded-opentype');
+    src: 
+        url('/assets/fonts/lato/Lato-Regular.woff2') format('woff2'),
+        url('/assets/fonts/lato/Lato-Regular.woff') format('woff'),
+        url('/assets/fonts/lato/Lato-Regular.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato-Medium';
+    src: url('/assets/fonts/lato/Lato-Medium.eot');
+    src: url('/assets/fonts/lato/Lato-Medium.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonts/lato/Lato-Medium.woff2') format('woff2'),
+        url('/assets/fonts/lato/Lato-Medium.woff') format('woff'),
+        url('/assets/fonts/lato/Lato-Medium.svg#Lato-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato-SemiBold';
+    src: url('/assets/fonts/lato/Lato-Semibold.eot');
+    src: url('/assets/fonts/lato/Lato-Semibold.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonts/lato/Lato-Semibold.woff2') format('woff2'),
+        url('/assets/fonts/lato/Lato-Semibold.woff') format('woff'),
+        url('/assets/fonts/lato/Lato-Semibold.svg#Lato-Semibold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato-Bold';
+    src: url('/assets/fonts/lato/Lato-Bold.eot');
+    src: url('/assets/fonts/lato/Lato-Bold.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonts/lato/Lato-Bold.woff2') format('woff2'),
+        url('/assets/fonts/lato/Lato-Bold.woff') format('woff'),
+        url('/assets/fonts/lato/Lato-Bold.svg#Lato-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato-Black';
+    src: url('/assets/fonts/lato/Lato-Black.eot');
+    src: url('/assets/fonts/lato/Lato-Black.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonts/lato/Lato-Black.woff2') format('woff2'),
+        url('/assets/fonts/lato/Lato-Black.woff') format('woff'),
+        url('/assets/fonts/lato/Lato-Black.svg#Lato-Black') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato-300-Hairline';
+    src: url('/assets/fonts/lato/Lato-Hairline.eot');
+    src: url('/assets/fonts/lato/Lato-Hairline.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonts/lato/Lato-Hairline.woff2') format('woff2'),
+        url('/assets/fonts/lato/Lato-Hairline.woff') format('woff'),
+        url('/assets/fonts/lato/Lato-Hairline.svg#Lato-Hairline') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato-Light';
+    src: url('/assets/fonts/lato/Lato-Light.eot');
+    src: url('/assets/fonts/lato/Lato-Light.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonts/lato/Lato-Light.woff2') format('woff2'),
+        url('/assets/fonts/lato/Lato-Light.woff') format('woff'),
+        url('/assets/fonts/lato/Lato-Light.svg#Lato-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/MaterialIcons/MaterialIcons-Regular.eot');  For IE6-8 
+  src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url('/assets/fonts/MaterialIcons/MaterialIcons-Regular.woff2') format('woff2'),
+    url('/assets/fonts/MaterialIcons/MaterialIcons-Regular.woff') format('woff'),
+    url('/assets/fonts/MaterialIcons/MaterialIcons-Regular.ttf') format('truetype');
+}*/
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  cursor: pointer;
+  font-size: 26px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+

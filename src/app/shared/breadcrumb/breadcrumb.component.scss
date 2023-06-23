@@ -1,0 +1,47 @@
+@import "src/assets/css/variables.scss";
+
+
+
+.landing-bread-crumb{
+    margin: 0 0 0 20px;
+    padding: 0;
+    ul{
+        margin:0;
+        padding:0;
+        li{
+            list-style: none;
+            display: inline-block; 
+            .gt-set{
+                margin: 0 6px;
+                font-size: 1em;
+                color: #6B7080;
+            }
+            .breadcrumb-item{
+                font-size: 1em;
+               
+            }
+            a{
+                text-decoration: none;
+                color: #6B7080;
+                border-bottom:1px dotted;
+            }
+            a:hover{
+                color: #1e88e5;
+            }
+            .breadcrumb-title{
+                color: #ffffff;
+            }
+        }
+        li:first-child:after {
+            content: '\F142';
+            display: inline-block;
+            font: normal normal normal 24px/1 "Material Design Icons";
+            font-size: 1em;
+            text-rendering: auto;
+            line-height: inherit;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            margin: -1px 3px 0 5px;
+        }
+    }
+}

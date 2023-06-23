@@ -1,0 +1,66 @@
+<div class="fullWH" >
+  <div fxLayout="column" class="fullWH" fxLayoutAlign="start start" fxLayoutGap="10px">
+    <div fxFlex="10%" class="fullWH">
+<div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="100px">
+  <form [formGroup]="customeElementForm" class="fullWH">
+  <div fxFlex="25%"   >
+      <mat-form-field class="fullWH">
+          <mat-label>Select Collection</mat-label>
+          <mat-select  formControlName="Collection">
+            <mat-option *ngFor="let folder of folders" [value]="folder">
+              {{folder.elementLabel}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+  </div>
+  <div fxFlex="25%">
+      <mat-checkbox formControlName="Aggrigation" (change)="aggrigation($event)">Is Aggrigation </mat-checkbox>
+    </div>
+
+    <div fxFlex="25%" *ngIf="customeElementForm.controls.Aggrigation.value">
+        <mat-form-field class="fullWH" >
+            <mat-label>Aggrigation Function</mat-label>
+            <mat-select placeholder="Choose Function"  formControlName="AggFunction" >
+                <mat-option *ngFor="let aggrigation of aggrigations" [value]="aggrigation.value">
+                    {{aggrigation.viewValue}}
+                  </mat-option>
+            </mat-select>
+          </mat-form-field>
+      </div>
+    <div [fxFlex]="customeElementForm.controls.Aggrigation.value?'25%':'50%'">
+        <mat-form-field class="fullWH">
+            <input matInput placeholder="ElementLabel" formControlName="ElementLabel" >
+          </mat-form-field>
+        </div>
+      </form>
+</div>
+    </div>
+    <div fxFlex="90%" class="fullWH">
+        <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="10px">
+            <div fxFlex="25%">
+              elements Div
+              <!-- <app-elements-collection-list *ngIf="data.length>0" [collections]="data" >
+              </app-elements-collection-list> -->
+            <app-custom-elements-collection-list *ngIf="data.length>0" [collections]="data"></app-custom-elements-collection-list>
+            </div>
+            <div fxFlex="75%">
+              <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="20px">
+                <div fxFlex="100%">
+                    <h3 fxLayout="row">
+                        <div fxFlex="50">FILTER CONDITIONS</div>
+                        {{psMainObj|json}}
+                        <div fxFlex="50" fxLayoutAlign="end start" fxLayoutGap="20px">
+                            <i class="mdi mdi-delete icon-set"  (click)="clear()" ></i>
+                        </div>
+                    </h3>
+                </div>
+            </div>
+
+                <app-custom-filter-panel [expressions]="psMainObj.expressions" (passData)="addToelements($event)"></app-custom-filter-panel>
+
+
+              </div>
+      </div>
+      <button mat-raised-button (click)="addElement()"> text</button>
+  </div>
+</div>

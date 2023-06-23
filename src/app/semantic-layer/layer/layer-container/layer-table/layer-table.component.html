@@ -1,0 +1,19 @@
+<div class="table window jsplumb-draggable" [id]="schema.collectionID+'-parent'">
+    <div class="table-header">
+        <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="10px">
+            <div fxFlex="80%" [matTooltip]="schema.collectionLabel">
+                <p>{{schema.collectionLabel | reduceString:15}}</p>
+            </div>
+            <div fxFlex="20%">
+
+                <!-- <mat-icon (click)="deleteSchema()">
+              delete_outline
+          </mat-icon> -->
+                <i (click)="deleteSchema()" class="mdi mdi-delete-circle"></i>
+
+            </div>
+        </div>
+
+    </div>
+    <app-table-column *ngFor="let element of elements" [element]="element" [jsPlumbInst]="jsPlumbInst" class="table-column-block"></app-table-column>
+</div>

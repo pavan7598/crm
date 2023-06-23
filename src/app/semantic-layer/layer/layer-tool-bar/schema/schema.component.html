@@ -1,0 +1,35 @@
+<mat-accordion>
+    <mat-expansion-panel *ngFor="let data of displayList;let i=index" (opened)="getColumns(data.name,dataID,i)">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <div fxLayout="row" class="fullWT" [matTooltip]="data.name.split('.')[1]" fxLayoutAlign="start start" fxLayoutGap="2px">
+                    <div fxFlex="10%"><i class="mdi mdi-menu-down"></i></div>
+                    <div fxFlex="80%" style="margin-top:4px;">
+                        <div class="text-block">
+                            {{data.name.split('.')[1]|reduceString:25}}
+                        </div>
+                    </div>
+                    <div fxFlex="10%" style="margin-top:4px;">
+                        <mat-icon (click)="addToContainer($event,data.name,dataID)">add_circle</mat-icon>
+                    </div>
+                </div>
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="element-height" fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="10px">
+            <div *ngIf="!displayColumns" class="fullWT">
+                Retrivieing Columns
+                <mat-progress-bar mode="query"></mat-progress-bar>
+            </div>
+            <div *ngIf="(i==ExpandedIndex)">
+                <app-column *ngFor="let ele of elements" [label]="ele.elementLabel"></app-column>
+            </div>
+        </div>
+    </mat-expansion-panel>
+</mat-accordion>
+<div>
+<mat-paginator [length]="tableList.length"
+              [pageSize]="37"
+              (page)="applyPagination($event)"
+              >
+</mat-paginator>
+</div>

@@ -1,0 +1,109 @@
+<div class="filter-inner-content">
+	<ul>
+		<li>
+			<div class="crm-col-lg-12 crm-col-md-12 crm-col-sm-12" *ngIf="returnelements.length>0">
+				<div class="crm-col-lg-1 crm-col-md-1 crm-col-sm-1">
+
+					<!-- <i (click)="deleteSlab(indx)" class="material-icons" style="margin-top: 20px;"> remove_circle_outline</i> -->
+
+					<i class="mdi mdi-minus-circle" *ngIf="totalIndx-1!=indx" (click)="deleteSlab(indx)"></i>
+					<i class="mdi mdi-plus-circle" *ngIf="totalIndx-1==indx" (click)="addFilter()"></i>
+
+				</div>
+
+				<div class="crm-col-lg-4 crm-col-md-4 crm-col-sm-4">
+
+					<mat-form-field>
+						<mat-select placeholder="Element" [(ngModel)]="slabfilter.elementid" (selectionChange)="selectedEleUi(slabfilter.elementid)">
+							<mat-option *ngFor="let filter of returnelements" [value]="filter.elementid">
+
+								<span> {{filter.elementlabel}}</span>
+							</mat-option>
+						</mat-select>
+					</mat-form-field>
+					<!-- <p *ngFor="let filter of returnelements" [value]="filter.elementid">{{filter.elementlabel}}</p> -->
+				</div>
+
+				<div class="crm-col-lg-4 crm-col-md-4 crm-col-sm-4">
+					<mat-form-field>
+						<mat-select placeholder="Condition" [(ngModel)]="selectFilter" (selectionChange)="filterOperator(selectFilter)">
+							<mat-option *ngFor="let filter of operators" [value]="filter">
+								<p> <span style="color: red;word-break: break-all">{{filter.value}}</span>
+									<span> {{filter.viewValue}}</span></p>
+							</mat-option>
+						</mat-select>
+					</mat-form-field>
+				</div>
+			</div>
+
+			<div class="crm-col-lg-12 crm-col-md-12 crm-col-sm-12 marginB20">
+				<div *ngIf="selectFilter">
+					<div class="row marginTB10-auto">
+						
+						<div class="crm-col-lg-1"></div>
+						
+						<div class="crm-col-lg-4">
+							<div *ngIf="(slabfilter.type==='Date')">
+								<mat-form-field *ngIf="!slabfilter.date_val">
+									<input matInput [matDatepicker]="picker" [max]="maxDate" [appInputType]="slabfilter.type" autocomplete="off" [datepickerInstance]="picker" [placeholder]="placeholders[slabfilter.type]" [(ngModel)]="slabfilter.value" (dateChange)="somethingChanged()">
+									<mat-datepicker #picker [disabled]="!(slabfilter.type==='Date')"></mat-datepicker>
+								</mat-form-field>
+							</div>
+							<div *ngIf="!(slabfilter.type==='Date') || slabfilter.date_val">
+								<div class="row">
+									<div [ngClass]="{'m-t5': selectFilter.multi=='F', 'm-t10':selectFilter.multi=='T' }" class="m-t5" *ngIf="slabfilter.date_val">
+										<span class="current_date"> Current Date</span>
+									</div>
+
+									<mat-form-field *ngIf="slabfilter.type=='Integer'">
+										<input matInput numbersOnly type="number" [appInputType]="datetype" [placeholder]="placeholders[datetype]" [(ngModel)]="slabfilter.value" (change)="somethingChanged()">
+									</mat-form-field>
+									<mat-form-field *ngIf="slabfilter.type!='Integer'">
+										<input matInput [appInputType]="datetype" [placeholder]="placeholders[datetype]" [(ngModel)]="slabfilter.value" (change)="somethingChanged()">
+									</mat-form-field>
+									
+								</div>
+							</div>
+						</div>
+						<div class="crm-col-lg-4" *ngIf="selectFilter.multi=='T'">
+							<div *ngIf="(slabfilter.type==='Date')">
+								<mat-form-field *ngIf="!slabfilter.date_val">
+									<input matInput [matDatepicker]="picker" [max]="maxDate" [appInputType]="slabfilter.type" autocomplete="off" [datepickerInstance]="picker" [placeholder]="placeholders[slabfilter.type]" [(ngModel)]="slabfilter.value2" (dateChange)="somethingChanged()">
+									<mat-datepicker #picker [disabled]="!(slabfilter.type==='Date')"></mat-datepicker>
+								</mat-form-field>
+							</div>
+							<div *ngIf="!(slabfilter.type==='Date') || slabfilter.date_val">
+								<div class="row">
+									
+									<div class="crm-col-lg-6" *ngIf="slabfilter.date_val">
+										<span class="current_date"> Current Date</span>
+									</div>
+									
+									<div class="crm-col-lg-6">
+										<mat-form-field *ngIf="slabfilter.type=='Integer'">
+											<input matInput numbersOnly type="number" [appInputType]="datetype" [placeholder]="placeholders[datetype]" [(ngModel)]="slabfilter.value2" (change)="somethingChanged()">
+										</mat-form-field>
+
+										<mat-form-field *ngIf="slabfilter.type!='Integer'">
+											<input matInput [appInputType]="datetype" [placeholder]="placeholders[datetype]" [(ngModel)]="slabfilter.value2" (change)="somethingChanged()">
+										</mat-form-field>
+									</div>
+									
+								</div>
+							</div>
+						</div>
+						<div class="crm-col-lg-1" *ngIf="(slabfilter.type==='Date')">
+							<button mat-button class="menu" [matMenuTriggerFor]="menu" style="margin-top: 20px;">
+								<mat-icon>more_vert</mat-icon>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<mat-menu #menu="matMenu">
+				<button mat-menu-item (click)="dateSelector(false)">Date Picker</button>
+				<button mat-menu-item (click)="dateSelector(true)">Current Date</button>
+			</mat-menu>
+		</li>
+	</ul>

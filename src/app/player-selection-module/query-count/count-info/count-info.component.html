@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>Count For Condition <i class="mdi mdi-close"></i></h1>
+
+<h2>LIST OF CONDITIONS AVAILABLE</h2>
+<h3>* this list is only for reference and can be used if selected</h3>
+<div mat-dialog-content>
+<table>
+  <thead>
+    <th>condition</th>
+    <th style="text-align:left;">sql-query</th>
+    <th>count</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let key of objectKeys">
+      <td >Condition {{key}}</td>
+      <td >{{dataSet[key].sql}} </td>
+      <td > {{dataSet[key].count}}</td>
+  </tr>
+</tbody>
+</table>
+<button>close</button>
+</div>

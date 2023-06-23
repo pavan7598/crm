@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="body">
+    <div class="target">
+      <div>
+        <ul>
+          <li><i class="mdi mdi-circle-edit-outline"></i></li>
+          <li>Select control group</li>  
+          <li>
+            <p>
+              Select your targeted customer and apply the control group.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="hding">AI generated segments</div>
+    <div class="cg-2">
+      <div class="crm-row">
+        <div class="crm-col-lg-4 card-1" *ngIf="segData">
+          <div class="c1-list">
+            <ul>
+              <li>SEGMENT NAME</li>
+              <li>{{segData.segmentName}}</li>
+              <!-- <li>{{segData.customers}}</li> -->
+            </ul>
+								<h3>{{segData.customers}}</h3>
+
+            <div class="f-detail">
+              <ul class="bot-list">
+                <li>{{segData.createdDate |date:'longDate'}}</li>
+                <li>{{segData.createdBy}}</li>
+              </ul>
+              <div class="eci">
+                <i class="material-icons">check_circle_outline</i>
+                <i class="material-icons check">visibility</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="crm-col-lg-4 card-1">
+          <app-control [campaignObj]="campaignObj.controls.ControlValue" [sliders]="Sliders"></app-control>
+        </div>
+        <div class="crm-col-lg-4 card-1">
+          <div class="heading">TARGET / CONTROL GROUP</div>
+          <app-channel [campaignObj]="campaignObj.controls.channel"></app-channel>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

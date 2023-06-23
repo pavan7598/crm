@@ -1,0 +1,23 @@
+<div class="row marginTB20-auto">
+	<div class="crm-col-lg-3">
+		<label>SEGMENT NAME</label>
+	</div>
+	<div class="crm-col-lg-5">
+		<mat-form-field style="margin-top: -25px;">
+			<input matInput [(ngModel)]="slb.slabName" placeholder="Enter segment name">
+		</mat-form-field>
+	</div>
+	<div class="crm-col-lg-4">
+		<label>BY FOLLOWING CONDITIONS</label>
+	</div>
+	<div class="crm-col-lg-1">
+		<!--<i class="material-icons" (click)="addFilter()"> add_circle_outline</i>-->
+	</div>
+</div>
+
+
+<div class="row marginTB20-auto">
+	<div class="crm-col-lg-12 crm-col-md-12 crm-col-sm-12">
+		<app-segmant-fixed-slab-filter [totalIndx]="slb.filters.length" *ngFor="let filter of slb.filters;let i=index" [returnelements]="returnelements" [slabfilter]="filter" [indx]="i" (removeSlab)="deleteSlab($event)" (addSlab)="addFilter($event)"></app-segmant-fixed-slab-filter>
+	</div>
+</div>

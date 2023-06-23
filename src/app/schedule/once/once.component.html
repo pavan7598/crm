@@ -1,0 +1,16 @@
+<div class="widget" (click)="OnceSelected()" [ngClass]="{'active-check':value != once,'inactive-check':value == once}">
+
+	<ul>
+		<li><i class="material-icons">check_circle</i></li>
+		<li class="marginL20">
+			<h6>
+				ASAP
+				<span>Your Campaign will be Schedule with in 30 min</span>
+			</h6>
+		</li>
+		<li class="pull-right"><button *ngIf="value" class="btn btn-secondary" (click)="addStep($event)">Add Step</button>
+		</li>
+	</ul>
+
+
+</div>

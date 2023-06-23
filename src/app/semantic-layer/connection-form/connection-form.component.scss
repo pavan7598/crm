@@ -1,0 +1,46 @@
+@import "./src/assets/scss/variables.scss";
+
+.SemanticForm {
+
+    height: 100%;
+    width: 100%;
+}
+
+mat-card {
+    margin: 10px;
+    height: 100%;
+}
+
+.mat-typography {
+    /*height: 600px;*/
+    min-width: 900px;
+}
+
+.margin-gap {
+    margin-top: 4%;
+}
+
+.test-success {
+    background: #28c128;
+    border-radius: 50px;
+    color: #fff;
+    box-shadow: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: $font-primary;
+    min-width: 100px;
+}
+/*button {
+    background: #159eda;
+    border-radius: 50px;
+    color: #fff;
+    box-shadow: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-family: $font-primary;
+    min-width: 100px;
+    letter-spacing: 1px;
+}*/
+.test-fail {
+    background: #de2323;
+}

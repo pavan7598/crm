@@ -1,0 +1,156 @@
+<div class="newcampaign--target">
+
+	<div class="row">
+		<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12 text-c top-running-text">
+
+			<div class="icon-circle"><i class="mdi mdi-circle-edit-outline"></i></div>
+
+			<h5>TARGET USERS</h5>
+
+			<p>Next, you probably only want to target certain of users. For example, you might want to target users who only
+				signed up in the past day or week. You can do really deep targetting so feel free to click the plus sign below
+				and target more specifically.</p>
+
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12 marginTB15-auto">
+			<div class="row">
+				<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12 marginTB15-auto">
+					<mat-form-field appearance="legacy">
+						<mat-label>Search</mat-label>
+						<input matInput placeholder="Search" (keyup)="Search(searchValue)" [(ngModel)]="searchValue">
+						<mat-icon matSuffix (click)="Search(searchValue)">search</mat-icon>
+					</mat-form-field>
+				</div>
+
+				<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12 marginTB15-auto">
+					<button mat-button (click)="customsegment(true)" class="add-bt">
+						<mat-icon matSuffix class="add-c">add_circle_outline</mat-icon>
+						CREATE CUSTOM SEGMENT
+					</button>
+				</div>
+			</div>
+			<div class="row">
+				<div class="crm-col-lg-12 crm-col-md-12 crm-col-sm-12 marginTB15-auto text-c">
+					<p>AI generated segments for <a  class="text-bold">Registered</a> Users campaign</p>
+				</div>
+			</div>
+
+
+			<div *ngIf="!Showsegments" class="marginB50">
+
+
+				<h6 class="segment-type-title">Custom segmentation</h6>
+				<div class="row scroll-x">
+
+					<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12 margin-auto" *ngFor="let seg of data;let i=index">
+
+						<div class="segment-folder" [ngClass]="{'selected':segmentName == seg.segmentName }">
+							<div class="segment-title">
+								<ul>
+									<li>
+										<h6>{{seg.segmentName}}</h6>
+									</li>
+									<li>
+										<span>{{i+1}}</span>
+									</li>
+								</ul>
+							</div>
+
+							<div class="segment-value">
+								<h3>{{seg.customers}}</h3>
+								<mat-progress-bar mode="determinate" value="seg.customersPer"></mat-progress-bar>
+								<span>{{seg.customersPer | number:'1.0-0'}}% out of 100% customer base</span>
+							</div>
+
+							<div class="segment-details-bottom">
+								<ul>
+									<li>
+										<span>{{seg.createdDate |date:'longDate'}}</span>
+										<span>{{seg.createdBy}}</span>
+									</li>
+									<li>
+										<i class="material-icons" (click)="doubleClick(seg)">visibility</i>
+										<i class="material-icons" (click)="selectedSegment(seg)">check_circle</i>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+
+
+			</div>
+
+		</div>
+	</div>
+
+	<div class="" *ngIf="Showsegments">
+		<div class="segmentation-filter">
+
+			<div class="row">
+				<div class="crm-col-lg-8 crm-col-md-8 crm-col-sm-12 marginTB15-auto text-c">
+
+					<ul class="segment--title">
+						<li>
+
+							<div class="title">
+								<h2>
+									Segmentation
+									<span>For the selected segment</span>
+								</h2>
+							</div>
+						</li>
+
+						<li>
+							<button class="btn btn-stroke pull-right" (click)="Save()">
+								<span *ngIf="!salb._id"> <i class="mdi mdi-content-save"></i> Save</span>
+								<span *ngIf="salb._id"> <i class="mdi mdi-update"></i> Update</span>
+							</button>
+						</li>
+					</ul>
+
+					<div class="crm-col-lg-12 crm-col-md-12 crm-col-sm-12 marginB20 text-c" style="margin-top: -15px;">
+						<form>
+							<mat-form-field>
+								<input matInput placeholder="Segment Name" [(ngModel)]="salb.name" [formControl]="Segment_name">
+								<mat-error *ngIf="Segment_name.hasError('required')">
+									<!-- Email is <strong>required</strong> -->
+								</mat-error>
+							</mat-form-field>
+						</form>
+					</div>
+
+					<hr style="border: .5px solid #D6D6D6;" />
+
+				</div>
+			</div>
+
+
+			<div class="row">
+
+				<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12 marginTB15-auto text-c">
+					<app-segmentation-chart *ngIf="fetchData" [noCustomer]="selectedCustomers"></app-segmentation-chart>
+				</div>
+
+				<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12 marginTB15-auto text-l" style="padding: 0 20px; border-left: 1px solid #ccc;">
+					<app-segmentation-filter [returnelements]="returnelements" [slb]="salb"></app-segmentation-filter>
+					
+					<div class="crm-col-lg-12 crm-col-md-12 crm-col-sm-12 marginTB15-auto text-l" *ngIf="Showsegments">
+						<button class="btn btn-stroke-black marginR20" (click)="fetch()">Fetch</button>
+						<button class="btn btn-black" (click)="customsegment(false)">Cancel</button>
+					</div>
+					
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
+</div>

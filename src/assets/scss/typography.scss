@@ -1,0 +1,56 @@
+@import'~fonts.scss';
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+// Fonts
+
+$font-primary:  'MuseoSans';
+$font-primary-500:  'MuseoSans500';
+$font-primary-700:  'MuseoSans700';
+$font-primary-900:  'MuseoSans900';
+$font-secondary:  'Montserrat';
+
+// Font-secondary - style and weight
+$font-secondary-black:  'Montserrat-Black'; // 900
+$font-secondary-BlackItalic:  'Montserrat-BlackItalic'; // 900
+$font-secondary-Bold:  'Montserrat-Bold'; // Bold
+$font-secondary-BoldItalic:  'Montserrat-BoldItalic';
+$font-secondary-ExtraBold:  'Montserrat-ExtraBold'; // 800
+$font-secondary-ExtraBoldItalic:  'Montserrat-ExtraBoldItalic'; // 800
+$font-secondary-ExtraLight:  'Montserrat-ExtraLight'; // 200
+$font-secondary-ExtraLightItalic:  'Montserrat-ExtraLightItalic'; // 200
+$font-secondary-Italic:  'Montserrat-Italic';
+$font-secondary-Light:  'Montserrat-Light'; // 300
+$font-secondary-LightItalic:  'Montserrat-LightItalic'; // 300
+$font-secondary-Medium:  'Montserrat-Medium'; //500
+$font-secondary-MediumItalic:  'Montserrat-MediumItalic'; // 500
+$font-secondary-SemiBold:  'Montserrat-SemiBold'; // 600
+$font-secondary-SemiBoldItalic:  'Montserrat-SemiBoldItalic'; // 600
+$font-secondary-Thin:  'Montserrat-Thin'; // 100
+$font-secondary-ThinItalic:  'Montserrat-ThinItalic'; // 100
+
+//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+
+$font-size-base:          14px !default;
+$font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
+
+$font-size-h1:            floor(($font-size-base * 2.6)) !default; // ~36px
+$font-size-h2:            floor(($font-size-base * 2.15)) !default; // ~30px
+$font-size-h3:            ceil(($font-size-base * 1.7)) !default; // ~24px
+$font-size-h4:            ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-h5:            $font-size-base !default;
+$font-size-h6:            ceil(($font-size-base * 0.85)) !default; // ~12px
+
+//** Unit-less `line-height` for use in components like buttons.
+$line-height-base:        1.428571429 !default; // 20/14
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$line-height-computed:    floor(($font-size-base * $line-height-base)) !default; // ~20px
+
+//** By default, this inherits from the `<body>`.
+$headings-font-family:    inherit !default;
+$headings-font-weight:    500 !default;
+$headings-line-height:    1.1 !default;
+$headings-color:          inherit !default;

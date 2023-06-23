@@ -1,0 +1,119 @@
+<div class="segment-left-panel">
+	
+	<div class="custom-select">
+			<ng-select [items]="dimensions" (change)="selectionChanged($event)" (clear)="selectionChanged($event)" bindLabel="elementlable"   placeholder="Select dimensions" >
+				</ng-select>
+	</div>
+	<div class="customer-type-list marginT50">
+		<ul>
+			<li *ngFor="let item of distinctDimentions">
+				<div class="customer-type-list-item">
+					<ul>
+						<li><i class="mdi mdi-check-circle-outline"></i></li>
+						<li><i class="mdi mdi-account-card-details"></i></li>
+						<li>
+							<h6>
+								{{item}}
+								<!-- <span>1024 records</span> -->
+							</h6>
+						</li>
+						<li><i class="mdi mdi-chevron-right"></i></li>
+					</ul>
+				</div>
+			</li>
+			<!-- <li>
+				<div class="customer-type-list-item">
+					<ul>
+						<li><i class="mdi mdi-check-circle-outline"></i></li>
+						<li><i class="mdi mdi-account-card-details"></i></li>
+						<li>
+							<h6>
+								Registered users
+								<span>1024 records</span>
+							</h6>
+						</li>
+						<li><i class="mdi mdi-chevron-right"></i></li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<div class="customer-type-list-item">
+					<ul>
+						<li><i class="mdi mdi-check-circle-outline"></i></li>
+						<li><i class="mdi mdi-account-card-details"></i></li>
+						<li>
+							<h6>
+								Registered users
+								<span>1024 records</span>
+							</h6>
+						</li>
+						<li><i class="mdi mdi-chevron-right"></i></li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<div class="customer-type-list-item">
+					<ul>
+						<li><i class="mdi mdi-check-circle-outline"></i></li>
+						<li><i class="mdi mdi-account-card-details"></i></li>
+						<li>
+							<h6>
+								Registered users
+								<span>1024 records</span>
+							</h6>
+						</li>
+						<li><i class="mdi mdi-chevron-right"></i></li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<div class="customer-type-list-item">
+					<ul>
+						<li><i class="mdi mdi-check-circle-outline"></i></li>
+						<li><i class="mdi mdi-account-card-details"></i></li>
+						<li>
+							<h6>
+								Registered users
+								<span>1024 records</span>
+							</h6>
+						</li>
+						<li><i class="mdi mdi-chevron-right"></i></li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<div class="customer-type-list-item">
+					<ul>
+						<li><i class="mdi mdi-check-circle-outline"></i></li>
+						<li><i class="mdi mdi-account-card-details"></i></li>
+						<li>
+							<h6>
+								Registered users
+								<span>1024 records</span>
+							</h6>
+						</li>
+						<li><i class="mdi mdi-chevron-right"></i></li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<div class="customer-type-list-item">
+					<ul>
+						<li><i class="mdi mdi-check-circle-outline"></i></li>
+						<li><i class="mdi mdi-account-card-details"></i></li>
+						<li>
+							<h6>
+								Registered users
+								<span>1024 records</span>
+							</h6>
+						</li>
+						<li><i class="mdi mdi-chevron-right"></i></li>
+					</ul>
+				</div>
+			</li> -->
+		</ul>
+	</div>
+	<!--<mat-divider [vertical]="true"></mat-divider>-->
+</div>
+
+

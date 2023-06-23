@@ -1,0 +1,49 @@
+<div class="newcampaign--compose">
+	<div class="row">
+		<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12 text-c top-running-text">
+
+			<div class="icon-circle"><i class="mdi mdi-circle-edit-outline"></i></div>
+
+			<h5>COMPOSE</h5>
+
+			<p>To Begin, let’s Start By Defining The Campaign.</p>
+
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12 marginTB15-auto">
+			<form [formGroup]="campaignObj">
+				<div class="row marginTB15-auto">
+					<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12">
+						<div class="custom-select">
+							<ng-select [items]="campaignTypes" bindLabel="name" bindValue="id" placeholder="Choose type of campaign" formControlName="campaign_type">
+							</ng-select>
+						</div>
+					</div>
+
+					<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12">
+
+						<mat-form-field appearance="legacy">
+							<mat-label>Enter Campaign Name Here</mat-label>
+							<input matInput placeholder="Enter Campaign Name Here" formControlName="campaign_name">
+						</mat-form-field>
+
+					</div>
+				</div>
+
+				<div class="row marginTB15-auto">
+					<div class="crm-col-lg-12 crm-col-md-12 crm-col-sm-12">
+
+						<mat-form-field appearance="legacy" class="text-field">
+							<mat-label>Description</mat-label>
+							<textarea matInput placeholder="Description" formControlName="campaign_Desc"></textarea>
+						</mat-form-field>
+
+					</div>
+				</div>
+			</form>
+
+		</div>
+	</div>
+</div>

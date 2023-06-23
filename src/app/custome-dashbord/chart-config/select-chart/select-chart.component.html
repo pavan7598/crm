@@ -1,0 +1,8 @@
+<section *ngIf="ChartList">
+   <div>
+      <button mat-button matTooltipPosition="above" [matTooltip]="item.key" *ngFor="let item of ChartList | keyvalue" (click)="chart(item.key)" >
+         <i class="material-icons">{{item.value}}</i>
+      </button>
+      <!-- <button mat-raised-button (click)="chart('text')">Text</button> -->
+   </div>
+</section>

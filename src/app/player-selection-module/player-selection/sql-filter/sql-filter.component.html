@@ -1,0 +1,86 @@
+<form [formGroup]="filterForm">
+  <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="10px">
+    <div [fxFlex]="'30%'">
+      <mat-form-field class="p-dd">
+        <mat-select placeholder="Condition" formControlName="filter" [(ngModel)]="viewdata.filter"
+          (selectionChange)="filterChange()">
+          <mat-option *ngFor="let filter of operators" [value]="filter">
+           <p> <span style="color: red;word-break: break-all">{{filter.value}}</span>
+            <span> {{filter.viewValue}}</span></p>
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div [fxFlex]="'70%'">
+      <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="5px">
+        <div fxFlex="{{filterValue.multi=='T'?'50%':'100%'}}">
+          <div fxFlex="{{type==='Date'&& !viewdata.date_val?'90%':'0%'}}" *ngIf="(type==='Date')">
+            <mat-form-field *ngIf="!viewdata.date_val">
+              <input matInput [matDatepicker]="picker" [max]="maxDate" [appInputType]="type" autocomplete="off"
+                [datepickerInstance]="picker" [placeholder]="placeholders[type]" formControlName="value"
+                [(ngModel)]="viewdata.value" (dateChange)="somethingChanged()">
+              <mat-datepicker #picker [disabled]="!(type==='Date')"></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div fxFlex="{{type==='Date'&& viewdata.date_val?'90%':'100%'}}"
+            *ngIf="!(type==='Date') || viewdata.date_val">
+            <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="10px">
+              <div [fxFlex]="'50%'" [ngClass]="{'m-t5': filterValue.multi=='F', 'm-t10':filterValue.multi=='T' }" class="m-t5" *ngIf="viewdata.date_val">
+                <span class="current_date"> Current Date</span>
+              </div>
+              <div fxFlex="{{viewdata.date_val==false?'100%':'50%'}}">
+                <mat-form-field *ngIf="type=='Integer'">
+                  <input matInput numbersOnly type="number" [appInputType]="datetype" [placeholder]="placeholders[datetype]"
+                    formControlName="value" [(ngModel)]="viewdata.value" (change)="somethingChanged()">
+                </mat-form-field>
+
+                <mat-form-field *ngIf="type!='Integer'">
+                  <input matInput [appInputType]="datetype" [placeholder]="placeholders[datetype]"
+                    formControlName="value" [(ngModel)]="viewdata.value" (change)="somethingChanged()">
+                </mat-form-field>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div [fxFlex]="'50%'" *ngIf="filterValue.multi=='T'">
+            <div fxFlex="{{type==='Date'&& !viewdata.date_val?'90%':'0%'}}" *ngIf="(type==='Date')">
+                <mat-form-field *ngIf="!viewdata.date_val">
+                  <input matInput [matDatepicker]="picker" [max]="maxDate" [appInputType]="type" autocomplete="off"
+                    [datepickerInstance]="picker" [placeholder]="placeholders[type]" formControlName="value2"
+                    [(ngModel)]="viewdata.value2" (dateChange)="somethingChanged()">
+                  <mat-datepicker #picker [disabled]="!(type==='Date')"></mat-datepicker>
+                </mat-form-field>
+              </div>
+              <div fxFlex="{{type==='Date'&& viewdata.date_val?'90%':'100%'}}"
+                *ngIf="!(type==='Date') || viewdata.date_val">
+                <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="10px">
+                  <div [fxFlex]="'50%'" class="m-t10" *ngIf="viewdata.date_val">
+                    <span class="current_date"> Current Date</span>
+                  </div>
+                  <div fxFlex="{{viewdata.date_val==false?'100%':'50%'}}">
+                    <mat-form-field *ngIf="type=='Integer'">
+                      <input matInput numbersOnly type="number" [appInputType]="datetype" [placeholder]="placeholders[datetype]"
+                        formControlName="value2" [(ngModel)]="viewdata.value2" (change)="somethingChanged()">
+                    </mat-form-field>
+                    <mat-form-field *ngIf="type!='Integer'">
+                      <input matInput [appInputType]="datetype" [placeholder]="placeholders[datetype]"
+                        formControlName="value2" [(ngModel)]="viewdata.value2" (change)="somethingChanged()">
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div [fxFlex]="'10%'" *ngIf="(type==='Date')">
+          <button mat-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="dateSelector(false)">Date Picker</button>
+      <button mat-menu-item (click)="dateSelector(true)">Current Date</button>
+    </mat-menu>
+  </div>
+</form>

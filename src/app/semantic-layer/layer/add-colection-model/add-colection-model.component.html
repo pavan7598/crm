@@ -1,0 +1,14 @@
+<div class="collection" >
+    <form [formGroup]="addCollectionForm">
+        <div>
+          <mat-form-field>
+            <input matInput placeholder="Create Collection" formControlName="CreateCollection">
+            <mat-error *ngIf="addCollectionForm.controls.CreateCollection.invalid">enter collection name</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="cr-ca" >
+            <button mat-button (click)="create(addCollectionForm)">Create</button>
+            <button mat-button   [mat-dialog-close] >Cancel</button>
+        </div>
+      </form>
+</div>

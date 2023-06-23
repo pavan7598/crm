@@ -1,0 +1,58 @@
+@import "./src/assets/scss/variables.scss";
+@import "./src/styles.scss";
+
+.campaign--summary-list {
+	>div {
+		/*border-bottom: 2px solid rgb(218, 222, 233);*/
+		margin: 0 auto 10px;
+	}
+	.campaign--summary-tabs {
+		margin: 0 auto;
+		button {
+			font-size: ($font-size-base + 2);
+			text-transform: uppercase;
+			color:#ADB7C5;
+			letter-spacing: .7px;
+			border-radius: 0;
+			&.active {
+				border-bottom: 3px solid #5468B2;
+				color: #363636;
+				border-radius: 0;
+			}
+		}
+	}
+		
+	/*.mat-header-row{
+		background-color:#F0F2F6 !important;
+		text-transform: uppercase;
+		
+		.mat-header-cell{
+			color:#ADB7C5 !important;
+			font-size: 11px !important;
+		}
+			
+	}
+
+	tr.mat-row {
+		border: 2px solid rgb(255, 255, 255) !important;
+	}
+	.mat-cell{
+		
+		color: rgb(86, 91, 97) !important;
+		font-weight: 500;
+			i{
+				font-size: 18px !important;
+			}
+	}*/
+	
+}
+
+.selected{
+	// background-color: #4265ed;
+	color:#000 !important;
+	border-bottom:3px solid #4265ed;
+	border-radius: 0;
+}
+
+
+

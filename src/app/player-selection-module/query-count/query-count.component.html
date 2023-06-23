@@ -1,0 +1,7 @@
+<h3>RESULTS</h3>
+<mat-card class="example-list" >
+    <button class="countBtn btn-primary" *ngIf="!loading" [disabled]="query.return_elements.length==0" (click)="getCountQuery()">Get Count </button>
+    <p *ngIf="loading">Getting the Count </p>
+    <mat-progress-bar mode="query" *ngIf="loading"></mat-progress-bar>
+    <app-count-chart *ngIf="data &&!refresh" [countdata]="data"> </app-count-chart>
+</mat-card>

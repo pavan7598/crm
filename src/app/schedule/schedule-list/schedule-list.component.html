@@ -1,0 +1,253 @@
+<div class="schedule-list">
+
+
+	<!-- Position Column -->
+	<ng-container matColumnDef="CampaignName">
+		<th mat-header-cell *matHeaderCellDef> CAMPAIGN NAME </th>
+		<td mat-cell *matCellDef="let element"> {{element['CampaignName']}} </td>
+	</ng-container>
+	<ng-container matColumnDef="staus">
+		<th mat-header-cell *matHeaderCellDef> STATUS </th>
+		<td mat-cell *matCellDef="let element"> {{element['staus']}} </td>
+	</ng-container>
+	<ng-container matColumnDef="type">
+		<th mat-header-cell *matHeaderCellDef> TYPE </th>
+		<td mat-cell *matCellDef="let element"> {{element['type']}} </td>
+	</ng-container>
+	<ng-container matColumnDef="startDate">
+		<th mat-header-cell *matHeaderCellDef> START DATE </th>
+		<td mat-cell *matCellDef="let element"> {{element['startDate']|date}} </td>
+	</ng-container>
+	<ng-container matColumnDef="endDate">
+		<th mat-header-cell *matHeaderCellDef> END DATE </th>
+		<td mat-cell *matCellDef="let element"> {{element['endDate']|date}} </td>
+	</ng-container>
+	<ng-container matColumnDef="Action">
+		<th mat-header-cell *matHeaderCellDef> ACTION </th>
+		<td mat-cell *matCellDef="let element">
+			<mat-icon mat-button [matMenuTriggerFor]="menu">more_vert</mat-icon>
+			<mat-menu #menu="matMenu">
+				<button mat-menu-item *ngIf="element['staus']=='draft'" (click)="run(element['Action'])">RUN</button>
+				<button mat-menu-item *ngIf="element['staus']=='in active'"
+					(click)="changeStatus(element['campaignID'],'in progress')"> </button>
+				<button mat-menu-item *ngIf="element['staus']=='in progress'"
+					(click)="changeStatus(element['campaignID'],'in active')">PAUSE</button>
+				<button mat-menu-item *ngIf="element['staus']!='canceled'&&element['staus']!='completed'"
+					(click)="changeStatus(element['campaignID'],'canceled')">CANCEL</button>
+			</mat-menu>
+		</td>
+	</ng-container>
+
+	<div class="content--header">
+		<div class="row">
+			<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12">
+				<h5>SCHEDULE
+					<span>Check your campaigns and schedule them.</span>
+				</h5>
+
+			</div>
+			<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12 text-r display-flex">
+				<div class="actions">
+					<!--<a href="JavaScript:Void(0)" class="" (click)="Summary()"><i class="mdi mdi-view-dashboard"></i>
+						Summary</a>-->
+					<button class="btn btn-primary pull-right" (click)="createNewSchedule()">CREATE NEW
+						SCHEDULE</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="crm-col-lg-12 crm-col-md-12 crm-col-sm-12">
+
+
+		<!-- <div class="table-title">
+			<b>{{list[i]}} Campaigns</b>
+		</div>
+		<div class="empty-data" *ngIf="!(dataset_length_array[i]>0)">
+			<i class="mdi mdi-store"></i>
+			<span>No Scheduled Campaigns</span>
+		</div> -->
+
+		<!-- <div *ngIf="dataset_length_array[i]>0"> -->
+
+		<div class="">
+			<div class="table-title">
+				<b>All CAMPAIGNS</b>
+			</div>
+
+			<div class="empty-data" *ngIf="!dataset_length_array[0]>0">
+				<i class="mdi mdi-store"></i>
+				<span>NO SCHEDULED CAMPAIGNS</span>
+			</div>
+			<div  *ngIf="dataset_length_array[0]>0">
+				<table mat-table [dataSource]="dataSource">
+
+					<ng-container matColumnDef="CampaignName">
+						<th mat-header-cell *matHeaderCellDef> CAMPAIGN NAME </th>
+						<td mat-cell *matCellDef="let element"> {{element.CampaignName}} </td>
+					</ng-container>
+					<ng-container matColumnDef="staus">
+						<th mat-header-cell *matHeaderCellDef> STATUS </th>
+						<td mat-cell *matCellDef="let element"> {{element.staus}} </td>
+					</ng-container>
+					<ng-container matColumnDef="type">
+						<th mat-header-cell *matHeaderCellDef> TYPE </th>
+						<td mat-cell *matCellDef="let element"> {{element.type}} </td>
+					</ng-container>
+					<ng-container matColumnDef="startDate">
+						<th mat-header-cell *matHeaderCellDef> START DATE </th>
+						<td mat-cell *matCellDef="let element"> {{element.startDate|date}} </td>
+					</ng-container>
+					<ng-container matColumnDef="endDate">
+						<th mat-header-cell *matHeaderCellDef> END DATE </th>
+						<td mat-cell *matCellDef="let element"> {{element.endDate|date}} </td>
+					</ng-container>
+					<ng-container matColumnDef="Action">
+						<th mat-header-cell *matHeaderCellDef> ACTION </th>
+						<td mat-cell *matCellDef="let element">
+							<mat-icon mat-button [matMenuTriggerFor]="menu">more_vert</mat-icon>
+							<mat-menu #menu="matMenu">
+								<button mat-menu-item *ngIf="element['staus']=='draft'"
+									(click)="run(element['Action'])">RUN</button>
+								<button mat-menu-item *ngIf="element['staus']=='paused'"
+									(click)="changeStatus(element['campaignID'],'active')">RESUME</button>
+								<button mat-menu-item *ngIf="element['staus']=='in-progress'"
+									(click)="changeStatus(element['campaignID'],'in active')">PAUSE</button>
+								<button mat-menu-item
+									*ngIf="element['staus']!='canceled'&&element['staus']!='completed'"
+									(click)="changeStatus(element['campaignID'],'canceled')">CANCEL</button>
+							</mat-menu>
+						</td>
+					</ng-container>
+
+					<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+					<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+				</table>
+				
+			</div>
+
+			<mat-paginator [pageSizeOptions]="[10, 20, 50, 100]" showFirstLastButtons></mat-paginator>
+		</div>
+<!-- second -->
+<div class="">
+	<div class="table-title">
+		<b> ACIVE CAMPAIGNS</b>
+	</div>
+
+	<div class="empty-data" *ngIf="!dataset_length_array[1]>0">
+		<i class="mdi mdi-store"></i>
+		<span>NO ACTIVE CAMPAIGNS</span>
+	</div>
+	<div  *ngIf="dataset_length_array[1]>0">
+		<table mat-table [dataSource]="dataSource1">
+
+			<ng-container matColumnDef="CampaignName">
+				<th mat-header-cell *matHeaderCellDef> CAMPAIGNS NAME </th>
+				<td mat-cell *matCellDef="let element"> {{element.CampaignName}} </td>
+			</ng-container>
+			<ng-container matColumnDef="staus">
+				<th mat-header-cell *matHeaderCellDef> STATUS </th>
+				<td mat-cell *matCellDef="let element"> {{element.staus}} </td>
+			</ng-container>
+			<ng-container matColumnDef="type">
+				<th mat-header-cell *matHeaderCellDef> TYPE </th>
+				<td mat-cell *matCellDef="let element"> {{element.type}} </td>
+			</ng-container>
+			<ng-container matColumnDef="startDate">
+				<th mat-header-cell *matHeaderCellDef> START DATE </th>
+				<td mat-cell *matCellDef="let element"> {{element.startDate|date}} </td>
+			</ng-container>
+			<ng-container matColumnDef="endDate">
+				<th mat-header-cell *matHeaderCellDef> END DATE </th>
+				<td mat-cell *matCellDef="let element"> {{element.endDate|date}} </td>
+			</ng-container>
+			<ng-container matColumnDef="Action">
+				<th mat-header-cell *matHeaderCellDef> ACTION </th>
+				<td mat-cell *matCellDef="let element">
+					<mat-icon mat-button [matMenuTriggerFor]="menu">more_vert</mat-icon>
+					<mat-menu #menu="matMenu">
+						<button mat-menu-item *ngIf="element['staus']=='draft'"
+							(click)="run(element['Action'])">RUN</button>
+						<button mat-menu-item 
+							(click)="changeStatus(element['campaignID'],'active')">RESUME</button>
+						<button mat-menu-item *ngIf="element['staus']=='in-progress'"
+							(click)="changeStatus(element['campaignID'],'in active')">PAUSE</button>
+						<button mat-menu-item
+							*ngIf="element['staus']!='canceled'&&element['staus']!='completed'"
+							(click)="changeStatus(element['campaignID'],'canceled')">CANCEL</button>
+					</mat-menu>
+				</td>
+			</ng-container>
+
+			<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+			<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+		</table>
+		
+	</div>
+
+	<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
+        <!-- </div> -->
+<!-- thrid -->
+<div class="" >
+    <div class="table-title">
+        <b>IN PROGRESS CAMPAIGNS</b>
+    </div>
+
+    <div class="empty-data" *ngIf="!dataset_length_array[2]>0">
+        <i class="mdi mdi-store"></i>
+        <span>NO RUNNING CAMPAIGNS</span>
+    </div>
+    <div  *ngIf="dataset_length_array[2]>0">
+        <table mat-table [dataSource]="dataSource2">
+
+            <ng-container matColumnDef="CampaignName">
+                <th mat-header-cell *matHeaderCellDef> CAMPAIGN NAME </th>
+                <td mat-cell *matCellDef="let element"> {{element.CampaignName}} </td>
+            </ng-container>
+            <ng-container matColumnDef="staus">
+                <th mat-header-cell *matHeaderCellDef> STATUS </th>
+                <td mat-cell *matCellDef="let element"> {{element.staus}} </td>
+            </ng-container>
+            <ng-container matColumnDef="type">
+                <th mat-header-cell *matHeaderCellDef> TYPE </th>
+                <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+            </ng-container>
+            <ng-container matColumnDef="startDate">
+                <th mat-header-cell *matHeaderCellDef> START DATE </th>
+                <td mat-cell *matCellDef="let element"> {{element.startDate|date}} </td>
+            </ng-container>
+            <ng-container matColumnDef="endDate">
+                <th mat-header-cell *matHeaderCellDef> END DATE </th>
+                <td mat-cell *matCellDef="let element"> {{element.endDate|date}} </td>
+            </ng-container>
+            <ng-container matColumnDef="Action">
+                <th mat-header-cell *matHeaderCellDef> ACTION </th>
+                <td mat-cell *matCellDef="let element">
+                    <mat-icon mat-button [matMenuTriggerFor]="menu">more_vert</mat-icon>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item *ngIf="element['staus']=='draft'"
+                            (click)="run(element['Action'])">RUN</button>
+                        <button mat-menu-item *ngIf="element['staus']=='paused'"
+                            (click)="changeStatus(element['campaignID'],'active')">RESUME</button>
+                        <button mat-menu-item *ngIf="element['staus']=='in-progress'"
+                            (click)="changeStatus(element['campaignID'],'in active')">PAUSE</button>
+                        <button mat-menu-item
+                            *ngIf="element['staus']!='canceled'&&element['staus']!='completed'"
+                            (click)="changeStatus(element['campaignID'],'canceled')">CANCEL</button>
+                    </mat-menu>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        
+    </div>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
+    </div>
+
+</div>
+

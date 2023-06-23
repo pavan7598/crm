@@ -1,0 +1,1091 @@
+@import "fonts.scss";
+
+//== Basic & Primary Colors
+
+$transparent : transparent;
+
+$white : #fff;
+$black : #000;
+
+$primary-color-red: #FD4141;
+$primary-color-yellow: #FFC527;
+$primary-color-cyan: #27DEFF;
+$primary-color-green: #74C638;
+$primary-color-pink: #FF3E8B;
+
+//bluish-tints
+
+$bluish-tints-dark:#1538C1;
+$bluish-tints-light:#4265ED;
+$bluish-tints-mud:#5468B2;
+$bluish-tints-mud-light:#8AAAF3;
+$bluish-tints-mud-thin:#BED2FF;
+$bluish-tints-mud-bg:#EAEEF8;
+
+
+//Light blue tints
+
+$Light-blue:#0F70E0;
+$Light-blue-moon:#147CFB;
+$Light-blue-sea:#34A9FF;
+$Light-blue-sea-bg:#F5F9FC;
+
+//Grey tints
+
+$greyish-black:#373737;
+$greyish-grey:#707070;
+$greyish-grey-cement:#D6D6D6;
+$greyish-whitish-grey:#F8F8F8;
+$white:#ffffff;
+
+//Bluish Grey
+
+$bluish-grey:#7B8696;
+$bluish-light-grey:#ADB7C5;
+
+
+//saffron
+
+$saffron-base:#FCC283;
+$saffron-darker:#FFD3A3;
+$saffron-daark:#FFDBB4;
+$saffron:#FFDEBA;
+$saffron-half-shaded:#FFE3C3;
+$saffron-full-shaded:#FFE6C9;
+$saffron-light:#FDE7CE;
+$saffron-lighter:#FFEFDD;
+$saffron-white:#FFF8F0;
+
+
+//red
+
+$red-base:#F9595A;
+$red-darker:#F86061;
+$red-dark:#FC6C6D;
+$red:#FC797A;
+$red-half-shaded:#FF8D8D;
+$red-full-shaded:#FF9A9A;
+$red-light:#FFA8A8;
+$red-lighter:#FFC6C6;
+$red-white:#FFE0E0;
+
+
+//blue
+
+$blue-base:#4B98F9;
+$blue-darker:#569EF8;
+$blue-dark:#62A5FA;
+$blue:#77B2FC;
+$blue-half-shaded:#90C1FF;
+$blue-full-shaded:#C4E0FF;
+$blue-light:#CEE5FF;
+$blue-lighter:#D6E9FF;
+$blue-white:#E3F0FF;
+
+
+// Login 
+
+$login-form-bg: #0C5AE5;
+
+
+
+
+
+
+$bg-grey : #F0F2F6;
+$grey : #C8CFDE;
+
+$green : #1BBC81;
+
+$light-grey : #F5F5F5;
+$inactive-grey : #EAEAEA;
+
+$light-blue : #eeeff5;
+$sky-blue : #028FD5;
+$pale-yellow : #FFF9D9;
+$yellow : #F8E71C;
+$yellow-dark : #FFC300;
+$error-color : #A20000;
+$warning-color : #A20000;
+$alert-color : #A20000;
+$error-msg :#ff8c8c;
+$alert-msg:#EF8308;
+$honey-color:#FFFAD6;
+$crm-bg-secondary : #3653A4;
+
+$dark-blue : #384079;
+$brand-ld : #384079;
+$bg-blue : #4a5584;
+$base-blue : #384079;
+$small-anchors : #3A60D7;
+
+$footer-border-colors : #DDDDDD;
+$border-colors : #EAEAEA;
+$anchor-color : /*#00ADEE*/ #5468B2;
+$header-blue : #4699FD;
+$footer-font-color : #384079;
+
+$bg-secondary : #F8F8F8;
+$blue-icon : #5C95FF;
+
+//== Spinner Colors
+$spin-circle-color: #939FB8;
+$spinner-bg-color: #DCE0EF;
+
+//== Info Colors
+$info-color: #E9A837;
+
+//== Text Highlighter Colors
+$text-highlighter: #4B7EFF;
+
+
+//== Secondary Colors
+$menu-active-hover : #5C95FF;
+
+//== Seperator, Lines and Disabled Colors
+$disabled-color : #5C95FF;
+
+//== Borders Colors
+$border-color : #EAEAEA;
+
+//== Pagination Colors
+$pagi-dot-bg-color : #D8D8D8;
+
+//== Content Background Colors
+$content-bg-color : #F0F2F6;
+
+//== Footer Background Colors
+$footer-bg-color : #F8F8F8;
+
+/* Form Shades */
+$form-placeholder : #C8CFDE;
+$form-text : #C8CFDE;
+
+$input-placeholder-color : #BCC4D6;
+$input-focus-color : #4B7EFF;
+$input-success-color : #2DCB70;
+$input-invalid-color : #C30016;
+
+
+/* Mobile Shades */
+
+
+//== Mobile Menu Gradient Colors
+$mob-menu-grad-b-color : #18274D;
+$mob-menu-grad-e-color : #314986;
+
+//== Mobile menu Seperator, Alert Indicator text and Scarcity text
+$mob-menu-sep-one : #00154A;
+$mob-menu-sep-two : #4A5F92;
+
+$mobile-lft-mn-bg : #1f2e5c;
+$mobile-rht-mn-bg : #1f2e5c;
+
+/*$mobile-border-color-1 : #0e1e53;
+$mobile-border-color-2 : #475a8e;
+*/
+$mobile-border-color-1 : #00154A;
+$mobile-border-color-2 : #4A5F92;
+
+
+// Brand Gradients
+
+//$grad-solid-color: #7b4397; // Old browsers
+/*
+@include brand-gradient-ie {
+    .brand-gradient-iex {
+        filter-gradient(#7b4397, #dc2430, horizontal);
+    }
+}
+@include brand-gradient-webkit {
+    .brand-gradient-wk {
+        background-image(radial-gradient(center, ellipse cover, #7b4397 0%,#b5238a 61%,#dc2430 100%));
+    }
+} 
+*/
+
+/*card default styles starts*/
+/*   $card-box-shadow: 0 1px 2px 0 rgba(213, 213, 213, 0.5);*/
+  $card-box-shadow:0 1px 1px 0 #A8A8A8;
+   $card-border: 1px solid #DFDFDF;
+   $card-border-radius : 4px;
+   $card-background-color:$white;
+
+$spl-num-radius:9px;
+/*card default styles ends*/
+    
+//General Components
+$card-white : #fff;
+$card-border-color : #D3D4D7;
+$card-border-radius : 4px;
+$pink : #FC346A;
+
+
+
+
+// input
+
+$input-text-base-color : #B9BCCB;
+
+//## Gray and brand colors for use across.
+
+$gray-base:              #000 !default;
+$gray-darker:            lighten($gray-base, 13.5%) !default; // #222
+$gray-dark:              lighten($gray-base, 20%) !default;   // #333
+$gray:                   lighten($gray-base, 33.5%) !default; // #555
+$gray-light:             lighten($gray-base, 46.7%) !default; // #777
+$gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
+
+$button-stroke:        #4265ED !default;
+$button-primary:        #4265ED !default;
+$button-secondary:      #244695 !default;
+$button-disabled:      #F5F5F5 !default;
+$button-additional:      #C2D6CF !default;
+$button-special:        #FC346A !default;
+$brand-primary:         darken(#428bca, 6.5%) !default; // #337ab7
+$brand-success:         #5cb85c !default;
+$brand-info:            #5bc0de !default;
+$brand-warning:         #f0ad4e !default;
+$brand-danger:          #d9534f !default;
+
+
+
+$button-border-base: 2px;
+$button-border-save: 1px;
+$button-border-radius-base: 50px;
+$text-transfer-button-first-letter: 'upper-case';
+$button-background-color-default: transparent; 
+$button-background-color-hover: $button-background-color-default;
+
+//color for other, active and disable 
+
+$button-color: #F6F6F6;
+
+
+//border is for hover,disable,default
+
+$button-border-color-red: #EA4243;
+$button-border-color-blue-light: #3A89ED;
+$button-border-color-blue: #4265ED;
+$button-border-color-black: #707070;
+
+//backgrounds for active and disable
+
+$button-background-color-red: $button-border-color-red;
+$button-background-color-blue-light: $button-border-color-blue-light;
+$button-background-color-blue: $button-border-color-blue;
+$button-background-color-black: $button-border-color-black;
+
+//font color for disable,active
+
+$button-color-red: $button-border-color-red;
+$button-color-blue-light: $button-border-color-blue-light;
+$button-color-blue: $button-border-color-blue;
+$button-color-black: $button-border-color-black;
+
+//shadow  for active
+
+$button-shadow-active-red: $button-border-color-red 0 9px 12px;
+$button-shadow-active-blue-light: $button-border-color-blue-light 0 9px 12px;
+$button-shadow-active-blue: $button-border-color-blue 0 9px 12px;
+$button-shadow-active-black: $button-border-color-black 0 9px 12px;
+
+//opacity for disable only
+
+$button-opacity-disable: 0.25;
+
+//padding Stroked Rounded and red Colored, disabled Rounded buttons
+
+$button-paddin: 25px;
+
+
+//padding for Colored Rounded except redcolored and disabled 
+
+$colored-rounded-buttons-padding-default: 15px;
+$colored-rounded-buttons-padding-hover:  $colored-rounded-buttons-padding-default;
+$colored-rounded-buttons-padding-active: 10px;
+
+
+
+
+$primary-color-p: #646464;
+$primary-color-li: #646464;
+//== Scaffolding
+//
+//## Settings for some of the most global styles.
+
+//** Background color for `<body>`.
+$body-bg:               #fff !default;
+//** Global text color on `<body>`.
+$text-color:            $gray-dark !default;
+
+//** Global textual link color.
+$link-color:            $brand-primary !default;
+//** Link hover color set via `darken()` function.
+$link-hover-color:      darken($link-color, 15%) !default;
+//** Link hover decoration.
+$link-hover-decoration: underline !default;
+
+
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+// Fonts
+
+$font-icons: 'Material Icons';
+$font-primary: 'CRM-Font-Medium';
+//$font-primary-Italic: 'Lato-italic';
+$font-primary-medium: 'CRM-Font-Medium';
+$font-primary-SemiBold: 'CRM-Font-Semibold';
+$font-primary-Bold: 'CRM-Font-Bold';
+$font-primary-Black: 'CRM-Font-Black';
+$font-primary-Hairline: 'CRM-Font-Thin';
+$font-primary-Light: 'CRM-Font-Light';
+$font-primary-Ultralight: 'CRM-Font-Ultralight';
+$font-primary-Heavy: 'CRM-Font-Heavy';
+
+$font-secondary:  'Montserrat';
+
+// Font-secondary - style and weight
+$font-secondary-black:  'Montserrat-Black'; // 900
+$font-secondary-BlackItalic:  'Montserrat-BlackItalic'; // 900
+$font-secondary-Bold:  'Montserrat-Bold'; // Bold
+$font-secondary-BoldItalic:  'Montserrat-BoldItalic';
+$font-secondary-ExtraBold:  'Montserrat-ExtraBold'; // 800
+$font-secondary-ExtraBoldItalic:  'Montserrat-ExtraBoldItalic'; // 800
+$font-secondary-ExtraLight:  'Montserrat-ExtraLight'; // 200
+$font-secondary-ExtraLightItalic:  'Montserrat-ExtraLightItalic'; // 200
+$font-secondary-Italic:  'Montserrat-Italic';
+$font-secondary-Light:  'Montserrat-Light'; // 300
+$font-secondary-LightItalic:  'Montserrat-LightItalic'; // 300
+$font-secondary-Medium:  'Montserrat-Medium'; //500
+$font-secondary-MediumItalic:  'Montserrat-MediumItalic'; // 500
+$font-secondary-SemiBold:  'Montserrat-SemiBold'; // 600
+$font-secondary-SemiBoldItalic:  'Montserrat-SemiBoldItalic'; // 600
+$font-secondary-Thin:  'Montserrat-Thin'; // 100
+$font-secondary-ThinItalic:  'Montserrat-ThinItalic'; // 100
+
+
+
+
+
+//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+
+$font-size-base:          12px !default;
+$font-size-large:         ceil(($font-size-base * 1.5)) !default; // ~18px
+$font-size-small:         $font-size-base !default; // ~12px
+
+$font-size-h1:   floor(($font-size-base * 5)) !default; // ~60px
+$font-size-h2:   floor(($font-size-base * 4)) !default; // ~48px
+$font-size-h3:   ceil(($font-size-base * 3.33)) !default; // ~40px
+$font-size-h4:   ceil(($font-size-base * 2.5)) !default; // ~30px
+$font-size-h5:   ceil(($font-size-base * 2)) !default; // ~24px
+$font-size-h6:   ceil(($font-size-base * 1.5)) !default; // ~18px
+$font-size-li:   floor(($font-size-base * 1.66)) !default; // ~20px   
+$font-size-p:   floor(($font-size-base + 2)) !default; // ~18px   
+$font-size-button:  floor(($font-size-base * 2.5)) !default; // ~30px 
+
+//font size for other roundes buttons
+
+$font-size-other-buttons:   ceil(($font-size-base * 2)) !default; // ~24px
+
+//** Unit-less `line-height` for use in components like buttons.
+$line-height-base:        1.428571429 !default; // 20/14
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$line-height-computed:    floor(($font-size-base * $line-height-base)) !default; // ~20px
+$line-height-h1:      floor(($line-height-computed * 3.6)) !default; // ~72px
+$line-height-h2:      floor(($line-height-computed * 3.05)) !default; // ~61px
+$line-height-h3:      floor(($line-height-computed* 2.9)) !default; // ~58px
+$line-height-h4:      floor(($line-height-computed * 2.2)) !default; // ~44px
+$line-height-h5:      floor(($line-height-computed * 1.9)) !default; // ~38px
+$line-height-h6:      floor(($line-height-computed * 1.45)) !default; // ~29px
+$line-height-p:      floor(($line-height-computed * 1.2)) !default; // ~24px
+$line-height-li:     $line-height-p !default; // ~24px
+
+
+
+
+
+
+$font-family-primary-head:  'bold';
+$font-family-h1:  $font-family-primary-head;
+$font-family-h2:  $font-family-primary-head;
+$font-family-h3:  $font-family-primary-head;
+$font-family-h4:  $font-family-primary-head;
+$font-family-h5:  $font-family-primary-head;
+$font-family-h6:  $font-family-primary-head;
+$font-family-p:  $font-primary-Light;
+$font-family-li:  $font-family-p;
+$font-family-button:  $font-family-p;
+
+$letter-spacing-base: .5px;
+
+$letter-spacing-h1: $letter-spacing-base;
+$letter-spacing-h2: $letter-spacing-base;
+$letter-spacing-h3: $letter-spacing-base;
+$letter-spacing-h4: $letter-spacing-base;
+$letter-spacing-h5: $letter-spacing-base;
+$letter-spacing-h6: $letter-spacing-base;
+$letter-spacing-p: $letter-spacing-base!default;
+
+
+//** By default, this inherits from the `<body>`.
+$headings-font-family:    inherit !default;
+$headings-font-weight:    500 !default;
+$headings-line-height:    1.1 !default;
+$headings-color:          inherit !default;
+
+
+// Gutter
+
+$gutter:                    0px;
+$grid-columns:              12;
+$grid-gutter-width:         0px;
+$grid-margin-width:         20px;
+$grid-float-breakpoint:     768px;
+
+$grid-breakpoints: (
+  // Extra small screen / phone
+  xs: 0,
+  // Small screen / phone
+  sm: 576px,
+  // Medium screen / tablet
+  md: 768px,
+  // Large screen / desktop
+  lg: 992px,
+  // Extra large screen / wide desktop
+  xl: 1200px
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+);
+
+//** Unit-less `line-height` for use in components like buttons.
+@line-height-base:        1.428571429; // 20/14
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+@line-height-computed:    floor((@font-size-base * @line-height-base)); // ~20px
+
+
+// ┌─────────────┐
+// │ Iconography │
+// └─────────────┘
+
+//== Iconography
+
+//** Load fonts from this directory.
+
+$icon-font-path: '/assets/fonts/icons/';
+
+//** File name for all font files.
+$icon-font-name:          "glyphicons-halflings-regular" !default;
+//** Element ID within SVG icon file.
+$icon-font-svg-id:        "glyphicons_halflingsregular" !default; 
+
+
+
+//== Components
+//
+//## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
+
+$padding-base-vertical:     6px !default;
+$padding-base-horizontal:   12px !default;
+
+$padding-large-vertical:    10px !default;
+$padding-large-horizontal:  16px !default;
+
+$padding-small-vertical:    5px !default;
+$padding-small-horizontal:  10px !default;
+
+$padding-xs-vertical:       1px !default;
+$padding-xs-horizontal:     5px !default;
+
+$line-height-large:         1.3333333 !default; // extra decimals for Win 8.1 Chrome
+$line-height-small:         1.5 !default;
+
+$border-radius-base:        4px !default;
+$border-radius-large:       6px !default;
+$border-radius-small:       3px !default;
+
+//** Global color for active items (e.g., navs or dropdowns).
+$component-active-color:    #fff !default;
+//** Global background color for active items (e.g., navs or dropdowns).
+$component-active-bg:       $brand-primary !default;
+
+//** Width of the `border` for generating carets that indicate dropdowns.
+$caret-width-base:          4px !default;
+//** Carets increase slightly in size for larger components.
+$caret-width-large:         5px !default;
+
+
+//== Tables
+//
+//## Customizes the `.table` component with basic values, each used across all table variations.
+
+//** Padding for `<th>`s and `<td>`s.
+$table-cell-padding:            8px !default;
+//** Padding for cells in `.table-condensed`.
+$table-condensed-cell-padding:  5px !default;
+
+//** Default background color used for all tables.
+$table-bg:                      transparent !default;
+//** Background color used for `.table-striped`.
+$table-bg-accent:               #f9f9f9 !default;
+//** Background color used for `.table-hover`.
+$table-bg-hover:                #f5f5f5 !default;
+$table-bg-active:               $table-bg-hover !default;
+
+//** Border color for table and cell borders.
+$table-border-color:            #ddd !default;
+
+
+//== Buttons
+//
+//## For each of Bootstrap's buttons, define text, background and border color.
+
+$btn-font-weight:                normal !default;
+
+$btn-default-color:              #1BBC81 !default;
+$btn-default-bg:                 #fff !default;
+$btn-default-border:             #1BBC81 !default;
+
+$btn-stroke-color:              #4265ED !default;
+$btn-stroke-bg:                 transparent !default;
+$btn-stroke-border:             #4265ED !default;
+
+$btn-stroke-black-color:        #363636 !default;
+$btn-stroke-black-bg:           transparent !default;
+$btn-stroke-black-border:       #363636 !default;
+
+$btn-black-color:        		#363636 !default;
+$btn-black-bg:           		#363636 !default;
+$btn-black-border:       		darken($btn-black-bg, 5%) !default;
+
+$btn-primary-color:              #fff !default;
+$btn-primary-bg:                 $button-primary !default;
+$btn-primary-border:             darken($btn-primary-bg, 5%) !default;
+
+$btn-secondary-color:            #fff !default;
+$btn-secondary-bg:               $button-secondary !default;
+$btn-secondary-border:           darken($btn-secondary-bg, 5%) !default;
+
+$btn-disabled-color:            #C9CACE !default;
+$btn-disabled-bg:               $button-disabled !default;
+$btn-disabled-border:           darken($btn-disabled-bg, 5%) !default;
+
+$btn-additional-color:           #fff !default;
+$btn-additional-bg:              $button-additional !default;
+$btn-additional-border:          darken($btn-additional-bg, 5%) !default;
+
+$btn-special-color:              #fff !default;
+$btn-special-bg:                 $button-special !default;
+$btn-special-border:             darken($btn-special-bg, 5%) !default;
+
+$btn-success-color:              #fff !default;
+$btn-success-bg:                 $brand-success !default;
+$btn-success-border:             darken($btn-success-bg, 5%) !default;
+
+$btn-info-color:                 #fff !default;
+$btn-info-bg:                    $brand-info !default;
+$btn-info-border:                darken($btn-info-bg, 5%) !default;
+
+$btn-warning-color:              #fff !default;
+$btn-warning-bg:                 $brand-warning !default;
+$btn-warning-border:             darken($btn-warning-bg, 5%) !default;
+
+$btn-danger-color:               #fff !default;
+$btn-danger-bg:                  $brand-danger !default;
+$btn-danger-border:              darken($btn-danger-bg, 5%) !default;
+
+$btn-link-disabled-color:        $gray-light !default;
+
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius-base:         $border-radius-base !default;
+$btn-border-radius-large:        $border-radius-large !default;
+$btn-border-radius-small:        $border-radius-small !default;
+
+
+//== Forms
+//
+//##
+
+//** `<input>` background color
+$input-bg:                       #fff !default;
+//** `<input disabled>` background color
+$input-bg-disabled:              $gray-lighter !default;
+
+//** Text color for `<input>`s
+$input-color:                    $gray !default;
+//** `<input>` border color
+$input-border:                   #ccc !default;
+
+// TODO: Rename `$input-border-radius` to `$input-border-radius-base` in v4
+//** Default `.form-control` border radius
+// This has no effect on `<select>`s in some browsers, due to the limited stylability of `<select>`s in CSS.
+$input-border-radius:            $border-radius-base !default;
+//** Large `.form-control` border radius
+$input-border-radius-large:      $border-radius-large !default;
+//** Small `.form-control` border radius
+$input-border-radius-small:      $border-radius-small !default;
+
+//** Border color for inputs on focus
+$input-border-focus:             #66afe9 !default;
+
+//** Placeholder text color
+$input-color-placeholder:        #C8CFDE !default;
+
+//** Default `.form-control` height
+$input-height-base:              ($line-height-computed + ($padding-base-vertical * 2) + 2) !default;
+//** Large `.form-control` height
+$input-height-large:             (ceil($font-size-large * $line-height-large) + ($padding-large-vertical * 2) + 2) !default;
+//** Small `.form-control` height
+$input-height-small:             (floor($font-size-small * $line-height-small) + ($padding-small-vertical * 2) + 2) !default;
+
+//** `.form-group` margin
+$form-group-margin-bottom:       0 !default;
+
+$legend-color:                   $gray-dark !default;
+$legend-border-color:            #e5e5e5 !default;
+
+//** Background color for textual input addons
+$input-group-addon-bg:           $gray-lighter !default;
+//** Border color for textual input addons
+$input-group-addon-border-color: $input-border !default;
+
+//** Disabled cursor for form controls and buttons.
+$cursor-disabled:                not-allowed !default;
+
+
+//== Dropdowns
+//
+//## Dropdown menu container and contents.
+
+//** Background for the dropdown menu.
+$dropdown-bg:                    #fff !default;
+//** Dropdown menu `border-color`.
+$dropdown-border:                rgba(0,0,0,.15) !default;
+//** Dropdown menu `border-color` **for IE8**.
+$dropdown-fallback-border:       #ccc !default;
+//** Divider color for between dropdown items.
+$dropdown-divider-bg:            #e5e5e5 !default;
+
+//** Dropdown link text color.
+$dropdown-link-color:            $gray-dark !default;
+//** Hover color for dropdown links.
+$dropdown-link-hover-color:      darken($gray-dark, 5%) !default;
+//** Hover background for dropdown links.
+$dropdown-link-hover-bg:         #f5f5f5 !default;
+
+//** Active dropdown menu item text color.
+$dropdown-link-active-color:     $component-active-color !default;
+//** Active dropdown menu item background color.
+$dropdown-link-active-bg:        $component-active-bg !default;
+
+//** Disabled dropdown menu item background color.
+$dropdown-link-disabled-color:   $gray-light !default;
+
+//** Text color for headers within dropdown menus.
+$dropdown-header-color:          $gray-light !default;
+
+//** Deprecated `$dropdown-caret-color` as of v3.1.0
+$dropdown-caret-color:           #000 !default;
+
+
+//-- Z-index master list
+//
+// Warning: Avoid customizing these values. They're used for a bird's eye view
+// of components dependent on the z-axis and are designed to all work together.
+//
+// Note: These variables are not generated into the Customizer.
+
+$zindex-navbar:            1000 !default;
+$zindex-dropdown:          1000 !default;
+$zindex-popover:           1060 !default;
+$zindex-tooltip:           1070 !default;
+$zindex-navbar-fixed:      1030 !default;
+$zindex-modal-background:  1040 !default;
+$zindex-modal:             1050 !default;
+
+
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+// Extra small screen / phone
+//** Deprecated `$screen-xs` as of v3.0.1
+$screen-xs:                  480px !default;
+//** Deprecated `$screen-xs-min` as of v3.2.0
+$screen-xs-min:              $screen-xs !default;
+//** Deprecated `$screen-phone` as of v3.0.1
+$screen-phone:               $screen-xs-min !default;
+
+// Small screen / tablet
+//** Deprecated `$screen-sm` as of v3.0.1
+$screen-sm:                  768px !default;
+$screen-sm-min:              $screen-sm !default;
+//** Deprecated `$screen-tablet` as of v3.0.1
+$screen-tablet:              $screen-sm-min !default;
+
+// Medium screen / desktop
+//** Deprecated `$screen-md` as of v3.0.1
+$screen-md:                  992px !default;
+$screen-md-min:              $screen-md !default;
+//** Deprecated `$screen-desktop` as of v3.0.1
+$screen-desktop:             $screen-md-min !default;
+
+// Large screen / wide desktop
+//** Deprecated `$screen-lg` as of v3.0.1
+$screen-lg:                  1200px !default;
+$screen-lg-min:              $screen-lg !default;
+//** Deprecated `$screen-lg-desktop` as of v3.0.1
+$screen-lg-desktop:          $screen-lg-min !default;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max:              ($screen-sm-min - 1) !default;
+$screen-sm-max:              ($screen-md-min - 1) !default;
+$screen-md-max:              ($screen-lg-min - 1) !default;
+
+
+//== Grid system
+//
+//## Define your custom responsive grid.
+
+//** Number of columns in the grid.
+$grid-columns:              12 !default;
+//** Padding between columns. Gets divided in half for the left and right.
+$grid-gutter-width:         30px !default;
+// Navbar collapse
+//** Point at which the navbar becomes uncollapsed.
+$grid-float-breakpoint:     $screen-sm-min !default;
+//** Point at which the navbar begins collapsing.
+$grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
+
+
+//== Form states and alerts
+//
+//## Define colors for form feedback states and, by default, alerts.
+
+$state-success-text:             #3c763d !default;
+$state-success-bg:               #dff0d8 !default;
+$state-success-border:           darken(adjust-hue($state-success-bg, -10), 5%) !default;
+
+$state-info-text:                #31708f !default;
+$state-info-bg:                  #d9edf7 !default;
+$state-info-border:              darken(adjust-hue($state-info-bg, -10), 7%) !default;
+
+$state-warning-text:             #8a6d3b !default;
+$state-warning-bg:               #fcf8e3 !default;
+$state-warning-border:           darken(adjust-hue($state-warning-bg, -10), 5%) !default;
+
+$state-danger-text:              #a94442 !default;
+$state-danger-bg:                #f2dede !default;
+$state-danger-border:            darken(adjust-hue($state-danger-bg, -10), 5%) !default;
+
+
+//== Container sizes
+//
+//## Define the maximum width of `.container` for different screen sizes.
+
+// Small screen / tablet
+$container-tablet:             (720px + $grid-gutter-width) !default;
+//** For `$screen-sm-min` and up.
+$container-sm:                 $container-tablet !default;
+
+// Medium screen / desktop
+$container-desktop:            (940px + $grid-gutter-width) !default;
+//** For `$screen-md-min` and up.
+$container-md:                 $container-desktop !default;
+
+// Large screen / wide desktop
+$container-large-desktop:      (1140px + $grid-gutter-width) !default;
+//** For `$screen-lg-min` and up.
+$container-lg:                 $container-large-desktop !default;
+
+
+//== Tooltips
+//
+//##
+
+//** Tooltip max width
+$tooltip-max-width:           200px !default;
+//** Tooltip text color
+$tooltip-color:               #fff !default;
+//** Tooltip background color
+$tooltip-bg:                  #000 !default;
+$tooltip-opacity:             .9 !default;
+
+//** Tooltip arrow width
+$tooltip-arrow-width:         5px !default;
+//** Tooltip arrow color
+$tooltip-arrow-color:         $tooltip-bg !default;
+
+
+
+//== Alerts
+//
+//## Define alert colors, border radius, and padding.
+
+$alert-padding:               15px !default;
+$alert-border-radius:         $border-radius-base !default;
+$alert-link-font-weight:      bold !default;
+
+$alert-success-bg:            $state-success-bg !default;
+$alert-success-text:          $state-success-text !default;
+$alert-success-border:        $state-success-border !default;
+
+$alert-info-bg:               $state-info-bg !default;
+$alert-info-text:             $state-info-text !default;
+$alert-info-border:           $state-info-border !default;
+
+$alert-warning-bg:            $state-warning-bg !default;
+$alert-warning-text:          $state-warning-text !default;
+$alert-warning-border:        $state-warning-border !default;
+
+$alert-danger-bg:             $state-danger-bg !default;
+$alert-danger-text:           $state-danger-text !default;
+$alert-danger-border:         $state-danger-border !default;
+
+
+//== Badges
+//
+//##
+
+$badge-color:                 #E72B2B !default;
+//** Linked badge text color on hover
+$badge-link-hover-color:      #E72B2B !default;
+$badge-bg:                    $gray-light !default;
+
+//** Badge text color in active nav link
+$badge-active-color:          $link-color !default;
+//** Badge background color in active nav link
+$badge-active-bg:             #fff !default;
+
+$badge-font-weight:           bold !default;
+$badge-line-height:           1 !default;
+$badge-border-radius:         10px !default;
+
+
+//== Close
+//
+//##
+
+$close-font-weight:           bold !default;
+$close-color:                 #000 !default;
+$close-text-shadow:           0 1px 0 #fff !default;
+
+
+
+@mixin center-block() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin hide-text() {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+// New mixin to use as of v3.0.1
+@mixin text-hide() {
+  @include hide-text;
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  // IE8 filter
+  $opacity-ie: ($opacity * 100);
+  filter: alpha(opacity=$opacity-ie);
+}
+
+// WebKit-style focus
+
+@mixin tab-focus() {
+  // Default
+  outline: thin dotted;
+  // WebKit
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+
+// Text overflow
+// Requires inline-block or block for proper styling
+
+@mixin text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Box sizing
+@mixin box-sizing($boxmodel) {
+  -webkit-box-sizing: $boxmodel;
+     -moz-box-sizing: $boxmodel;
+          box-sizing: $boxmodel;
+}
+
+// Only display content to screen readers
+//
+// See: http://a11yproject.com/posts/how-to-hide-content/
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+// Use in conjunction with .sr-only to only display content when it's focused.
+// Useful for "Skip to main content" links; see http://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G1
+// Credit: HTML5 Boilerplate
+
+.sr-only-focusable {
+  &:active,
+  &:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+  }
+}
+
+
+// iOS "clickable elements" fix for role="button"
+//
+// Fixes "clickability" issue (and more generally, the firing of events such as focus as well)
+// for traditionally non-focusable elements with role="button"
+// see https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile
+
+[role="button"] {
+  cursor: pointer;
+}
+
+
+//
+//##
+
+//** Horizontal offset for forms and lists.
+$component-offset-horizontal: 180px !default;
+//** Text muted color
+$text-muted:                  $gray-light !default;
+//** Abbreviations and acronyms border color
+$abbr-border-color:           $gray-light !default;
+//** Headings small color
+$headings-small-color:        $gray-light !default;
+//** Blockquote small color
+$blockquote-small-color:      $gray-light !default;
+//** Blockquote font size
+$blockquote-font-size:        ($font-size-base * 1.25) !default;
+//** Blockquote border color
+$blockquote-border-color:     $gray-lighter !default;
+//** Page header border color
+$page-header-border-color:    $gray-lighter !default;
+//** Width of horizontal description list titles
+$dl-horizontal-offset:        $component-offset-horizontal !default;
+//** Point at which .dl-horizontal becomes horizontal
+$dl-horizontal-breakpoint:    $grid-float-breakpoint !default;
+//** Horizontal line color.
+$hr-border:                   $gray-lighter !default;
+//** Table head color.
+$table-head-color:            $bg-grey !default;
+
+
+//** LottoDay Checkbox
+$crm-custom--class-name: ld-custom !default;
+
+// colors
+$crm-custom--color-default: #bdc3c7 !default;
+$crm-custom--color-primary: #428bca !default;
+$crm-custom--color-info: #5bc0de !default;
+$crm-custom--color-success: #5cb85c !default;
+$crm-custom--color-warning: #f0ad4e !default;
+$crm-custom--color-danger: #d9534f !default;
+$crm-custom--color-dark: #5a656b !default;
+
+// z-index
+$crm-custom--z-index-back: 0 !default;
+$crm-custom--z-index-between: 1 !default;
+$crm-custom--z-index-front: 2 !default;
+
+// box
+$crm-custom--curve-radius: 20% !default;
+$crm-custom--box-size: calc(1em + 2px) !default;
+
+// text
+$crm-custom--label-text-offset: 1.5em !default;
+$crm-custom--label-text-offset-switch: 2.5em !default;
+
+// scale
+$crm-custom--2x: 1.2em !default;
+
+// color set
+$crm-custom--colors: (primary, $crm-custom--color-primary), (info, $crm-custom--color-info), (success, $crm-custom--color-success), (warning, $crm-custom--color-warning), (danger, $crm-custom--color-danger) !default;
+
+// position
+$crm-custom-top: 8;
+$crm-custom-top-switch: ($crm-custom-top * 2) * 1%;
+$crm-custom-top-offset: calc((0% - (100% - 1em)) - #{$crm-custom-top * 1%});
+$crm-custom-top-offset-switch: calc((0% - (100% - 1em)) - #{$crm-custom-top-switch});
+
+// dev 
+$crm-custom--debug: false !default;
+$crm-custom--err-message: 'Error: Invalid input type!' !default;
+
+
+// Custom Styles & Theming
+
+// Header
+
+$background-color-head: #4265ED;
+$head-list-color:#8AAAF3;
+$head-list-font-size:11px;
+$head-second-list-active-color:#F5F9FC;
+$head-second-list-text-transfer: 'upercase';
+$head-second-list-color: $head-list-color;
+$head-icons-color: $head-list-color;
+$head-icons-font-size:24px;
+$head-notification-background-color:#FD3636;
+$head-notification-fontsize:11px;
+$head-notification-color: #FFFFFF;
+$head-profile-roundblock-background-color: $head-list-color;
+$head-profile-roundblock-border-color: $head-second-list-active-color;
+$head-profile-roundblock-border:1px;
+$head-profile-roundblock-border-radius:50px;
+$head-profile-name-color: $head-notification-color;
+$head-profile-name-font-size:14px;
+$head-profile-tagline-color: $head-notification-color;
+$head-profile-tagline-font-size: $head-profile-name-font-size;
+$head-list-circle-disable:'transperant';
+$head-list-circle-active: $head-list-color;
+$head-logo-name-text-transfer: $head-second-list-text-transfer;
+$head-logo-name-font-size:18px;
+$head-logo-name-font-family: $font-primary-Bold;
+$head-logo-name-color: $head-notification-color;
+$head-list-font-family: $head-logo-name-color;
+$head-list-font-family-active: $font-primary-SemiBold;

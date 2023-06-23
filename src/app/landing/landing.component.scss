@@ -1,0 +1,159 @@
+@import "./src/assets/scss/variables.scss";
+@import "./src/styles.scss";
+.container {
+    background-color: transparent;
+    color: #333333;
+    height: calc(100vh - 128px);
+    //  padding-bottom: 50px;
+}
+.gap{
+	margin: 0;
+}
+.sidenav-container {
+	width: 350px;
+
+.campaign--predictions {
+		> ul {
+			margin: 0 auto;
+			padding: 15px 15px;
+			display: flex;
+			border-bottom: 1px solid #EAEEF8;
+
+			li {
+				color: #7B8696;
+				margin: 0;
+				padding: 0;
+				list-style: none;
+
+				&:first-child {
+					font-size: ($font-size-base + 18);
+				}
+
+				&:last-child {
+					padding: 0 10px;
+
+					h6 {
+						font-size: ($font-size-base + 6);
+						font-family: $font-primary-Light;
+						margin: 0;
+						letter-spacing: 1px;
+
+						span {
+							font-size: ($font-size-base - 2);
+							display: block;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.campaign--prediction-values {
+		margin: 15px;
+		color: #7B8696;
+
+		.campaign--prediction-value-header {
+			h6 {
+				font-family: $font-primary;
+				font-size: ($font-size-base);
+				letter-spacing: 1px;
+				text-transform: uppercase;
+				margin: 30px auto 30px;
+
+				span {
+					font-family: $font-primary-Light;
+					font-size: $font-size-base;
+					display: block;
+					text-transform: none;
+					letter-spacing: .5px;
+				}
+			}
+		}
+
+		.campaign--prediction-value-numbers {
+			text-align: center;
+
+			h6 {
+				font-family: $font-primary-Hairline;
+				font-size: ($font-size-base + 32);
+				letter-spacing: 1px;
+				color: #147CFB;
+
+				span {
+					font-size: ($font-size-base + 9);
+				}
+
+				&:first-child {
+					h6 {
+						margin: 30px auto 0;
+					}
+				}
+
+				&:last-child {
+					h6 {
+						margin: 0 auto 30px;
+					}
+				}
+			}
+
+			ul.total-value {
+				margin: 0;
+				padding: 0;
+				display: flex;
+
+				li {
+					margin: 0;
+					padding: 0;
+					list-style: none;
+					display: inline-block;
+
+					.down,
+					.growth {
+						border-radius: 50px;
+						text-align: center;
+						width: 50px;
+						height: 45px;
+						padding-top: 5px;
+						font-size: 30px;
+					}
+
+					.growth {
+						border: 2px solid #74C638;
+
+						i {
+							color: #74C638;
+						}
+					}
+
+					.down {
+						border: 2px solid #FD4141;
+
+						i {
+							color: #FD4141;
+						}
+					}
+					&:last-child {
+						margin-left: 10px;
+						h6 {
+							margin-bottom: -10px;
+							text-align: left;
+						}
+					}
+				}
+			}
+		}
+
+		.addition {
+			margin: 0 auto;
+			text-align: center;
+
+			i {
+				font-size: ($font-size-base + 18);
+				color: #363636;
+			}
+		}
+	}
+}
+.segmentation-filter {
+	padding: 0 15px;
+}

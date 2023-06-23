@@ -1,0 +1,27 @@
+<div class="container">
+
+	<div *ngIf="!SegListData">
+		<app-segmentation-cards (SegmentationList)="ShowSegList($event)"></app-segmentation-cards>
+
+		<mat-divider></mat-divider>
+
+		<div class="row">
+
+			<div class="crm-col-lg-3 marginT50">
+
+				<app-segmentleft-panel [dimensions]="dimensions"></app-segmentleft-panel>
+
+				<!--<mat-divider [vertical]="true"></mat-divider>-->
+
+			</div>
+			<div class="crm-col-lg-9 marginT50">
+				<app-segmentation-slabs></app-segmentation-slabs>
+			</div>
+
+		</div>
+	</div>
+	<div *ngIf="SegListData">
+		<app-segmentation-list (Segmentation)="ShowSegList($event)"></app-segmentation-list>
+	</div>
+
+</div>

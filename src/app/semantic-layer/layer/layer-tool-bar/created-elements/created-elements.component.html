@@ -1,0 +1,1 @@
+<app-collection *ngFor="let obj of objects;let i = index" [data]="obj" [index]="i" [showdelete]="true" (oncollectionDelete)="deleteFolder($event)" (oncollectionEdit)="editFolder($event)" [allObjects]="objects"></app-collection>

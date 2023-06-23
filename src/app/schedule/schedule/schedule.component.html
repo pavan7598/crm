@@ -1,0 +1,120 @@
+<!-- Old Code -->
+
+<!--<mat-card class="full-width-hight margin-to-child">
+	<form class="example-form">
+		<div class="schedule-field">
+			<div class="custom-select">
+
+				<ng-select [items]="cities" bindLabel="name" bindValue="id" placeholder="Select Campaign" [formControl]="CampaignName">
+				</ng-select>
+			</div>
+			<div class="custom-select recipient-select">
+
+				<ng-select [items]="recipients" placeholder="Enter Recipients" [addTag]="addTagFn" [hideSelected]="true" multiple="true" bindLabel="name" name="reciepient" [(ngModel)]="selectedRecipients">
+				</ng-select>
+			</div>
+		</div>
+	</form>
+
+	<div class="save-run-buttons">
+		<button *ngIf="id==undefind" (click)="SaveCampaign()">save</button>
+		<button (click)="back()">back</button>
+		<button *ngIf="id" (click)="RunCampaign()">run</button>
+	</div>
+
+	<app-once *ngIf="ScheduleType == undefined || ScheduleType =='once'" [schedule]="ScheduleObj" (onceEmit)="SelectedType($event)" (add_step)="add_step()"></app-once>
+	<app-daily *ngIf="ScheduleType == undefined || ScheduleType =='daily'" [schedule]="options.controls.daily" (dailyEmit)="SelectedType($event)" (add_step)="add_step()"></app-daily>
+	<app-weekly *ngIf="ScheduleType == undefined || ScheduleType =='weekly'" [schedule]="options.controls.weekly" (weeklyEmit)="SelectedType($event)" (add_step)="add_step()"></app-weekly>
+	<div *ngIf="ScheduleType != undefined">
+		<div *ngFor="let step of formArray.controls;let i =index;">
+			<app-steps [schedule]="formArray.value" [index]="i" [stepsInput]="step" (stepsSubmit)="stepEmit($event)" (removeStep)="removeStep($event)">
+			</app-steps>
+		</div>
+	</div>
+
+</mat-card>-->
+
+
+
+<div class="scheduling">
+
+	<div class="content--header">
+		<div class="row">
+			<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12">
+				<h5>Schedule
+					<span>Check your campaigns and schedule them.</span>
+				</h5>
+
+			</div>
+			<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12 text-r display-flex">
+				<!-- <div class="actions">
+
+					<button class="btn btn-primary pull-right" (click)="createNewSchedule()">Create New Schedule</button>
+				</div> -->
+			</div>
+		</div>
+	</div>
+
+	<mat-card>
+		<div class="row marginTB15-auto">
+			<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12">
+				<form class="example-form">
+
+					<div class="schedule-field">
+
+						<div class="row">
+							<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12">
+
+								<div class="custom-select">
+									<ng-select [items]="cities" bindLabel="name" bindValue="id" placeholder="Select Campaign" [formControl]="CampaignName">
+									</ng-select>
+								</div>
+							</div>
+
+
+							<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12">
+
+								<div class="custom-select recipient-select">
+									<ng-select [items]="recipients" placeholder="Enter Recipients" [addTag]="addTagFn" [hideSelected]="true" multiple="true" bindLabel="name" name="reciepient" [(ngModel)]="selectedRecipients" [formControl]="reciepients"></ng-select>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+
+
+			<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12 text-r">
+
+				<button class="btn btn-primary marginLR15-auto" *ngIf="id==undefind" (click)="SaveCampaign()">save</button>
+
+				<button class="btn btn-stroke marginLR15-auto" (click)="back()">back</button>
+
+				<button class="btn btn-secondary marginLR15-auto" *ngIf="id" (click)="RunCampaign()">run</button>
+
+			</div>
+
+		</div>
+
+		<div class="schedule-frequency">
+
+			<app-once class="once" *ngIf="ScheduleType == undefined || ScheduleType =='once'" [schedule]="ScheduleObj" (onceEmit)="SelectedType($event)" (add_step)="add_step()"></app-once>
+
+			<app-daily class="daily" *ngIf="ScheduleType == undefined || ScheduleType =='daily'" [schedule]="options.controls.daily" (dailyEmit)="SelectedType($event)" (add_step)="add_step()"></app-daily>
+
+			<app-weekly class="weekly" *ngIf="ScheduleType == undefined || ScheduleType =='weekly'" [schedule]="options.controls.weekly" (weeklyEmit)="SelectedType($event)" (add_step)="add_step()"></app-weekly>
+
+			<div *ngIf="ScheduleType != undefined">
+
+				<div *ngFor="let step of formArray.controls;let i =index;">
+					<app-steps [schedule]="formArray.value" [index]="i" [stepsInput]="step" (stepsSubmit)="stepEmit($event)" (removeStep)="removeStep($event)">
+					</app-steps>
+				</div>
+
+			</div>
+
+		</div>
+
+	</mat-card>
+
+</div>

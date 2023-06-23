@@ -1,0 +1,6 @@
+<div class="container">
+	
+	<app-schedule-list (hide)="hideScheduleList()" (refresh)="refreshDiv()" *ngIf="show_list&&refresh"></app-schedule-list>
+	<app-schedule (hide)="hideschedule()" *ngIf="!show_list"></app-schedule>
+	
+</div>

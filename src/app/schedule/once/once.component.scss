@@ -1,0 +1,99 @@
+@import "./src/styles.scss";
+
+.widget {
+
+	background-color: #EAEEF8;
+	padding: 30px 15px;
+	margin: 15px auto;
+	border-radius: 5px;
+	color: #5468B2;
+
+	ul {
+		margin: 0;
+		padding: 0;
+
+		li {
+			list-style: none;
+			/*margin: 0;*/
+			padding: 0;
+			display: inline-block;
+			h6 {
+				font-size: ($font-size-base + 2);
+				font-family: $font-primary;
+				margin-bottom: 0;
+				span {
+					display: block;
+					font-size: $font-size-base;
+					font-family: $font-primary-Light;
+				}
+			}
+
+		}
+	}
+
+	&.active-check {
+		background-color: #4265ED;
+		color: $white;
+
+		ul {
+			li {
+				color: $white;
+				p {
+					color: $white;
+				}
+			}
+		}
+	}
+
+}
+
+.gray-color {
+	background: #f6f8fc;
+	width: 100%;
+	min-height: 100px;
+
+	.padding-set {
+		padding: 30px;
+
+	}
+
+	.active-check {
+		color: #3f87e0;
+		cursor: pointer;
+	}
+
+	.inactive-check {
+		cursor: pointer;
+		color: #d9e2e6;
+	}
+
+	.move_top {
+		margin-top: 10px;
+	}
+}
+
+.selected {
+	background-color: green
+}
+
+.schedule-select-text {
+	.select-schedule-icon {
+		float: left;
+	}
+
+	b {
+		margin-left: 2%;
+	}
+}
+
+.save-run-buttons {
+
+	color: white;
+
+	text-transform: uppercase;
+	font-size: 14px;
+	border: 2px solid#6682f0;
+	background-color: #6682f0;
+	height: 40px;
+	float: right;
+}

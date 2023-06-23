@@ -1,0 +1,54 @@
+mat-card{
+  padding: 3px;
+}
+.floatRT{
+  float: right;
+}
+
+button{
+  width: 100%;
+}
+.overflow{
+  overflow: scroll;
+}
+mat-icon{
+  float: right;
+}
+.small-button
+{
+  min-width: 20px !important;
+  height: 25px;
+  margin-top: 10px;
+}
+.mat-button-wrapper{
+  margin-bottom: 10px;
+}
+
+::ng-deep .fullWT
+{
+  width: 100%;
+}
+.addBTN
+{
+  background: white;
+  padding: 10px;
+
+}
+i{
+  font-size: 22px;
+  color: #3A3E52;
+}
+.sett-icon{
+  width:10%;
+}
+.text-block{
+  max-width: 80%;
+}
+
+/*::ng-deep .mat-expansion-panel-header {
+    padding: 0 !important;
+}*/
+
+.mat-expansion-panel-header {
+    padding: 0 24px 0 12px;
+}

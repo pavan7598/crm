@@ -1,0 +1,123 @@
+.top-actions {
+	.select-div {
+		margin-left: 5px;
+		margin-top: 5px;
+	}
+	.search-box {
+		// ::ng-deep .mat-form-field-flex {
+		// 	padding: 0 10px;
+		// }
+	}
+	/*div {
+		&:first-child {
+			margin-left: 5px;
+			margin-top: 5px;
+		}
+	}*/
+}
+
+.fullHT {
+	height: 100%;
+
+}
+
+.fullWT {
+	width: 100%;
+}
+
+mat-card {
+	height: 100%;
+
+}
+
+.maxWidth {
+	width: 100%;
+}
+
+mat-icon {
+	float: right;
+	margin-top: 2px !important;
+	color: #fff;
+}
+
+.mat-tab-labels {
+	width: 30%;
+}
+
+::ng-deep.mat-tab-label,
+::ng-deep.mat-tab-label-active {
+	min-width: 50% !important;
+	padding: 10px !important;
+	margin: 0 !important;
+}
+
+.btnSpace {
+	margin-top: 3%;
+}
+
+mat-tab-group {
+	height: inherit;
+	overflow-x: hidden;
+}
+
+::ng-deep .mat-tab-body-content {
+	overflow-x: hidden;
+	height: 600px;
+	overflow-y: scroll;
+}
+
+::ng-deep .mat-tab-header-pagination,
+::ng-deep .mat-tab-group.mat-primary .mat-ink-bar,
+::ng-deep .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+	display: none !important;
+}
+
+::ng-deep .mat-tab-label {
+	height: auto !important;
+	color: #3A3E52 !important;
+	background-color: #ececec !important;
+	font-family: 'Lato-Regular' !important;
+	text-transform: uppercase !important;
+	font-size: 12px !important;
+	opacity: 1 !important;
+	letter-spacing: 1px !important;
+}
+
+::ng-deep .mat-tab-label-active {
+	background-color: #4265ed !important;
+	color: #fff !important;
+	font-weight: bold !important;
+}
+
+::ng-deep .mat-tab-body-wrapper {
+	background-color: #fff !important;
+	padding: 15px !important;
+}
+
+::ng-deep .mat-form-field-infix {
+
+	/*width: 119px !important;*/
+}
+
+::ng-deep .mat-select {
+	margin: 0;
+}
+
+::ng-deep .mat-form-field {
+	float: left;
+	width: 138px !important;
+}
+
+/*input {
+	background-color: #EBEBEB;
+	height: 21px;
+	margin-left: 8px;
+}*/
+
+/*::ng-deep .mat-expansion-indicator::after{
+   display: none !important;
+}*/
+
+.mat-raised-button.mat-primary {
+	background-color: #3a3e52;
+}

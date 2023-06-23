@@ -1,0 +1,25 @@
+<div class="model--box">
+
+	<div class="heading">
+		<h6>
+			Save segmentation
+			<div class="close--btn"><i class="mdi mdi-close" [mat-dialog-close]></i></div>
+		</h6>
+	</div>
+
+	<form>
+
+		<div class="marginB20">
+			<mat-form-field>
+				<input matInput placeholder="Enter Slab Name" [formControl]="slabName">
+				<mat-error *ngIf="slabName.hasError('email') && !slabName.hasError('required')">
+					Enter Slab Name
+				</mat-error>
+			</mat-form-field>
+		</div>
+
+		<button class="btn btn-primary" (click)="Save()">Save</button>
+
+	</form>
+
+</div>

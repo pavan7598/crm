@@ -1,0 +1,7 @@
+
+<div  *ngFor="let obj of metricObject;let i =index">
+    <mat-card fxLayout="column" *ngIf="metricObject[i][metricList[i]]">
+        <h5>{{metricList[i]}}</h5>
+        <h2> {{metricObject[i][metricList[i]]|number}}</h2>
+    </mat-card>
+</div>

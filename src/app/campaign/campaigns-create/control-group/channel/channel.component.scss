@@ -1,0 +1,36 @@
+@import "./src/assets/scss/variables.scss";
+
+
+
+ul {
+    margin: 0;
+    padding: 0;
+    color: #ffff;
+    font-family: $font-primary-medium;
+    list-style-type: none;
+    font-size: 1.1vw;
+    li{
+        padding-left: 6%;
+    }
+    li:first-child{
+        margin-bottom:7%;
+        padding: 0;
+    }
+    
+}
+
+
+
+::ng-deep{
+    .check-ul{
+        .mat-checkbox-frame{
+            background-color: #FFFFFF;
+            border: 2px solid #8AAAF3;
+        }
+        .mat-checkbox-checked.mat-primary .mat-checkbox-background, .mat-checkbox-indeterminate.mat-primary .mat-checkbox-background{
+            border: 2px solid #FFFFFF;
+            background-color: #8AAAF3;
+        }
+    }
+}
+

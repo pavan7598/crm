@@ -1,0 +1,148 @@
+<mat-toolbar>
+	<mat-toolbar-row>
+		<div class="crm-col-lg-2 crm-col-md-2 crm-col-sm-6 logo">
+			<a href="/" alt="CRM logo" title="CRM logo" class="">
+				<span class="logo">
+					<!-- <img class="" alt="FalconDive" title="FalconDive" src="/assets/img/FalconDive-logo.svg" /> -->
+				</span>
+				<span class="logo-txt">
+					<ul>
+						<li>CRM</li>
+						<li>DATA AS ASSET</li>
+					</ul>
+				</span>
+			</a>
+		</div>
+
+		<!-- <div class="crm-col-lg-1 crm-col-md-1 crm-col-sm-6 dash--dropdown">
+			<ul>
+				<li><i class="mdi mdi-crown"></i></li>
+				<li class="dropdown--hold clearfix">
+
+					<div class="dashboard--text">
+						<ul>
+							<li>My Dashboard</li>
+							<li>Project Name</li>
+						</ul>
+					</div>
+					<div class="clearfix"></div>
+				</li>
+				<li>
+					<div class="chevron--down"></div>
+				</li>
+			</ul>
+		</div> -->
+		<div class="crm-col-lg-8 crm-col-md-8 crm-col-sm-6 main-menu">
+			<ul>
+
+				<li><a class="head-list" [routerLinkActive]="['active']" [routerLink]="'/campaign/summary'" title="CRM-Campaigning" alt="CRM-Campaigning">CAMPAIGNS</a></li>
+				<li><a class="head-list" [routerLinkActive]="['active']" href="/#" title="CRM-Reports" routerLink="/reports" alt="CRM-Reports">REPORTS</a></li>
+				<li><a class="head-list" [routerLinkActive]="['active']" title="CRM-Predictions" routerLink="/customerextraction/player" href="/#" alt="CRM-Predictions" >CUSTOMER EXTRACTION </a></li>
+				<li><a class="head-list" [routerLinkActive]="['active']" [routerLink]="'/semantic/'" href="/#" title="CRM-Semantic" alt="CRM-Semantic" >SEMANTIC</a></li>
+				<li><a class="head-list" [routerLinkActive]="['active']" href="/#" title="CRM-Reports" routerLink="/dashboard" alt="CRM-Reports">DASHBOARD</a></li>
+				<li><a class="head-list" [routerLinkActive]="['active']" href="/#" title="CRM-Reports" routerLink="/newreports" alt="CRM-Reports">New Reports</a></li>
+			</ul>
+
+		</div>
+
+		<div class="crm-col-lg-2 crm-col-md-2 crm-col-sm-6 tools--topmenu">
+
+			<ul class="tools--apps">
+				<li>
+					<mat-icon matSuffix matBadge="0" matBadgeColor="accent">notifications</mat-icon>
+				</li>
+				<!-- <li disabled="true">
+					<mat-icon mat-button matSuffix>apps</mat-icon>
+					<mat-menu #men="matMenu">
+						<div class="crm-row">
+							<ul>
+								<li class="crm-col-4">jush</li>
+								<li class="crm-col-4">jush</li>
+								<li class="crm-col-4">jush</li>
+							</ul>
+						</div>
+						<div class="crm-row">
+							<ul>
+								<li>jush</li>
+								<li>jush</li>
+								<li>jush</li>
+							</ul>
+						</div>
+					</mat-menu>
+				</li> -->
+				<li>
+					<div class="avtar--menu" [matMenuTriggerFor]="menu">
+						<ul>
+							<li>
+								<div *ngIf = "strletter" class="avtar">{{strletter}}</div>
+								<mat-menu #menu="matMenu">
+									<button mat-menu-item (click)="AccountSettings()" disabled="true">Account
+										Settings</button>
+									<button mat-menu-item (click)="logout()">Logout</button>
+								</mat-menu>
+							</li>
+							<li>
+								<b>{{currentuser.email}}</b>
+								<span>CMO</span>
+							</li>
+							<li>
+								<div class="chevron--down"></div>
+							</li>
+						</ul>
+
+					</div>
+				</li>
+			</ul>
+
+		</div>
+
+	</mat-toolbar-row>
+
+	<mat-toolbar-row class="sub--menu" *ngIf="menustr=='campaign' || menustr=='semantic' || menustr=='dashboard' ">
+		<div class="crm-col-lg-12 crm-col-md-12 crm-col-sm-6">
+			<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-6 subnav--topmenu">
+				<ul *ngIf="menustr=='campaign'">
+					<li><a href="/#" [routerLinkActive]="['active']" [routerLink]="'summary'" alt="CRM - Campaign Summary" title="CRM - Campaign Summary">CAMPAIGNS SUMMARY</a></li>
+					<li><a href="/#" [routerLinkActive]="['active']" [routerLink]="'segmentation'" alt="CRM - Campaign Segments" title="CRM - Campaign Summary">SEGMENTS</a></li>
+					<li><a href="/#" [routerLinkActive]="['active']" [routerLink]="'createCampaign'" alt="CRM - New Campaigns" title="CRM - New Campaigns">NEW CAMPAIGNS</a></li>
+					<li><a href="/#" [routerLinkActive]="['active']" [routerLink]="'schedule'" alt="CRM - Campaign Schedule" title="CRM - Campaign Schedule">SCHEDULE</a></li>
+				    <li><a href="/#" [routerLinkActive]="['active']" [routerLink]="'start'" alt="CRM - Campaign Schedule" title="CRM - Campaign Schedule">Start Campaign</a></li>
+					<li><a href="/#" [routerLinkActive]="['active']" [routerLink]="'view'" alt="CRM - Campaign Schedule" title="CRM - Campaign Schedule">View Campaigns</a></li>
+					<!--<li><a href="/#" [routerLinkActive]="['active']" [routerLink]="'dispatch'" alt="CRM - Campaign Dispatch" title="CRM - Campaign Dispatch">DISPATCH</a></li>-->
+				</ul>
+				<ul *ngIf="menustr=='semantic'">
+					<li><a href="/#" [routerLinkActive]="['active']" [routerLink]="'connection'" alt="CRM - Connection" title="CRM - Connection">DB Connection</a></li>
+					<li><a href="/#" [routerLinkActive]="['active']" [routerLink]="'semanticLayerHome'" alt="CRM - Semantic Layers List" title="CRM - Semantic Layers List">Layers List</a></li>
+					<!-- <li><a href="/#" [routerLinkActive]="['active']" [routerLink]="'layer'" alt="CRM - Layer" title="CRM - Layer">Layer</a></li> -->
+				</ul>
+				<ul *ngIf="menustr=='customerextraction'">
+				</ul>
+				<ul *ngIf="menustr=='reports'">
+				</ul>
+				<ul *ngIf="menustr=='dashboard'">
+						<li><a href="/#" [routerLinkActive]="['active']" [routerLink]="'dashbordList'" alt="CRM - Connection" title="CRM - Connection">Dashboard List</a></li>
+						<li><a href="/#" [routerLinkActive]="['active']" [routerLink]="'dashboardCreate'" alt="CRM - Semantic Layers List" title="CRM - Semantic Layers List">Create Dashboard</a></li>
+				</ul>
+			</div>
+			<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-6 subnav--topmenu-hamburger" *ngIf="menustr=='campaign'">
+				<div class="side--nav">
+					<!--<span *ngIf="menuVal"><i class="material-icons" (click)="sidenav()">menu</i></span>
+					<span *ngIf="!menuVal"><i class="material-icons" (click)="sidenav()">clear</i></span>-->
+
+					<div id="nav-icon3" (click)="sidenav()" *ngIf="!Showmenu">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
+			</div>
+
+			<!--<div class="crm-col-lg-1 crm-col-md-1 crm-col-sm-6 pull-right">
+				<span class="pull-right top-menu--right">menu</span>
+			</div>-->
+		</div>
+
+	</mat-toolbar-row>
+
+</mat-toolbar>

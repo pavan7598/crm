@@ -1,0 +1,84 @@
+@import "./src/assets/scss/variables.scss";
+@import "./src/styles.scss";
+
+.schedule-frequency {
+	.widget {
+
+		background-color: #4265ED;
+		padding: 15px;
+		margin: 15px;
+		border-radius: 5px;
+		color: #fff;
+
+		&.active-check {
+			background-color: #4265ED;
+			color: #fff;
+		}
+
+		ul {
+			margin: 0;
+			padding: 0;
+
+			li {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+
+			}
+		}
+	}
+}
+
+/*.margin-to-child > * {
+	margin: 30px;
+}
+
+.example-form {
+	display: flow-root;
+
+	.form-schedule {
+		margin: 0;
+		border-radius: 0;
+		border: none;
+		border-bottom: 1px solid #BED2FF;
+	}
+
+	.custom-select {
+		float: left;
+		width: 15%;
+		margin-top: 1%;
+	}
+
+	.recipient-select {
+		width: 25%;
+	}
+
+	.schedule-field {
+		margin-left: -1%;
+		margin-top: 2%;
+	}
+
+}
+
+.custom-select {
+	width: 32%;
+}
+
+.save-run-buttons {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 18%;
+
+	button {
+		color: #4265ED;
+		border: 2px solid #4265ED;
+		width: 46%;
+		background-color: transparent;
+		text-transform: uppercase;
+		font-size: 14px;
+		border-radius: 50px;
+		padding: 2%;
+		margin-left: 3%;
+	}
+}*/

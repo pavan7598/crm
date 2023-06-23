@@ -1,0 +1,105 @@
+<div fxLayout="column" *ngIf="queryObj.query">
+
+        <div fxLayout="row" *ngIf="!chartLoaded&&!error">
+
+                <div fxFlex="50%" *ngIf="original_dataset.type=='Player Selection'">
+                        <h6>Segmentation Builder > Customers </h6>
+                        <h5>Ability To See Dimensions, Metrics And KPIs At A Customer Level</h5>
+                </div>
+                <div fxFlex="50%" *ngIf="original_dataset.type=='Segementation'">
+                        <h6>Segmentation Builder > Segmentation </h6>
+                        <h5>Ability To Build Your Own Segments</h5>
+                </div>
+                <div fxFlex="50%" fxLayoutAlign="end center" fxLayoutGap="20px">
+                        <div fxLayoutGap="20px">
+                                <button mat-stroked-button [disabled]="!queryObj.query.name"
+                                        (click)="save(queryObj.query,false)">
+                                        <span *ngIf="!queryObj.query._id && !(uname.errors?.pattern)"> SAVE</span>
+                                        <span *ngIf="queryObj.query._id && !(uname.errors?.pattern)">UPDATE</span>
+                                </button>
+                                <button mat-stroked-button *ngIf="queryObj.query._id && !(uname.errors?.pattern)"
+                                        (click)="saveAs(queryObj.query)">SAVE AS</button>
+                                <button mat-stroked-button (click)="cancel()"> CANCEL</button>
+                        </div>
+                        <!-- <button mat-stroked-button (click)="linkClicked()" *ngIf="queryObj.query._id">LINK</button> -->
+                </div>
+        </div>
+        <div fxLayout="row">
+                <div fxFlex="30%">
+                        <mat-form-field>
+                                <mat-icon matSuffix>Create</mat-icon>
+                                <input matInput [(ngModel)]="queryObj.query.name" pattern="(^[a-z-A-Z_0-9 ]*){1,50}$"
+                                        placeholder="name your query" #uname="ngModel">
+                                <mat-error *ngIf="uname.errors?.pattern">
+                                        Special Charaters Are Not Allowed
+                                </mat-error>
+                        </mat-form-field>
+                </div>
+                <div fxFlex="70%" fxLayoutAlign="end center">
+                        <button mat-raised-button *ngIf="resData.conditionresults" (click)="chart()"
+                                style="background: #159eda;color: #fff;border-radius: 50px;">
+                                <i class="mdi mdi-chart-bar" style="font-size: 20px;"></i>
+                        </button>
+                </div>
+        </div>
+        <div>
+                <app-metric-count *ngIf="psresults" [metricObject]="psresults"> </app-metric-count>
+        </div>
+        <div fxLayout="row" *ngFor="let item of resData.conditionresults" class="slab">
+                <div fxFlex="30%" class="div1">
+                        <div fxFlex="50%">
+                                <h4>{{item.slabcondition}}</h4>
+                        </div>
+                        <div fxFlex="50%">
+                                <label>Total Number Of Customers</label>
+                                <h5>{{item.total_count}} ({{(item.dataset.length/item.total_count)*100}} %)
+                                </h5>
+                        </div>
+                </div>
+                <div fxFlex="60%" class="div2">
+                        <div fxFlex="60%" class="div2sub">
+                                <label>Segment Name</label>
+                                <h5>{{item.slabcondition}}</h5>
+                        </div>
+                        <div fxFlex="60%">
+                                <label>Number Of Customers</label>
+                                <h5>{{item.dataset.length}}</h5>
+                        </div>
+                        <div fxFlex="60%" *ngFor="let item1 of item.kpi_list | keyvalue">
+                                <label>{{item1.key}}</label>
+                                <h5>{{item1.value | number}}</h5>
+                        </div>
+                </div>
+                <div fxFlex="10%" fxLayoutAlign="space-around center" class="div3">
+                        <button mat-button (click)="showresults(item.dataset)">RESULTS</button>
+                        <!-- <i (click)="onNoClick()" class="material-icons" style="cursor: pointer;margin-left: 100%;font-size: 14px;">close</i> -->
+                </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="10px" *ngIf="!chartLoaded&&!error">
+                <button class="se-er" mat-raised-button (click)="emailSend()">
+                        Send Email
+                        <i class="mdi mdi-email"></i>
+                </button> 
+                <button class="se-er" mat-raised-button (click)="exportAsXLSX(resultData)">
+                        Export Results
+                        <i class="mdi mdi-download"></i>
+                </button> 
+        </div>
+        test{{resultData.length}}
+        <app-view-table *ngIf="resultData.length>0" [masterData]="resultData"></app-view-table>
+        <div *ngIf="!chartLoaded && resultData.length==0">
+                <p id="bg-text">No Records Found!</p>
+        </div>
+        <div *ngIf="chartLoaded">
+                <p id="bg-text">Executing Selected Query</p>
+                <mat-progress-bar mode="query"></mat-progress-bar>
+        </div>
+        <br>
+        <div fxLayout="row" fxLayoutAlign="end center">
+                <button mat-raised-button color="primary" (click)="back()" class="result_button">
+                        <i class="mdi mdi-export-variant result_md"></i>
+                </button>
+        </div>
+</div>
+
+<!-- <button mat-stroked-button (click)="update(queryObj.query)" *ngIf="queryObj.query.name">update</button> -->

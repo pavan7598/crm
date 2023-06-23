@@ -1,0 +1,33 @@
+input{
+    padding-bottom: 0px;
+  }
+  mat-form-field{
+    width: 100%;
+  }
+  .current_date{
+    float: right;
+  }
+  .m-t5{
+    margin-top: 5%;
+  }
+  .m-t10{
+    margin-top: 10%;
+  }
+  .logoS:before {
+    color: red;
+    content: "Title ";
+  }
+  p{
+    color: #000;
+    margin: 0;
+    margin-top: 4px;
+  }
+  p span 
+  {
+      display: block;
+      margin-top: -8px;
+  }
+  .p-dd{
+    margin-top: -7px;
+  }
+  

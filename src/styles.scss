@@ -1,0 +1,652 @@
+/* Global styles to this file, and also import other style files */
+// Core
+// @import '~bootstrap/dist/css/bootstrap.min.css';
+@import "~@ng-select/ng-select/themes/default.theme.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~@mdi/font/css/materialdesignicons.min.css';
+
+@import "./assets/scss/mixins.scss";
+@import "./assets/scss/variables.scss";
+@import "./assets/scss/buttons.scss";
+@import "./assets/scss/fonts.scss";
+@import "./assets/scss/global.scss";
+@import '~ngx-toastr/toastr.css';
+
+@import "./assets/scss/form.scss";
+@import "./assets/scss/mobile.scss";
+@import "./assets/scss/table.scss";
+@import "./assets/scss/custom-prefixes.scss";
+//@import '~pretty-checkbox/src/pretty-checkbox.scss';
+//@import "material-components-web/material-components-web";
+// Fontawesome
+// @import "font-awesome/font-awesome";
+// // Reset
+// @import "scaffolding";
+@import "./assets/scss/modal.scss";
+
+@import "./assets/scss/responsive.scss";
+@import "./assets/scss/grid-system.scss";
+// @import "~swiper/swiper-bundle";
+
+
+/*@import "./assets/css/custom.scss";
+@import "./assets/css/mixins.scss";
+@import "./assets/css/custom-prefixes.scss";*/
+/*@import "./src/responsive.scss";
+@import "./src/grid-system";
+
+@import "./src/form.scss";
+@import "./src/mobile.scss";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";*/
+
+// Fontawesome
+// @import "font-awesome/font-awesome";
+// // Reset
+// @import "scaffolding";
+html {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	font-family: $font-primary;
+	background-color: $bg-grey;
+	padding: 0;
+	margin: 0;
+	color: $text-color;
+	transition: all ease .5s;
+//	height: calc(100% - 128px);
+	/*background: #122b50;
+    background: -moz-linear-gradient(top, #122b50 0%, #24558c 100%);
+    background: -webkit-linear-gradient(top, #122b50 0%,#24558c 100%);
+    background: linear-gradient(to bottom, #122b50 0%,#24558c 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#122b50', endColorstr='#24558c',GradientType=0 );*/
+}
+
+app-root {
+	width: 100%;
+}
+
+::selection {
+	/*    background-color: $light-blue;*/
+	background-color: $dark-blue;
+	color: #fff;
+}
+
+a {
+	color: $anchor-color;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+a:active,
+a:selected {
+	color: $anchor-color;
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0 0 15px;
+}
+.boxsize{
+	padding: 70px 10px 57px 10px;
+}
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small {
+	color: $gray;
+	font-size: 15px;
+	font-family: $font-primary;
+	float: right;
+}
+
+h1 {
+	font-size: $font-size-h1;
+	/*font-family: $font-secondary-SemiBold;*/
+}
+
+h2 {
+	font-size: $font-size-h2;
+}
+
+h3 {
+	font-size: $font-size-h3;
+}
+
+h4 {
+	font-size: $font-size-h4;
+}
+
+h5 {
+	font-size: $font-size-h5;
+}
+
+h6 {
+	font-size: $font-size-h6;
+}
+
+
+/*.container {
+    margin: 0 auto;
+}*/
+
+.display-flex {
+	display: flex;
+}
+
+.clearfix {
+	clear: both;
+}
+
+.text-l {
+	text-align: left;
+}
+
+.text-r {
+	text-align: right;
+}
+
+.text-c {
+	text-align: center;
+}
+
+.text-j {
+	text-align: justify;
+}
+
+.text-no-wrap {
+	white-space: nowrap;
+}
+
+.text-l-case {
+	text-transform: lowercase;
+}
+
+.text-u-case {
+	text-transform: uppercase;
+}
+
+.text-cap {
+	text-transform: capitalize;
+}
+
+.badget-holder {
+	position: relative;
+}
+
+.badget {
+	min-width: 20px;
+	min-height: 18px;
+	border-radius: 50%;
+	background-color: $badge-color;
+	position: absolute;
+	top: 5px;
+	right: -5px;
+	color: #fff;
+	font-size: 12px;
+	text-align: center;
+	font-family: $font-secondary;
+	padding-top: 2px;
+}
+
+.padding10 {
+	padding: 10px;
+}
+
+.rotate45deg {
+	transform: rotate(90deg)
+}
+
+.marginTB30-auto {
+	margin: 30px auto;
+}
+
+.marginTB20-auto {
+	margin: 20px auto;
+}
+
+.marginTB10-auto {
+	margin: 10px auto;
+}
+
+.margin30 {
+	margin: 30px;
+}
+
+.marginT10 {
+	margin-top: 10px;
+}
+
+.marginT20 {
+	margin-top: 20px;
+}
+
+.marginT30 {
+	margin-top: 30px;
+}
+
+.marginT50 {
+	margin-top: 50px;
+}
+
+.marginTB50-auto {
+	margin: 50px auto;
+}
+
+.marginB20 {
+	margin-bottom: 20px;
+}
+
+.marginB30 {
+	margin-bottom: 30px;
+}
+
+.marginL20 {
+	margin-left: 20px;
+}
+
+.marginL0 {
+	margin-left: 0;
+}
+
+.marginR20 {
+	margin-right: 20px;
+}
+
+.marginR0 {
+	margin-right: 0 !important;
+}
+
+.marginB50 {
+	margin-bottom: 50px;
+}
+
+.marginB50-auto {
+	margin: auto auto 50px;
+}
+
+.marginT40 {
+	margin-top: 40px;
+}
+
+.marginTB15-auto {
+	margin: 15px auto;
+}
+
+.marginLR15-auto {
+	margin: auto 15px;
+}
+
+.marginRB15-auto {
+	margin: auto 15px;
+}
+
+.margin-auto {
+	margin: auto;
+}
+
+.p-15 {
+	padding: 15px;
+}
+
+// .height100-cent {
+// 	// height: 100%;
+// }
+
+.scroll-x {
+	overflow-x: scroll;
+}
+
+.scroll-y {
+	overflow-y: scroll;
+}
+
+.scroll-auto {
+	overflow: auto;
+}
+
+//
+// Utility classes
+// --------------------------------------------------
+// Floats 
+// -------------------------
+.clearfix {
+	/*@include clearfix;*/
+	clear: both;
+}
+
+// .center-block {
+// 	/*@include center-block;*/
+// }
+
+.pull-right {
+	float: right !important;
+}
+
+.pull-left {
+	float: left !important;
+}
+
+.float-none {
+	float: none;
+}
+
+// Toggling content
+// -------------------------
+// Note: Deprecated .hide in favor of .hidden or .sr-only (as appropriate) in v3.0.1
+
+
+
+.hide {
+	display: none !important;
+}
+
+.show {
+	display: block !important;
+}
+
+.hidden {
+	visibility: hidden !important;
+	opacity: 0;
+	-moz-transition: opacity 1s, visibility 1.3s;
+	-webkit-transition: opacity 1s, visibility 1.3s;
+	-o-transition: opacity 1s, visibility 1.3s;
+	transition: opacity 1s, visibility 1.3s;
+}
+
+.shown {
+	visibility: visible !important;
+	opacity: 1;
+	-moz-transition: opacity 1s, visibility 1.3s;
+	-webkit-transition: opacity 1s, visibility 1.3s;
+	-o-transition: opacity 1s, visibility 1.3s;
+	transition: opacity 1s, visibility 1.3s;
+}
+
+.invisible {
+	visibility: hidden;
+}
+
+/*.text-hide {
+    @include text-hide;
+}*/
+
+.mobile-comp {
+	display: none;
+}
+
+.device-comp {
+	display: block;
+}
+
+// Hide from screenreaders and browsers
+//
+// Credit: HTML5 Boilerplate
+.hidden {
+	display: none !important;
+}
+
+::selection {
+	background: #393e52;
+	color: #fff;
+	text-shadow: none;
+}
+
+address,
+blockquote,
+dl,
+fieldset,
+figure,
+ol,
+p,
+pre,
+ul {
+	margin: 0 0 0px 0;
+	color: #6b7080;
+	font-family: $font-primary-medium;
+	font-size: 12px;
+}
+
+* + address,
+* + blockquote,
+* + dl,
+* + fieldset,
+* + figure,
+* + ol,
+* + p,
+* + pre,
+* + ul {
+	margin-top: 5px;
+	font-family: $font-family-p;
+	letter-spacing: $letter-spacing-p;
+	line-height: $line-height-p;
+}
+
+*:focus {
+	outline: none;
+}
+
+input[type="reset"][disabled],
+input[type="submit"][disabled],
+html input[type="button"][disabled],
+button[disabled],
+a[disabled] {
+	cursor: default;
+	color: #cacaca !important;
+	border: 1px solid #cacaca !important;
+	background: none !important;
+	cursor: not-allowed;
+	pointer-events: none;
+}
+
+label {
+	font-size: 12px;
+	text-transform: lowercase;
+}
+
+
+//********* swiper  ******* /
+// .swiper-container {
+// 	width: 100%;
+// 	height: 300px;
+// 	margin: 20px auto;
+//   }
+  
+//   .swiper-slide {
+// 	background: #f1f1f1;
+// 	color: #000;
+// 	text-align: center;
+// 	line-height: 300px;
+//   }
+
+
+input:not([type]).md-input,
+input[type=color].md-input,
+input[type=date].md-input,
+input[type=datetime-local].md-input,
+input[type=datetime].md-input,
+input[type=email].md-input,
+input[type=month].md-input,
+input[type=number].md-input,
+input[type=password].md-input,
+input[type=search].md-input,
+input[type=tel].md-input,
+input[type=text].md-input,
+input[type=time].md-input,
+input[type=url].md-input,
+input[type=week].md-input,
+select.md-input,
+textarea.md-input,
+.md-input-wrapper label {
+	font: 400 12px/18px $font-primary-medium;
+	//    background-color: #fff;
+}
+
+input:not([type]).md-input:focus,
+input[type=color].md-input:focus,
+input[type=date].md-input:focus,
+input[type=datetime-local].md-input:focus,
+input[type=datetime].md-input:focus,
+input[type=email].md-input:focus,
+input[type=month].md-input:focus,
+input[type=number].md-input:focus,
+input[type=password].md-input:focus,
+input[type=search].md-input:focus,
+input[type=tel].md-input:focus,
+input[type=text].md-input:focus,
+input[type=time].md-input:focus,
+input[type=url].md-input:focus,
+input[type=week].md-input:focus,
+select.md-input:focus,
+textarea.md-input:focus 
+
+
+.textAlignCenter {
+	text-align: center;
+}
+
+.text-bold {
+	font-family: $font-primary-SemiBold;
+}
+
+.align-center {
+	text-align: center;
+}
+
+.align-left {
+	text-align: left;
+}
+
+.align-right {
+	text-align: right;
+}
+
+/*-- ng select --*/
+
+::ng-deep {
+	.custom-select {
+		margin: 0 15px;
+
+		.ng-select .ng-select-container {
+			border-radius: 50px;
+		}
+
+		::ng-deep .ng-select.ng-select-single .ng-select-container {
+			border-radius: 50px;
+			border: 1px solid #BED2FF;
+			height: 40px;
+			font-size: ($font-size-base + 2);
+			padding-left: 10px;
+		}
+
+		::ng-deep .ng-select .ng-select-container .ng-value-container .ng-input > input {
+			padding-top: 6px;
+		}
+
+		::ng-deep .ng-select .ng-select-container .ng-value-container .ng-placeholder {
+			color: #7B8696;
+			font-family: $font-primary-Light;
+		}
+
+		::ng-deep .ng-dropdown-panel {
+			box-shadow: none;
+		}
+
+		.ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+			padding: 15px 15px;
+			color: #8AAAF3;
+			font-family: $font-primary-Light;
+			font-size: ($font-size-base + 2);
+		}
+
+		.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected,
+		.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected.ng-option-marked {
+			color: #1538C1;
+			font-family: $font-primary-Light;
+			font-size: $font-size-base;
+		}
+
+		::ng-deep .ng-dropdown-panel.ng-select-bottom {
+			top: 40px;
+			border-radius: 50px;
+			border-top-color: transparent;
+			margin-top: -1px;
+			border: none;
+
+			.ng-option-marked {
+				color: #1538C1;
+				font-family: $font-primary;
+			}
+		}
+
+		::ng-deep .ng-dropdown-panel.ng-select-bottom .ng-dropdown-panel-items .ng-option:first-child {
+			border-top-left-radius: 15px;
+			border-top-right-radius: 15px;
+		}
+
+		::ng-deep .ng-dropdown-panel.ng-select-bottom .ng-dropdown-panel-items .ng-option:last-child {
+			border-bottom-left-radius: 15px;
+			border-bottom-right-radius: 15px;
+		}
+
+		.ng-dropdown-panel .scroll-host {
+			box-shadow: 0 3px 25px rgba(0, 0, 0, .15);
+			position: static;
+			border-radius: 15px;
+
+			&:before {
+				content: "";
+				width: 0px;
+				height: 0px;
+				border-top: 10px solid transparent;
+				border-bottom: 10px solid white;
+				border-left: 10px solid transparent;
+				border-right: 10px solid transparent;
+				position: absolute;
+				left: 30px;
+				top: -20px;
+			}
+		}
+	}
+}
+
+/*.campaign--summary-list .mat-paginator-container{
+	margin: 0 auto;
+	width: 50% !important;
+
+}*/
+
+/*-- Device Identifier overlay --*/
+
+.screen-devive-msg {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	position: absolute;
+	z-index: 999999;
+	background-color: rgba(0, 0, 0, .9);
+	display: none;
+}
+
+@media (min-width: 1200px) {
+	.container {
+		width: 100%;
+	}
+}

@@ -1,0 +1,18 @@
+<mat-form-field>
+  <input matInput placeholder="Search Variables" [(ngModel)]="variable" >
+</mat-form-field>
+<mat-card class="test">
+  <h3>VARIABLES </h3>
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let collection of collections|searchFilter:{searchFeild:'elementLabel',searchValue:variable};let i=index" style="margin:10px">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{collection.elementLabel}}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="element-height" fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="10px">
+        <app-custom-element [isDragable]="true" fxFlex="100%" [canlock]="a" *ngFor="let element of collection.elements;let j=index" [data]="element"></app-custom-element>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</mat-card>

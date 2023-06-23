@@ -1,0 +1,68 @@
+.fullWT {
+	// height: 100%;
+	// background: rgb(255, 255, 255);
+	height: 2000px;
+	width: 2000px;
+	overflow: visible !important;
+
+}
+
+mat-card {
+	height: 100%;
+}
+
+p {
+	font-family: Lato;
+}
+
+// .customBox {
+//   position: absolute;
+//   margin-top: 5%;
+//   padding: 8px 100px;
+//   box-shadow: 0 10px 40px 0 #B0C1D9;
+// }
+
+// .alignleft {
+//   float: left;
+// }
+
+// .alignright {
+//   float: right;
+// }
+
+// ::ng-deep .connectingConnectorLabel {
+//     height: 23px;
+//     width: 110px;
+//     border-radius: 13px;
+//     color: #FFFFFF;
+//     text-align: center;
+//     z-index:3 !important;
+//     background-color: #456;
+// }
+app-layer-table {
+	position: absolute;
+}
+
+::ng-deep .Inner {
+	background: center center no-repeat fixed #b24fc9 !important;
+	color: #fff !important;
+	padding: 6px !important;
+	border-radius: 3px !important;
+	font-family: Lato-Bold !important;
+}
+
+::ng-deep .leftJoinType {
+	background: center center no-repeat fixed #4fc4c9 !important;
+	color: #fff !important;
+	padding: 6px !important;
+	border-radius: 3px !important;
+	font-family: Lato-Bold !important;
+}
+
+::ng-deep .rightJoinType {
+	background: center center no-repeat fixed #ff9d00 !important;
+	color: #fff !important;
+	padding: 6px !important;
+	border-radius: 3px !important;
+	font-family: Lato-Bold !important;
+}

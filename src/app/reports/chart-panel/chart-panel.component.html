@@ -1,0 +1,22 @@
+<div #chart class="chart--container">
+	<mat-card>
+		<mat-toolbar>
+			<div class="toolbar">
+				<span>{{option.name}}</span> 
+				<i class="material-icons" *ngIf="!Show" matTooltip="full screen" (click)="fullscreen($event)">fullscreen</i>
+				<i class="material-icons" *ngIf="Show" matTooltip="exit screen" (click)="exit($event)">fullscreen_exit</i>
+
+			</div>
+		</mat-toolbar>
+
+		<div class="p-15 height100-cent">
+			<div echarts [options]="option" #main *ngIf="!Show"></div>
+			<div *ngIf="Show">
+				<div echarts [options]="option" #main></div>
+				<div>
+					<p>Description placeholder.</p>
+				</div>
+			</div>
+		</div>
+	</mat-card>
+</div>

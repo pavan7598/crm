@@ -1,0 +1,69 @@
+<div class="custom-accordion">
+
+	<div class="heading">
+		<h6>Configuration</h6>
+	</div>
+
+	<!-- <div class="row marginT30">
+		<div *ngFor="let card of percentileTypes;let i = index">
+			<div class="crm-col-lg-12">
+				<div class="pull-right">
+					<button class="btn btn-stroke" (click)="SaveSegment(i)">Save as segment</button>
+				</div>
+			</div>
+		</div>
+	</div> -->
+
+	<div class="row marginT30">
+		<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12">
+			<div class="custom-select">
+				<ng-select [items]="measureList" bindLabel="elementlabel" [(ngModel)]="common.measure" (change)="selectChange()" placeholder="Select Measure" [formControl]="metricSelect" dropdownPosition="bottom" [virtualScroll]="false">
+				</ng-select>
+			</div>
+			<span *ngIf="metricSelect.hasError('required') && Submitted" class="error">Metric required</span>
+		</div>
+
+		<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12">
+			<div class="custom-select">
+				<ng-select [items]="orders" bindLabel="label" [(ngModel)]="common.order" (change)="selectChange()" placeholder="Select Order" [formControl]="Order">
+				</ng-select>
+			</div>
+			<span *ngIf="Order.hasError('required') && Submitted" class="error">Order required</span>
+		</div>
+	</div>
+
+	<div class="row fixed-slab">
+		<div class="fixed-slab-chart">
+
+			<ul>
+				<li>
+					<div (click)="SubmitPercentile(4)" [ngClass]="{'selected':No_of_divisions == 4}">
+						<span class="numberCircle">4</span>
+					</div>
+				</li>
+				<li>
+					<div (click)="SubmitPercentile(5)" [ngClass]="{'selected':No_of_divisions == 5}">
+						<span class="numberCircle">5</span>
+					</div>
+				</li>
+				<li>
+					<div (click)="SubmitPercentile(6)" [ngClass]="{'selected':No_of_divisions == 6}">
+						<span class="numberCircle">6</span>
+					</div>
+				</li>
+				<li>
+					<div (click)="SubmitPercentile(7)" [ngClass]="{'selected':No_of_divisions == 7}">
+						<span class="numberCircle">7</span>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div *ngFor="let card of percentileTypes;let i = index">
+		<app-percentile-chart [data]="card" [i]="i" [dataSet]="percentileTypes" *ngIf="Object" [obj]="Object"></app-percentile-chart>
+	</div>
+
+	<div class="clearfix"></div>
+
+</div>

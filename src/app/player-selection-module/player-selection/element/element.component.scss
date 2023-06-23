@@ -1,0 +1,47 @@
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #4265ED;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 14px;
+    cursor: all-scroll;
+
+    mat-icon {
+        float: left;
+        color: #fff;
+    }
+}
+::ng-deep .custom{
+  background: rgb(255, 136, 0) ;
+  color: white;
+  box-shadow: none !important;
+  text-align: center !important;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 10px !important;
+}
+
+
+#div1,
+#div2 {
+    float: left;
+    width: 100px;
+    height: 35px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+#draggable {
+    width: 150px;
+    height: 150px;
+    padding: 0.5em;
+}
+::ng-deep .metric {
+    background: rgb(248, 68, 77) !important;
+}
+::ng-deep .dimention {
+    background: rgb(4, 171, 212) !important;
+}

@@ -1,0 +1,12 @@
+.chart--container-paddings {
+	padding: 0 15px 15px 0;
+	width: 49%;
+	
+
+	&:nth-child(2n+1) {
+		padding-right: 0; 
+	}
+}
+// ::ng-deep .mat-toolbar{
+// 	background: #4265ed;
+// }

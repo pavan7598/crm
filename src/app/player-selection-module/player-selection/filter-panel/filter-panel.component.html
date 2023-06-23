@@ -1,0 +1,33 @@
+<mat-card class="margin filter-condition" (dragover)="containerDragOver($event)" (drop)="containerDrop($event)">
+    <div fxLayout="row" fxLayoutAlign="start start" class="rel1" fxLayoutGap="20px" *ngIf="expressions">
+        <div fxFlex="5%" class="rel" *ngIf="expressions.conjunction" (click)="changeConjunction()">
+            <div class="abs" *ngIf="expressions.conjunction">
+                <p class="conditiontxt">
+                    {{expressions.conjunction}}
+                </p>
+                <!-- <mat-icon class="floatL" (click)="removeEle(containerIndex||0)">close</mat-icon> -->
+            </div>
+        </div>
+
+        <div [fxFlex]="expressions.conjunction?'95%':'100%'">
+            <div *ngFor="let exp of expressions.expressions;let i=index">
+                <app-filter-panel *ngIf="exp.conjunction&&exp.expressions.length>0" [expressions]="exp" (passData)="addToelements($event)"></app-filter-panel>
+                <!-- (drop)="elementDrop($event,i)" -->
+                <app-filter-element
+                (dragover)="elementDragOver($event)"
+                *ngIf="!exp.conjunction"
+                [containerid]="panelId"
+                [data]="exp"
+                (filterDrop)=elementDrop($event,i)
+                (dragstart)="addDataTransfer($event,exp,i)"
+                (dragend)="removeEle(i)"
+                (removeElement)="removeEle(i)"
+                ></app-filter-element>
+
+            </div>
+            <app-filter-element *ngIf="placeholderdata"
+                [data]="placeholderdata"
+                ></app-filter-element>
+        </div>
+    </div>
+</mat-card>

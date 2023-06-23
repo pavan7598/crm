@@ -1,0 +1,14 @@
+<div class="marginstyle">
+    <app-layer-header (onsave)="saveLayer()" [params]="_Layer.params" [currentSelection]="_Layer.connectionId"></app-layer-header>
+    <div class="panel">
+        <div fxLayout="row" class="full-height" fxLayoutAlign="start start" fxLayoutGap="5px">
+            <div fxFlex="400px" class="full-height">
+
+                <app-layer-tool-bar [objects]="_Layer.objects"></app-layer-tool-bar>
+            </div>
+            <div fxFlex="85%" class="full-height">
+                <app-layer-container [params]="_Layer.params" [onedit]="editEvent"></app-layer-container>
+            </div>
+        </div>
+    </div>
+</div>

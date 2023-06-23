@@ -1,0 +1,16 @@
+
+<div>
+	<app-segmentation-types (slab)="SelectedSlab($event)"></app-segmentation-types>
+</div>
+
+<div class="slabs marginTB50-auto">
+	<div *ngIf="SlabValue=='fixed'" class="fixed-slabs">
+		<app-fixed-slabs></app-fixed-slabs>
+	</div>
+	<div *ngIf="SlabValue=='percentile'" class="percentile-slabs">
+		<app-percentile-slabs></app-percentile-slabs>
+	</div>
+	<div *ngIf="SlabValue=='normal'" class="normal-distribution">
+		<app-normal-distribution></app-normal-distribution>
+	</div>
+</div>

@@ -1,0 +1,56 @@
+<!-- Old Code  -->
+<!--<div class="gray-color">
+  <div class="padding-set">
+      <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="5px">
+          <div fxFlex="90%">
+    <div class="schedule-select-text">
+      <div class="select-schedule-icon"><i class="material-icons  " (click)="weeklySelected()"
+        [ngClass]="{'active-check':value == 'weekly','inactive-check':value != 'weekly'}">check_circle</i></div>
+        <b class="move_top">WEEKLY</b>
+    </div>
+    <p>Your Campaign will be Schedule Weekly</p>
+    <form class="weekly-form" [formGroup]="schedule" *ngIf="value">
+      
+      <div formGroupName="week" class="weekly-checkbox">
+        <mat-checkbox *ngFor="let c of weekdays" [formControlName]="c">{{c}}</mat-checkbox>
+      </div>-->
+
+
+<div class="widget" (click)="weeklySelected()" [ngClass]="{'active-check':value == 'weekly','inactive-check':value != 'weekly'}">
+
+	<ul>
+		<li><i class="material-icons  ">check_circle</i></li>
+		<li class="marginL20">
+			<h6>WEEKLY
+				<span>Your Campaign will be Schedule Weekly</span>
+			</h6>
+		</li>
+		<li class="pull-right"><button *ngIf="value" class="btn btn-secondary" (click)="addStep($event)">Add Step</button></li>
+	</ul>
+
+</div>
+
+<form class="weekly-form" [formGroup]="schedule" *ngIf="value">
+	
+	<!-- <mat-form-field class="margin-right">
+		<input matInput placeholder="Every Days" [disabled]="false" formControlName="every">
+	</mat-form-field> -->
+	
+	<div formGroupName="week" class="weekly-checkbox">
+		<mat-checkbox *ngFor="let c of weekdays" [formControlName]="c">{{c}}</mat-checkbox>
+	</div>
+
+
+	<mat-form-field class="margin-right">
+		<input matInput [min]="minDate" [max]="maxDate" (click)="picker.open()" [matDatepicker]="picker" placeholder="From Date" formControlName="from_date">
+		<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+		<mat-datepicker #picker></mat-datepicker>
+	</mat-form-field>
+	
+	<mat-form-field class="margin-right">
+		<input matInput [min]="minDate" [max]="maxDate" (click)="picker1.open()" [matDatepicker]="picker1" placeholder="To Date" formControlName="to_date">
+		<mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+		<mat-datepicker #picker1></mat-datepicker>
+	</mat-form-field>
+	
+</form>

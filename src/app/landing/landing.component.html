@@ -1,0 +1,98 @@
+<mat-progress-bar *ngIf="loading" class="gap" mode="query"></mat-progress-bar>
+<app-header (side)="sideMenu($event)"></app-header>
+
+<mat-drawer-container autosize class="container">
+	<mat-drawer #drawer class="sidenav-container" mode="side" position="end">
+		<!-- <div *ngIf="campaignCreation" class="">
+			<div class="campaign--predictions">
+				<ul>
+					<li>
+						<i class="mdi mdi-circle-edit-outline"></i>
+					</li>
+					<li>
+						<h6>Predicted ROI
+							<span>For the selected segmentation</span>
+						</h6>
+					</li>
+				</ul>
+			</div>
+			<div class="campaign--prediction-values">
+				<div class="campaign--prediction-value-header">
+					<h6>COST<span>Cost spent on this campaign</span></h6>
+				</div>
+				<div class="campaign--prediction-value-numbers">
+					<h6><span>$</span>287<span>mn</span></h6>
+				</div>
+			</div>
+
+			<div class="campaign--prediction-values">
+				<div class="campaign--prediction-value-header">
+					<h6>RETURN ON INVESTMENT - ROI<span>Cost spent on this campaign</span></h6>
+				</div>
+				<div class="campaign--prediction-value-numbers">
+					<h6><span>$</span>189<span>mn</span></h6>
+				</div>
+
+				<div class="addition">
+					<i class="mdi mdi-plus"></i>
+				</div>
+
+				<div class="campaign--prediction-value-numbers">
+					<h6><span>$</span>98<span>mn</span></h6>
+				</div>
+			</div>
+
+			<mat-divider></mat-divider>
+
+			<div class="campaign--prediction-values">
+				<div class="campaign--prediction-value-header">
+					<h6>TOTAL PERCENTAGE OF ROI<span>Return On Investment</span></h6>
+				</div>
+				<div class="campaign--prediction-value-numbers">
+					<ul class="total-value">
+						<li>
+							<div class="down growth">
+								<i class="mdi mdi-debug-step-out"></i>
+							</div>
+						</li>
+						<li>
+							<h6>26.3<span>%</span></h6>
+							<p>Increased by</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</div> -->
+
+		<app-roi-data-summary [show]="campaignCreation || campaignSummary"></app-roi-data-summary>
+
+		<div *ngIf="segmentation">
+			<div class="segmentation-filter">
+
+				<div class="campaign--predictions">
+					<ul>
+						<li>
+							<i class="mdi mdi-circle-edit-outline"></i>
+						</li>
+						<li>
+							<h6>Segmentation Filter
+								<span>Select filters</span>
+							</h6>
+						</li>
+					</ul>
+				</div>
+
+				<app-segmentation-filter [returnelements]="returnelements" [slb]="salb">
+				</app-segmentation-filter>
+
+				<div class="marginTB30-auto">
+					<button class="btn btn-stroke-black marginR20" (click)="fetch()">Fetch</button>
+					<button class="btn btn-black" (click)="customsegment(false)">Cancel</button>
+				</div>
+			</div>
+		</div>
+	</mat-drawer>
+	
+	<router-outlet></router-outlet>
+</mat-drawer-container>

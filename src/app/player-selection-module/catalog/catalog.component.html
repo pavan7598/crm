@@ -1,0 +1,78 @@
+<div class="container height100-cent">
+
+	<div class="content--header">
+		<div class="row">
+			<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12">
+				<h5>Customer extraction
+					<span>Query Selection Catalog</span>
+				</h5>
+
+			</div>
+			<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12 text-r display-flex">
+				<div class="actions"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row marginB30">
+		<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12"></div>
+
+		<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12 text-r">
+
+			<button class="btn btn-primary" (click)="openNewSelection('Player Selection')">CUSTOMER EXTRACTION</button>
+			<button class="btn btn-primary marginR0" (click)="openNewSelection('Segementation')">SEGMENTATION</button>
+
+		</div>
+
+	</div>
+
+	<div class="row">
+		<div class="crm-col-lg-12 crm-col-md-12 crm-col-sm-12">
+			<div class="custom-table">
+				<mat-paginator [pageSizeOptions]="[ 10, 25, 100]" showFirstLastButtons></mat-paginator>
+				<table mat-table [dataSource]="dataSource" matSort>
+
+					<ng-container matColumnDef="name">
+						<th mat-header-cell *matHeaderCellDef mat-sort-header> NAME </th>
+						<td mat-cell *matCellDef="let row"> {{row.name}} </td>
+					</ng-container>
+
+					<ng-container matColumnDef="queryowner">
+						<th mat-header-cell *matHeaderCellDef mat-sort-header> Owner </th>
+						<td mat-cell *matCellDef="let row"> {{row.query_owner}} </td>
+					</ng-container>
+
+					<ng-container matColumnDef="type">
+						<th mat-header-cell *matHeaderCellDef mat-sort-header> Type </th>
+						<td mat-cell *matCellDef="let row"> {{row.type}} </td>
+					</ng-container>
+
+					<!-- <ng-container matColumnDef="color">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Color </th>
+              <td mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.color}} </td>
+            </ng-container> -->
+					<ng-container matColumnDef="updatedts">
+						<th mat-header-cell *matHeaderCellDef mat-sort-header> Updated On </th>
+						<td mat-cell *matCellDef="let row"> {{row.updatedtimestamp |date}} </td>
+					</ng-container>
+
+					<ng-container matColumnDef="ceatedts">
+						<th mat-header-cell *matHeaderCellDef mat-sort-header> Created On </th>
+						<td mat-cell *matCellDef="let row"> {{row.creationtimestamp |date}} </td>
+					</ng-container>
+					<ng-container matColumnDef="action">
+						<th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+						<td mat-cell *matCellDef="let row">
+							<button mat-button color="primary" (click)="emmitVal('edit',row)">Edit</button>
+							|<button mat-button color="primary" [disabled]="row.linkedToCampaign" (click)="deleteQuery('delete',row)">Delete</button></td>
+					</ng-container>
+
+					<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+					<tr mat-row *matRowDef="let row; columns: displayedColumns;">
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+</div>

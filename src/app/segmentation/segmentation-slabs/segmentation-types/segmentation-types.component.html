@@ -1,0 +1,20 @@
+<div class="row segmentation-types">
+	<div class="crm-col-lg-4">
+		<mat-card (click)="SelectSlab('fixed')" [ngClass]="{'active': segmentType=='fixed'}">
+			<span class="icon-hold"><i class="mdi mdi-bullseye-arrow"></i></span>
+			<h6>Fixed Slabs</h6>
+		</mat-card>
+	</div>
+	<div class="crm-col-lg-4">
+		<mat-card (click)="SelectSlab('percentile')" [ngClass]="{'active': segmentType=='percentile'}">
+			<span class="icon-hold"><i class="mdi mdi-percent"></i></span>
+			<h6>Percentile</h6>
+		</mat-card>
+	</div>
+	<div class="crm-col-lg-4">
+		<mat-card (click)="SelectSlab('normal')" [ngClass]="{'active': segmentType=='normal'}">
+			<span class="icon-hold"><i class="mdi mdi-database-check"></i></span>
+			<h6>Normal Distribution</h6>
+		</mat-card>
+	</div>
+</div>

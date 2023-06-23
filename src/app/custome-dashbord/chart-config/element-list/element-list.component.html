@@ -1,0 +1,13 @@
+<div fxLayout="column" class="outline" *ngIf="!type">
+    <button [draggable]="isDragable" (dragstart)="elementDrag($event)" mat-raised-button
+        [ngClass]="{'metric':data.elementtype!='Dimension','dimention':data.elementtype=='Dimension'}">
+        {{data.elementlabel}}
+    </button>
+</div>
+<div fxLayout="column" class="outline" *ngIf="type">
+        <button [draggable]="isDragable" (dragstart)="elementDrag($event)" mat-raised-button
+            [ngClass]="{'metric':data.elementtype!='Dimension','dimention':data.elementtype=='Dimension'}">
+            {{data.elementlabel}}
+            <mat-icon (click)="delete(index)" >remove_circle_outline </mat-icon>
+        </button>
+    </div>

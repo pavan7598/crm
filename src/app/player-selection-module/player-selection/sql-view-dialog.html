@@ -1,0 +1,18 @@
+<div class="ck-editor">
+	<div class="modal-header">
+		<h6>Preview Sql</h6>
+
+		<div (click)="callServiceToCopy()" class="icon-top-right">
+			<mat-icon class="file_copy">content_copy</mat-icon>
+		</div>
+	</div>
+
+	<div class="modal-content">
+		<code [innerHTML]="data.sql">
+			<!-- {{data.sql}} -->
+		</code>
+	</div>
+	<div class="modal-footer">
+		<div class="footer text-r marginT30"></div>
+	</div>
+</div>

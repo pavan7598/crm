@@ -1,0 +1,57 @@
+<div class="pop-head">
+    <h3>Create Elements</h3>
+</div>
+<div class="pop-body">
+  <form class="example-container" [formGroup]="addElementForm">
+    <div fxLayoutGap="10px">
+      <mat-form-field class="text-box">
+        <input matInput placeholder="element name" formControlName="elementname">
+        <mat-error *ngIf="addElementForm.controls.elementname.invalid">enter element name</mat-error>
+      </mat-form-field>
+      <mat-form-field class="text-box">
+        <input matInput placeholder="mouse over text" formControlName="mouseovertext">
+        <mat-error *ngIf="addElementForm.controls.mouseovertext.invalid">enter mouse over text</mat-error>
+      </mat-form-field>
+      <mat-form-field class="click-box">
+        <mat-select placeholder="Create in collection" formControlName="CollectionName">
+          <mat-option *ngFor="let obj of objects" [value]="obj">
+            {{obj.elementLabel}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="addElementForm.controls.CollectionName.invalid">Select Collection name</mat-error>
+      </mat-form-field>
+      <mat-form-field class="click-box">
+        <mat-select placeholder="Choose Function" formControlName="chooseFunction">
+          <mat-option *ngFor="let aggrigation of aggrigations" [value]="aggrigation.value">
+            {{aggrigation.viewValue}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="addElementForm.controls.chooseFunction.invalid">Select function name</mat-error>
+      </mat-form-field>
+
+    </div>
+    <div fxLayoutGap="5px">
+
+        <mat-checkbox formControlName="visible">is visible</mat-checkbox>
+        <mat-checkbox formControlName = "fixedElement">is Fixed element</mat-checkbox>
+        <mat-checkbox formControlName = "Cast">Cast As</mat-checkbox>
+
+
+        <mat-checkbox formControlName = "dispatchElement" *ngIf="aggrigations.length==1&&selectedElem.data_type!='date'">is Email element</mat-checkbox>
+
+    </div>
+    <mat-form-field *ngIf="addElementForm.get('Cast').value" class="click-box">
+
+        <mat-select placeholder="Create in collection" formControlName="CastValue">
+          <mat-option *ngFor="let cst of castObjects" [value]="cst.value">
+            {{cst.viewValue}}
+          </mat-option>
+        </mat-select>
+
+      </mat-form-field>
+  </form>
+</div>
+<div fxLayout="row" fxLayoutAlign="end center" class="pop-footer">
+  <button mat-button (click)="create(addElementForm)" [disabled]="!addElementForm.valid">Create</button>
+  <button mat-button (click)="close()">Cancel</button>
+</div>

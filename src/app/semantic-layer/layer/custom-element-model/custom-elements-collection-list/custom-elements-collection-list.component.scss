@@ -1,0 +1,56 @@
+@import "./src/assets/scss/variables.scss";
+
+app-custom-element {
+    width: 100%
+}
+
+h3 {
+    background-color: #3a3e52;
+    padding: 10px 20px;
+    color: #fff;
+    font-family: 'Lato-Bold';
+    font-size: 14px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.test {
+    padding: 0px 0px 5px 0px;
+}
+
+.mat-expansion-indicator {
+    color: #3a3e52 !important;
+}
+
+.mat-expansion-panel {
+    margin: 0;
+    box-shadow: none;
+}
+
+.mat-expansion-panel-header {
+    font-family: $font-primary-Bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 14px;
+
+    &:hover {
+        background: transparent !important;
+    }
+}
+
+.mat-expansion-indicator::after, 
+.mat-expansion-panel-header-description {
+    color: rgba(0,0,0,.54) !important;
+}
+
+.mat-expansion-panel-content {
+    .mat-raised-button {
+        border-radius: inherit !important;
+    }
+}
+.mat-accordion {
+    height: 560px;
+    overflow-y: auto;
+    width: 100%;
+    display: block;
+}

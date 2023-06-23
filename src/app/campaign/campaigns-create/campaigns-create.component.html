@@ -1,0 +1,75 @@
+<div class="container">
+	<div class="content--header">
+		<div class="row">
+			<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12">
+				<h5>CAMPAIGNS - CREATE
+					<span>CREATE AND VIEW YOUR CAAMPAIGNS</span>
+				</h5>
+
+			</div>
+			<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12 text-r display-flex">
+				<!--<div class="actions">
+					<a href="JavaScript:Void(0)" class=""><i class="mdi mdi-view-dashboard"></i> Summary</a>
+				</div>-->
+			</div>
+		</div>
+	</div>
+
+	<mat-horizontal-stepper #stepper linear class="campaign--create">
+		<mat-step [stepControl]="campaignObj.controls.compose">
+			<ng-template matStepLabel>
+				<ul>
+					<li><i class="mdi mdi-circle-edit-outline"></i></li>
+					<li>
+						<h6>COMPOSE
+							<span>SET YOUR GOAL</span>
+						</h6>
+					</li>
+				</ul>
+			</ng-template>
+			
+			<app-compose [campaignObj]="campaignObj.controls.compose" ></app-compose>
+			
+			<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12 text-c float-none marginB50-auto">
+				<button mat-flat-button class="btn btn-primary" matStepperNext (click)="ComposeForm('compose')" >NEXT <i class="mdi mdi-arrow-right"></i></button>
+			</div>
+			
+		</mat-step>
+		<mat-step [stepControl]="campaignObj.controls.target_users">
+			<ng-template matStepLabel>
+				<ul>
+					<li><i class="mdi mdi-account-multiple-check"></i></li>
+					<li>
+						<h6>TARGET USERS
+							<span>SELECT YOUR USERS</span>
+						</h6>
+					</li>
+				</ul>
+			</ng-template>
+			<app-target-users [targetusers]="campaignObj.controls.target_users" [totalCampainObj]="campaignObj.value" (segmentData)="SelectedSegmentData($event)"></app-target-users>
+			<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12 text-c float-none marginB50-auto">
+				<button mat-flat-button class="btn btn-primary" matStepperPrevious>BACK</button>
+				<button mat-flat-button class="btn btn-primary" matStepperNext (click)="ComposeForm('target')" >NEXT</button>
+			</div>
+		</mat-step>
+		<mat-step>
+			<ng-template matStepLabel>
+				<ul>
+					<li><i class="mdi mdi-call-split"></i></li>
+					<li>
+						<h6>SELECT CONTROL GROUP
+							<span>CONTROL YOUR CAMPAIGN</span>
+						</h6>
+					</li>	
+				</ul>
+			</ng-template>
+			<app-control-group [campaignObj]="campaignObj.controls.control_group" [segData]="selectedData"></app-control-group>
+			<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12 text-c float-none marginB50-auto">
+				<button mat-flat-button class="btn btn-primary" matStepperPrevious>BACK</button>
+				<button mat-flat-button class="btn btn-primary" (click)="finish()">FINISH</button>
+			</div>
+		</mat-step>
+	</mat-horizontal-stepper>
+</div>
+
+<app-footer></app-footer>

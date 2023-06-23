@@ -1,0 +1,35 @@
+<div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="24px" class="dilog-block">
+	<!-- <button mat-raised-button  (click)="deleteJoin()" ><mat-icon>delete_forever</mat-icon> </button> -->
+	<div class="fullWT" style="margin-bottom: 30px;">
+		<mat-icon mat-tool matTooltip="Delete Join" (click)="deleteJoin()">delete</mat-icon>
+
+	</div>
+	<div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="10px" class="fullWT">
+		<div class="move-top" fxFlex="30%">
+			<h5>Source Table</h5>
+			{{source}}
+		</div>
+		<div fxFlex="40%">
+			<div fxLayout="row" fxLayoutAlign="start start" class="fullWT">
+				<div class="" fxFlex="33%">
+					<button mat-raised-button (click)="join('left')" [ngClass]="{'selected': type ==='left'}">Left</button>
+				</div>
+				<div class="" fxFlex="33%">
+					<button mat-raised-button (click)="join('default')" [ngClass]="{'selected': type ==='default'}">Inner</button>
+				</div>
+				<div class="" fxFlex="33%">
+					<button mat-raised-button (click)="join('right')" [ngClass]="{'selected': type  ==='right'}">Right</button>
+				</div>
+			</div>
+		</div>
+		<div class="move-top" fxFlex="30%">
+			<h5>Target Table</h5>
+			{{target}}
+		</div>
+		<div class="icon-top-right">
+			<button class="btn" [mat-dialog-close]><i  class="material-icons">close</i></button>
+		</div>
+
+	</div>
+
+</div>

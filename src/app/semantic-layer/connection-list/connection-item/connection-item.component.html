@@ -1,0 +1,47 @@
+<mat-card>
+<div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="10px">
+<div class="item" fxFlex="7%">
+
+<div class="bigfont">{{connectionObject.name}}</div>
+<div fxLayout="column" fxLayout.xs="row" fxLayoutAlign="start start" >
+<div class="bigfont small-size">created on</div>
+<div class="boldfont">{{test |date}}</div>
+</div>
+</div>
+<!--<mat-divider [vertical]="true" [inset]="true"></mat-divider>-->
+<div fxFlex="93%">
+ <div class="center" matTooltip="Click to edit the connection"   matTooltipClass="testClass"> {{connectionObject.type}}</div>
+  <!--<mat-divider  [inset]="true"></mat-divider>-->
+   <div class="divcontent" fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="5px">
+
+
+
+  <div calss="connection" fxFlex="23%" fxFlexAlign="end">
+    <div class="title">DATABASE</div>
+    <div class="content">{{connectionObject.params[0].connection.database}}</div>
+  </div>
+  <div calss="connection" fxFlex="33%" fxFlexAlign="end">
+      <div class="title">HOST</div>
+      <div class="content">{{connectionObject.params[0].connection.host}}</div>
+    </div>
+    <div calss="connection" fxFlex="33%" fxFlexAlign="end">
+        <div class="title">PORT</div>
+        <div class="content">{{connectionObject.params[0].connection.port}}</div>
+      </div>
+  <!-- <div calss="connection">
+      <div class="title" fxFlex="25%" >HOST</div>
+      <div class="content">{{connectionObject.params[0].connection.host}}</div>
+    </div>
+    <div fxFlex="25%">
+
+    </div>
+    <div calss="connection" fxFlex="25%">
+        <div class="title">PORT</div>
+        <div class="content">{{connectionObject.params[0].connection.port}}</div>
+      </div> -->
+    </div>
+
+</div>
+
+</div>
+</mat-card>

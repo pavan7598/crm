@@ -1,0 +1,14 @@
+<ul class="check-ul">
+    <li>Select a Channel</li>
+    <li *ngFor="let ch of controlGroup;let i = index">
+  <div class="row">
+      <div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-6">
+      <mat-checkbox color="primary" [(ngModel)]="ch.value" (change)="selected(ch,i)">{{ch.type}}</mat-checkbox>
+   </div>
+      <!-- <mat-slider *ngIf="campaignObj.control_group.channel[ch.type]"></mat-slider> -->
+      <div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-6">
+      <ng5-slider *ngIf="ch.value" (userChangeEnd)="sliderChange(ch)" [(ngModel)]="ch.percentage" [options]="ch.options"></ng5-slider>
+  </div>
+    </div>
+    </li>
+  </ul>

@@ -1,0 +1,15 @@
+<div ng-if="data">
+<button [draggable]="isDragable" (dragstart)="elementDrag($event)"
+ class="test"
+
+ [ngClass]="{'metric':data.elementtype=='Metrics','dimention':data.elementtype=='Dimension','custom':data.elementtype=='Custom'}">
+ {{data.elementlabel}}
+
+
+ <mat-icon *ngIf="showRemove&&(!data.fixedelement||!canlock)" (click)="delete(index)" >remove_circle_outline </mat-icon>
+ <mat-icon *ngIf="showRemove&&data.fixedelement&&canlock" >lock </mat-icon>
+</button>
+</div>
+<!-- <app-element [isDragable]="true" fxFlex="100%" [canlock]="a" *ngFor="let element of collection.elements;let j=index" [data]="element"></app-element> -->
+
+

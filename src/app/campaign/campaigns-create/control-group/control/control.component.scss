@@ -1,0 +1,98 @@
+@import "./src/assets/scss/variables.scss";
+
+.head-cont{
+    ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        li:first-child{
+            color: #F4F5F8;
+            font-size:12px;
+            margin-bottom: 7%;
+        }
+        li:last-child{
+            color: #F4F5F8;
+            font-size: 16px;
+        }
+    } 
+}
+
+
+
+
+.body-cont{
+    ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        ::ng-deep ng5-slider &.ng5-slider-bubble.ng5-slider-limit {
+            color: #ffffff !important;
+        }
+        
+        ::ng-deep ng5-slider &.ng5-slider-bubble {
+        color: #ffffff !important;
+        }
+        
+        li:last-child{
+            font-size: 12px;
+            color:#FFFFFF
+        }
+    }
+}
+
+
+::ng-deep{
+    .body-cont{
+        // .mat-slider-horizontal{
+        //     height: 35px;
+        // }
+        .mat-slider-min-value:not(.mat-slider-thumb-label-showing) .mat-slider-thumb{
+            background-color: #FFC527;
+            border: 2px solid #FFFFFF;
+        }
+        .mat-accent .mat-slider-thumb, .mat-accent .mat-slider-thumb-label, .mat-accent .mat-slider-track-fill{
+            background-color: #FFC527;
+            // border: 1px solid #FFFFFF;
+        }
+        .mat-slider-horizontal .mat-slider-track-background{
+            height: 6px;
+            background-color: #ffff;
+        }
+        .mat-slider-horizontal .mat-slider-track-wrapper{
+            height: 6px;
+        }
+        .mat-slider-thumb{
+            right: -14px!important;
+            bottom: -14px!important;
+            border: 2px solid #ffff !important;
+            width: 25px!important;
+            height: 25px!important;
+        }
+        .mat-slider-horizontal .mat-slider-ticks {
+            height: 6px;
+            border-radius: 5px;
+        }
+        .mat-slider-horizontal .mat-slider-ticks-container {
+            height: 6px;
+            border-radius: 5px;
+        }
+        .mat-slider-horizontal .mat-slider-track-fill {
+            height: 6px;
+            border-radius: 5px;
+        }
+        .mat-slider-horizontal .mat-slider-track-background {
+            height: 6px;
+            border-radius: 5px;
+        }
+        .mat-slider-horizontal .mat-slider-track-wrapper {
+            height: 6px;
+            border-radius: 5px;
+        }
+        .mat-slider-horizontal .mat-slider-wrapper {
+            height: 2px;
+            top: 23px;
+            left: 8px;
+            right: 8px;
+        }
+    }
+}

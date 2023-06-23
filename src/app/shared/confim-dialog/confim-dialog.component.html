@@ -1,0 +1,14 @@
+<div mat-dialog-title>
+	<h6>
+		<i class="mdi mdi-alert-circle"></i>
+		<span>Alert</span>
+	</h6>
+</div>
+<div mat-dialog-content>
+    {{data.name}}
+</div>
+<div mat-dialog-actions>
+  <button class="btn btn-stroke-black" (click)="onNoClick(true)">CANCEL</button>
+  <button class="btn btn-black" (click)="onNoClick(false)" cdkFocusInitial>OK</button>
+</div>
+

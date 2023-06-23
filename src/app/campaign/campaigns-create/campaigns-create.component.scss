@@ -1,0 +1,153 @@
+@import "./src/assets/scss/variables.scss";
+
+.mat-stepper-horizontal,
+.mat-stepper-vertical {
+	border-radius: 5px;
+	border: 1px solid $greyish-grey-cement;
+}
+
+.campaign--create {
+	::ng-deep .mat-horizontal-content-container {
+		min-height: 500px;
+	}
+	
+	button {
+		&.btn-primary {
+			min-width: 150px;
+			margin: 0 15px;
+		}
+	}
+
+	::ng-deep .mat-horizontal-stepper-header-container {
+		font-family: $font-primary;
+		font-size: ($font-size-base +4);
+		text-transform: capitalize;
+		letter-spacing: .5px;
+
+		.mat-step-header {
+			border-bottom: 1px solid #D6D6D6;
+			background-color: #F8F8F8;
+			width: 33.33%;
+			position: relative;
+			transition: all ease 1s;
+
+			.mat-step-icon {
+				background-color: #ADB7C5;
+				transition: all ease 1s;
+				margin-left: 10%;
+				visibility: hidden;
+			}
+
+			.mat-step-label {
+				color: #ADB7C5;
+				transition: all ease 1s;
+
+
+
+				ul {
+					margin: 0;
+					padding: 10px 0 0;
+
+					li {
+						margin: 0;
+						padding: 0;
+						list-style: none;
+						display: inline-block;
+
+						&:first-child {
+							font-size: ($font-size-base + 20);
+							margin-right: 10px;
+							color: $bluish-light-grey;
+						}
+
+						&:last-child {
+							color: $bluish-light-grey;
+							h6 {
+								font-size: ($font-size-base + 2);
+								font-family: $font-primary-SemiBold;
+
+								span {
+									font-size: ($font-size-base - 2);
+									font-family: $font-primary-Light;
+									display: block;
+								}
+							}
+						}
+					}
+				}
+
+				&.mat-step-label-selected {
+					ul {
+						li {
+							&:first-child {
+								color: $greyish-black;
+							}
+
+							&:last-child {
+								color: $greyish-black;
+							}
+						}
+					}
+				}
+			}
+
+			&:first-child {
+				border-top-left-radius: 5px;
+			}
+
+			&:last-child {
+				border-top-right-radius: 5px;
+			}
+
+			&[ng-reflect-selected="true"] {
+				background-color: $white;
+
+				&:after {
+					content: '';
+					width: 100%;
+					height: 2px;
+					display: block;
+					position: absolute;
+					bottom: 0;
+					background-color: $bluish-tints-mud;
+					left: 0;
+				}
+			}
+
+			.mat-step-icon-selected {
+				background-color: $greyish-black;
+			}
+
+			.mat-step-label-selected {
+				color: $greyish-black;
+			}
+
+			.mat-step-header .mat-step-icon-selected,
+			.mat-step-header .mat-step-icon-state-done,
+			.mat-step-header .mat-step-icon-state-edit {
+				background-color: $bluish-tints-mud;
+				transition: all ease 1s;
+				margin-left: 35%;
+			}
+		}
+
+		.mat-stepper-horizontal-line {
+			display: none;
+		}
+	}
+
+	::ng-deep .mat-step-header .mat-step-icon-selected,
+	::ng-deep .mat-step-header .mat-step-icon-state-done,
+	::ng-deep .mat-step-header .mat-step-icon-state-edit {
+		background-color: $bluish-tints-mud;
+		transition: all ease 1s;
+		margin-left: 35%;
+	}
+}
+
+
+
+@import "src/assets/scss/responsive.scss";
+
+
+

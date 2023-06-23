@@ -1,0 +1,40 @@
+<form [formGroup]="ProfileForm" (ngSubmit)="upDateprofile()">
+  <mat-form-field>
+    <input matInput placeholder="your name" formControlName="username">
+    <mat-error *ngIf="ProfileForm.controls.username.invalid">Enter name</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="your email" formControlName="email">
+    <mat-error *ngIf="ProfileForm.controls.email.invalid">Enter email</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="your password" formControlName="password">
+    <mat-error *ngIf="ProfileForm.controls.password.invalid">Enter password</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="your phonenumber" formControlName="phonenumber">
+    <mat-error *ngIf="ProfileForm.controls.phonenumber.invalid">Enter phonenumber</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="your name" formControlName="role">
+    <mat-error *ngIf="ProfileForm.controls.role.invalid">Enter role</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="your age" formControlName="age">
+    <mat-error *ngIf="ProfileForm.controls.age.invalid">Enter name</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="your gender" formControlName="gender">
+    <mat-error *ngIf="ProfileForm.controls.gender.invalid">Enter gender</mat-error>
+  </mat-form-field>
+  <div>
+    <input type="file" (change)="fileChangeEvent($event)" formControlName="profileImage" />
+  </div>
+  <button mat-button>Update profile</button>
+</form>
+
+<image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true" [aspectRatio]="4 / 3"
+  [resizeToWidth]="128" format="png" (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded()"
+  (cropperReady)="cropperReady()" (loadImageFailed)="loadImageFailed()" style="width:400px"></image-cropper>
+
+<img [src]="croppedImage" />

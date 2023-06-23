@@ -1,0 +1,33 @@
+@import "./src/assets/scss/variables.scss";
+
+.btn {
+	margin: 0 15px;
+}
+
+table {
+	width: 100%;
+}
+
+.mat-form-field {
+	font-size: 14px;
+	width: 100%;
+}
+
+td,
+th {
+	width: 21%;
+}
+
+.fullWT {
+	width: 100%;
+}
+
+.margin {
+	margin-top: 20px;
+}
+
+/*td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
+  padding: 0;1
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}*/

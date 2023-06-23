@@ -1,0 +1,50 @@
+<div class="ck-editor">
+	<div class="modal-header">
+		<h6>Link your database</h6>
+	</div>
+	<div class="icon-top-right">
+		<button class="btn" [mat-dialog-close]><i  class="material-icons">close</i></button>
+	</div>
+
+	<div class="modal-content">
+		<div class="custom-table">
+			<mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator>
+			<table mat-table [dataSource]="dataSource" matSort>
+				<ng-container matColumnDef="name">
+					<th mat-header-cell *matHeaderCellDef mat-sort-header> NAME </th>
+					<td mat-cell *matCellDef="let row"> {{row.name}} </td>
+				</ng-container>
+				<ng-container matColumnDef="queryowner">
+					<th mat-header-cell *matHeaderCellDef mat-sort-header> Owner </th>
+					<td mat-cell *matCellDef="let row"> {{row.query_owner}} </td>
+				</ng-container>
+				<ng-container matColumnDef="type">
+					<th mat-header-cell *matHeaderCellDef mat-sort-header> Type </th>
+					<td mat-cell *matCellDef="let row"> {{row.type}} </td>
+				</ng-container>
+				<ng-container matColumnDef="updatedts">
+					<th mat-header-cell *matHeaderCellDef mat-sort-header> Updated On </th>
+					<td mat-cell *matCellDef="let row"> {{row.updatedtimestamp |date}} </td>
+				</ng-container>
+				<ng-container matColumnDef="ceatedts">
+					<th mat-header-cell *matHeaderCellDef mat-sort-header> Created On </th>
+					<td mat-cell *matCellDef="let row"> {{row.creationtimestamp |date}} </td>
+				</ng-container>
+				<ng-container matColumnDef="action">
+					<th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+					<td mat-cell *matCellDef="let row">
+						<button mat-button color="primary" [mat-dialog-close]="row">Link</button>
+					</td>	
+				</ng-container>
+				<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+				<tr mat-row *matRowDef="let row; columns: displayedColumns;">
+				</tr>
+			</table>
+		</div>
+
+		<div class="modal-footer">
+			<div class="footer text-r marginT30"></div>
+		</div>
+
+	</div>
+</div>

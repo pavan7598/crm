@@ -1,0 +1,40 @@
+@import "./src/assets/scss/variables.scss";
+
+::ng-deep mat-card {
+    box-shadow: 0 1px 5px rgba(0,0,0,.05) !important;
+    transition: all ease .2s;
+    &:hover {
+//        box-shadow: 0 1px 15px rgba(61, 154, 255, 0.4) !important;
+        box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1) !important;
+        transition: all ease .4s;
+    }
+}
+
+::ng-deep .mat-paginator {
+    background-color: transparent;
+}
+
+
+.full-width {
+    width: 100%;
+}
+
+.test {
+    /*justify-content: flex-end;
+    display: flex;*/
+    background: #159eda;
+    border-radius: 50px;
+    color: #fff;
+    box-shadow: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-family: Lato-Regular;
+    max-width: 200px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.flex-margin {
+    margin: 20px 0px;
+    max-width: inherit;
+}

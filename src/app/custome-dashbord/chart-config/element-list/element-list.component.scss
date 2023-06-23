@@ -1,0 +1,15 @@
+.outline{
+    padding-bottom:5px; 
+    }
+    mat-icon {
+        float: right;
+        margin-top: 6px;
+        margin-right: -2px;
+        color: #fff;
+    }
+    ::ng-deep .metric {
+        background: rgb(248, 68, 77) !important;
+    }
+    ::ng-deep .dimention {
+        background: rgb(4, 171, 212) !important;
+    }

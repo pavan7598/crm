@@ -1,0 +1,34 @@
+<section>
+  <div>
+    <div fxLayout="row">
+      <button class="btn md-btn-default" mat-raised-button (click)="apply()">Apply</button>
+      <button class="btn md-btn-default close" mat-raised-button [mat-dialog-close] (click)="close()">Close</button>
+    </div>
+    <br>
+    <div fxLayout="row" fxLayoutGap="20px">
+      <div fxFlex="20%" class="outline">
+        <app-element-list [isDragable]="true" *ngFor="let element of returnElements;let j=index" [data]="element">
+        </app-element-list>
+      </div>
+      <div fxFlex="20%">
+        <app-drag-elemts *ngIf="conf" [conflist]="conf" (dragConfig)="dragconfig($event)"></app-drag-elemts>
+      </div>
+      <div fxFlex="60%" fxLayout="column" fxLayoutGap="50px">
+        <div class="outline">
+          <!-- <app-select-chart (chartType)="receivecharttype($event)" [prevdata]="dragdata"></app-select-chart> -->
+          <app-select-chart (chartType)="receivecharttype($event)"></app-select-chart>
+        </div>
+         <!-- <div *ngIf="!opt && !opt.series"> -->
+           <!-- </div> -->
+           <div *ngIf="opt">
+              <!-- <mat-progress-bar mode="indeterminate" *ngIf="!opt.series"></mat-progress-bar> -->
+            <!-- <app-chart-options *ngIf="opt && opt.series" [option]="dragdata" [dataset]="dataset" (echartOptions)="echartOptions($event)"></app-chart-options> -->
+            <div echarts [options]="opt" *ngIf="opt.tooltip" style="height:450px;overflow:auto;"></div>
+            <div *ngIf="!opt.tooltip" [innerHtml]="opt.series"></div>
+        </div> 
+       
+      </div>
+      
+    </div>
+  </div>
+</section>

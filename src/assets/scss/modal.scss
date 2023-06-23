@@ -1,0 +1,59 @@
+//@import "/assets/scss/variables.scss";
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.7);
+  &.blowUpModal {
+    transform: scale(1);
+    .modal-container {
+      animation: blowUpModal .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+    }
+  }
+  .modal-container {
+    margin: auto;
+    max-width: 100%;
+    width: auto ;
+    display: inline-block;
+
+
+    .modal-body {
+/*      background-color: $white;
+      border-radius: 8px;
+      padding: 20px;*/
+             max-height: calc(100vh - 100px);
+    overflow-y: auto;  height: 100%;
+    min-height: 100%;
+    }
+    .close-modal {
+      color: $bg-grey;
+      font-size: 18px;
+      font-weight: bold;
+      width: 100%;
+      text-align: right;
+      padding: 0px 10px 5px 0;
+      &:hover,
+      &:focus {
+        color: $white;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+  }
+  @keyframes blowUpModal {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+}

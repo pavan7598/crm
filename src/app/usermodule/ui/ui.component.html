@@ -1,0 +1,127 @@
+<!-- <p>
+  ui works!
+</p> -->
+<mat-card>
+    <mat-card-content>
+        <section>
+          <mat-checkbox color="primary" [(ngModel)]="checked">Checked</mat-checkbox>
+          <mat-checkbox class="disable" color="primary" [(ngModel)]="checked">Checked</mat-checkbox>
+        </section>
+        <section>
+
+        </section>
+    </mat-card-content>
+</mat-card>
+<mat-card class="page">
+  <div class="vo">VIEWS ONLY</div>
+  <mat-paginator class="pn" [length]="length"
+                [pageSize]="pageSize"
+                [pageSizeOptions]="pageSizeOptions"
+                (page)="pageEvent = $event">
+  </mat-paginator>
+  
+  <div *ngIf="pageEvent">
+    <div class="vo">SHOWING <span>{{pageEvent.pageSize}}</span> of <span>{{pageEvent.length}}</span></div>
+  </div>
+    
+  <div *ngIf="!pageEvent">
+    <div class="vo">SHOWING <span>{{pageSize}}</span> of <span>{{length}}</span></div>
+  </div>
+</mat-card>  
+
+
+<mat-card>
+  <mat-slide-toggle 
+        [checked]="checked"
+        (change)="gh()"
+        [disabled]="disabled">
+      Slide me!
+  </mat-slide-toggle>
+</mat-card>
+
+
+<mat-card>
+  <mat-radio-button class="mrb">
+      rbutton  
+  </mat-radio-button>
+  <mat-radio-button class="mrb disable">
+      rbutton  
+  </mat-radio-button>
+</mat-card>
+
+
+
+
+
+<mat-card>
+  <mat-slider
+  #ele
+    class="msr"
+    [disabled]="disabled"
+    [invert]="invert"
+    [max]="max"
+    [min]="min"
+    [step]="step"
+    [thumbLabel]="thumbLabel"
+    [tickInterval]="tickInterval"
+    [(ngModel)]="value"
+    [vertical]="vertical">
+  </mat-slider>
+</mat-card>
+<mat-card>
+<span class='number-wrapper' >
+  <!-- <i class="material-icons up-i" (click)="increase()">expand_less</i>
+  <i id="icon" class="material-icons dn-i" (click)="decrease()">expand_more</i> -->
+  <input type="number" [(ngModel)]="numberSpin" name="value" appNumberSpinner   />
+</span>
+</mat-card>
+<mat-card>
+  <div class="tooltip">Hover over me
+    <span class="tooltiptext black">Tooltip text</span>
+  </div>
+  <div class="tooltip">Hover over me
+    <span class="tooltiptext blue">Tooltip text</span>
+  </div>
+  <div class="tooltip">Hover over me
+    <span class="tooltiptext white">Tooltip text</span>
+  </div>
+</mat-card>
+
+
+
+<mat-card>
+  <div class="tooltipleft">Hover over me
+    <span class="tooltiptext black br">Tooltip text</span>
+  </div>
+  <div class="tooltipleft">Hover over me
+    <span class="tooltiptext blue blr">Tooltip text</span>
+  </div>
+  <div class="tooltipleft">Hover over me
+    <span class="tooltiptext white wr">Tooltip text</span>
+  </div>
+</mat-card>
+
+
+
+<mat-card>
+
+  <div class="poper">
+      <div class="p-cont">
+          Eror, test text pharagrap messages complete
+      </div>
+    <i class="material-icons">
+      info
+      </i>
+  </div>
+
+</mat-card>
+
+<mat-card>
+  <div class="drop-file">
+    <i class="material-icons">cloud_upload</i>
+    <p>Drag and drop your files here or</p>
+    <button>Browse files</button>
+  </div>
+</mat-card>
+<mat-slider color="primary" class="ms-b" ></mat-slider>
+<mat-slider color="primary" ></mat-slider>

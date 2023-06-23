@@ -1,0 +1,94 @@
+<div class="custom-accordion">
+	<mat-accordion>
+		<mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+			<mat-expansion-panel-header>
+				<mat-panel-title>
+					Configuration
+				</mat-panel-title>
+			</mat-expansion-panel-header>
+
+			<div class="row marginT20">
+				<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12">
+					<div class="custom-select">
+						<ng-select [items]="measureList" bindLabel="elementlabel" dropdownPosition="bottom" [(ngModel)]="common.measure" placeholder="Select Measure" [formControl]="metricSelect">
+						</ng-select>
+						<span *ngIf="metricSelect.hasError('required') && Submitted" class="error">Metric required</span>
+
+					</div>
+				</div>
+				<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12">
+					<div class="custom-select">
+						<ng-select [items]="orders" bindLabel="label" [(ngModel)]="common.order" placeholder="Select Order" [formControl]="Order">
+						</ng-select>
+					</div>
+					<span *ngIf="Order.hasError('required') && Submitted" class="error">Order required</span>
+
+				</div>
+			</div>
+			
+			<div class="row marginT20 slab-buttons">
+
+				<div class="crm-col-lg-4">
+					<mat-card (click)="normaldistributiontype('Mean +/- 1 stdev')" [ngClass]="{'selected':type == 'Mean +/- 1 stdev'}"> Mean +/- 1</mat-card>
+				</div>
+				<div class="crm-col-lg-4">
+					<mat-card (click)="normaldistributiontype('Mean +/- 2 stdev')" [ngClass]="{'selected':type == 'Mean +/- 2 stdev'}"> Mean +/- 2</mat-card>
+				</div>
+				<div class="crm-col-lg-4">
+					<mat-card (click)="normaldistributiontype('Mean +/- 3 stdev')" [ngClass]="{'selected':type == 'Mean +/- 3 stdev'}">Mean +/- 3</mat-card>
+				</div>
+
+			</div>
+			
+			<!--<div class="row fixed-slab">
+				<div class="fixed-slab-chart">
+
+					<ul>
+						<li>
+							<div (click)="normaldistributiontype('Mean +/- 1 stdev')" [ngClass]="{'selected':type == 'Mean +/- 1 stdev'}">
+								<span class="numberCircle">+/- 1</span>
+							</div>
+						</li>
+						<li>
+							<div (click)="normaldistributiontype('Mean +/- 2 stdev')" [ngClass]="{'selected':type == 'Mean +/- 2 stdev'}">
+								<span class="numberCircle">+/- 2</span>
+							</div>
+						</li>
+						<li>
+							<div (click)="normaldistributiontype('Mean +/- 3 stdev')" [ngClass]="{'selected':type == 'Mean +/- 3 stdev'}">
+								<span class="numberCircle">+/- 3</span>
+							</div>
+						</li>						
+					</ul>
+				</div>
+			</div>-->
+
+			<div class="row marginT20">
+				<div class="crm-col-lg-12 text-c">
+					<button class="btn btn-primary custom-btn" (click)="normaldistribution()">Apply Config</button>
+				</div>
+			</div>
+
+		</mat-expansion-panel>
+		<mat-expansion-panel [disabled]="ShowPanel" [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+			<mat-expansion-panel-header>
+				<mat-panel-title>
+					Result
+				</mat-panel-title>
+
+			</mat-expansion-panel-header>
+
+			<div *ngFor="let card of NormalDistributionList;let i = index">
+
+				<app-percentile-chart [data]="card" [i]="i" [dataSet]="NormalDistributionList" [obj]="Object"></app-percentile-chart>
+
+			</div>
+			<mat-action-row>
+				<button mat-button color="warn" (click)="prevStep()">Previous</button>
+			</mat-action-row>
+
+		</mat-expansion-panel>
+
+	</mat-accordion>
+
+</div>

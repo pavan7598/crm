@@ -1,0 +1,62 @@
+<div class="segmentation-view">
+	<div class="container">
+
+		<div class="content--header">
+			<div class="row">
+				<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12">
+					<h5>
+						SEGMENTATION-CREATE/VIEW
+						<span>OVERVIEW OF YOUR CAMPAIGNS</span>
+					</h5>
+				</div>
+				<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12 text-r display-flex" >
+					<div class="actions" fxLayoutAlign="end center">
+						<a href="JavaScript:Void(0)" class="crm-col-lg-4" (click)="SegList()"><i
+								class="mdi mdi-view-dashboard"></i>
+							SEGMENTATION LIST</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div class="row" *ngIf="segmentationCardList && segmentationCardList.total_customers">
+
+			<div class="crm-col-lg-4">
+				<mat-card class="total-customers">
+					<h3>
+						{{segmentationCardList.active_players[0].count | number }}
+
+						<span>ACTIVE CUSTOMERS</span>
+					</h3>
+					<span><i class="mdi mdi-account-group"></i></span>
+				</mat-card>
+			</div>
+
+			<div class="crm-col-lg-4">
+				<mat-card class="total-NGR">
+					<h3>
+						{{segmentationCardList.total_ngr[0].sum | number }}
+						<span>NGR</span>
+					</h3>
+					<span><i class="mdi mdi-account-group"></i></span>
+				</mat-card>
+			</div>
+
+			<div class="crm-col-lg-4">
+				<mat-card class="total-revenue">
+					<h3>
+						{{segmentationCardList.total_customers[0].count | number }}
+
+						<span>TOTAL CUSTOMERS</span>
+					</h3>
+					<span><i class="mdi mdi-account-group"></i></span>
+				</mat-card>
+			</div>
+
+		</div>
+
+	</div>
+
+</div>

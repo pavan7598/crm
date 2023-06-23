@@ -1,0 +1,11 @@
+<mat-form-field>
+    <mat-select [formControl]="selectCtrl" placeholder="List" #singleSelect>
+      <mat-option>
+        <ngx-mat-select-search [formControl]="listFilterCtrl"></ngx-mat-select-search>
+      </mat-option>
+
+      <mat-option *ngFor="let list of filteredList | async" [value]="list">
+        {{list.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>

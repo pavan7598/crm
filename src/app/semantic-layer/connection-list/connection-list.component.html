@@ -1,0 +1,8 @@
+
+<app-connection-item [@slideStatus]="'active'"  *ngFor="let connection of connectionsDisp" [connectionObject]="connection" (click)="cardClicked(connection)"></app-connection-item>
+
+<mat-paginator *ngIf="connectionsDisp.length>3" [length]="connections.length"
+              [pageSize]="3"
+              [pageSizeOptions]="[3, 6, 9, 18, 36]"  (page)="paginationChanged($event)" >
+
+</mat-paginator>

@@ -1,0 +1,14 @@
+<div class="landing-bread-crumb">
+	<ul>
+		<li>
+            <a *ngIf="router.url != '/'" routerLink="/landing" class="breadcrumb-item">HOME</a>
+			
+		</li>
+		<li>
+	        <div *ngFor="let breadcrumb of breadcrumbs; let i = index;"  fxLayout="row" fxLayoutAlign="start center">
+		        <a [hidden]="i == (breadcrumbs.length - 1)" [routerLink]="[breadcrumb.url]">{{breadcrumb.name}}</a>
+		        <span [hidden]="i != (breadcrumbs.length - 1)" class="breadcrumb-title active"><span>{{breadcrumb.name}}</span></span>
+		    </div>
+	    </li>
+    </ul>
+</div>

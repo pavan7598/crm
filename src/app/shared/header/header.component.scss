@@ -1,0 +1,128 @@
+@import "src/assets/css/variables.scss";
+
+section {
+
+	&.header {
+
+		position: fixed;
+		width: 100%;
+		z-index: 999999;
+		box-shadow: 0 2px 15px rgba(0, 0, 0, .4);
+
+		.example-spacer {
+			flex: 1 1 auto;
+		}
+
+		.mat-toolbar {
+			background-color: $bg-dark-blue;
+			color: $header-text-white;
+			//            max-height: 50px;
+
+		}
+
+		.mat-toolbar-row,
+		.mat-toolbar-single-row,
+		.mat-toolbar-multiple-rows {
+			height: auto;
+			min-height: 46px;
+		}
+
+		.mat-toolbar-row {
+
+			ul {
+				float: left;
+				padding: 0;
+
+				&.landing-bread-crumb {
+					margin: 0px 0 0 40px;
+					padding: 0;
+
+					li {
+						margin: 0px -2px 15px;
+						padding: 0;
+						list-style: none;
+						display: inline-block;
+						/*color: #fff;*/
+						font-family: 'Lato-Light';
+						font-size: 1em;
+						text-transform: uppercase;
+
+						// &:after {
+						//     content: '\F142';
+						//     display: inline-block;
+						//     font: normal normal normal 24px/1 "Material Design Icons";
+						//     font-size: 1em;
+						//     text-rendering: auto;
+						//     line-height: inherit;
+						//     -webkit-font-smoothing: antialiased;
+						//     -moz-osx-font-smoothing: grayscale;
+						//     margin: -1px 0px 0 5px;
+						// }
+						.material-icons-vertical {
+							margin: 0px 8px;
+						}
+
+						a {
+							color: inherit;
+							display: inline;
+							border-bottom: 1px dotted;
+							// cursor: pointer;
+
+							&:hover {
+								color: #1e88e5;
+							}
+						}
+
+						&:first-child,
+						&:last-child {
+							margin-left: 0;
+						}
+
+						&:last-child {
+							color: #f0f0f0;
+
+							&:after {
+								display: none;
+							}
+						}
+					}
+				}
+			}
+
+		}
+
+		.mat-toolbar-multiple-rows {
+			.logo {
+				width: 150px;
+			}
+		}
+
+		.mat-icon-button {
+			width: 200px !important;
+		}
+
+		.log {
+			color: #6b7080;
+			font-size: 14px;
+			text-transform: lowercase;
+		}
+
+		.log2 {
+			font-weight: bold;
+			text-transform: capitalize;
+			color: #fff;
+		}
+
+		.mat-icon {
+			color: #fff;
+		}
+	}
+
+	&.header.full-page-header {
+		box-shadow: none;
+
+		.mat-toolbar {
+			background-color: #1f2027;
+		}
+	}
+}

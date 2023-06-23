@@ -1,0 +1,9 @@
+<div [id]="element.elementID" class="table-column test" [matTooltip]="element.elementName"
+  matTooltipClass="tooltipClass" fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="2px">
+
+  <button fxFlex="100%">
+    <mat-icon (click)="addElement()">add_circle</mat-icon>
+    <p>{{element.elementName|lowercase | reduceString:15}}
+      <b>{{element.elementType | reduceString:'3-rdot' |uppercase}}</b></p>
+  </button>
+</div>

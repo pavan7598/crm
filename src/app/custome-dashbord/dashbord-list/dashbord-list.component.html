@@ -1,0 +1,63 @@
+<div class="container height100-cent full-height">
+
+	<div class="content--header">
+		<div class="row">
+			<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12">
+				<h5>Dashboard
+					<span>Your list of dashboards</span>
+				</h5>
+
+			</div>
+			<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12 text-r display-flex" *ngIf="ShowCampaignList">
+				<div class="actions">
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- <div fxLayoutAlign="end center">
+    		<button class="newdashboard" mat-raised-button color="primary" routerLink="/dashbord">+ New Dashboard</button>
+			</div> -->
+	<div class="custom-table">
+
+		<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+		<table mat-table [dataSource]="dataSource">
+
+			<!-- Position Column -->
+			<ng-container matColumnDef="name">
+				<th mat-header-cell *matHeaderCellDef> NAME </th>
+				<td mat-cell *matCellDef="let element "> {{element.name}}</td>
+			</ng-container>
+			<ng-container matColumnDef="created by">
+				<th mat-header-cell *matHeaderCellDef> CREATED BY </th>
+				<td mat-cell *matCellDef="let element "> {{element.dashboard_owner}}</td>
+			</ng-container>
+			<ng-container matColumnDef="created date">
+				<th mat-header-cell *matHeaderCellDef> CREATED DATE </th>
+				<td mat-cell *matCellDef="let element "> {{element.created_date | date:'yyyy-MM-dd'}}</td>
+			</ng-container>
+			<ng-container matColumnDef="Actions">
+				<th mat-header-cell *matHeaderCellDef> ACTIONS </th>
+				<td mat-cell *matCellDef="let element">
+					<button mat-button  (click)="viewDashboard(element)">View</button>
+					<button mat-button (click)="editDashboard(element)">Edit</button>
+					<button mat-button (click)="DeleteDashboard(element)">Delete</button>
+					<!-- <mat-slide-toggle  matTooltip="Assign to gage"></mat-slide-toggle> -->
+				</td>
+			</ng-container>
+			<ng-container matColumnDef="Link to Gaze">
+				<th mat-header-cell *matHeaderCellDef> LINK TO GAZE </th>
+				<td mat-cell *matCellDef="let element">
+					<mat-slide-toggle matTooltip="Assign to gage" (change)=toggle($event,element) [checked]="element.link_to_gage"></mat-slide-toggle>
+				</td>
+			</ng-container>
+
+			<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+			<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+		</table>
+
+
+	</div>
+</div>

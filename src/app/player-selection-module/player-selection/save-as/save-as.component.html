@@ -1,0 +1,16 @@
+<div mat-dialog-title>
+	<h6>Save a copy of layer</h6>
+</div>
+
+<mat-dialog-content class="mat-typography">
+	<form>
+		<mat-form-field>
+			<input matInput placeholder="Save As" [formControl]="name" required>
+			<mat-error *ngIf="name.invalid && !(name.hasError('pattern'))">Name Already Exists </mat-error>
+			<mat-error *ngIf="name.hasError('pattern')">Special charaters are not allowed</mat-error>
+		</mat-form-field>
+	</form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+	<button class="btn btn-black" (click)="saveAs()"> Save As </button>
+</mat-dialog-actions>

@@ -1,0 +1,167 @@
+@import "./src/assets/scss/variables.scss";
+@import "./src/styles.scss";
+
+.custom-accordion {
+	background-color: $white;
+	padding: 20px;
+	.heading {
+		h6 {
+			text-transform: uppercase;
+			font-size: ($font-size-base + 2);
+			font-family: $font-primary-medium;
+			letter-spacing: .5px;
+		}
+	}
+}
+
+.fixed-slab {
+	margin: 30px auto;
+
+	.fixed-slab-chart {
+		margin: auto;
+		ul {
+			margin: 0;
+			padding: 0;
+
+			li {
+				margin: 0 10px;
+				padding: 0;
+				list-style: none;
+				display: inline-block;
+
+				div {
+					border-radius: 50px;
+					border: 1px solid #BED2FF;
+					background-color: #EAEEF8;
+					height: 35px;
+					width: 50px;
+					text-align: center;
+					padding-top: 15px;
+					cursor: pointer;
+
+					span {
+						font-size: ($font-size-base + 13);
+						color: #0F70E0;
+
+						&.numberCircle {
+							border-radius: 50%;
+							width: auto;
+							height: auto;
+							padding: 5px 10px;
+							/* background: #4265ed; */
+							border: 2px solid #c4d6fd;
+							border-radius: 50px;
+							color: #c4d6fd;
+							text-align: center;
+							font-size: 17px;
+						}
+					}
+
+					&.active {
+						border: 1px solid #116AD1;
+						background-color: #0F70E0;
+
+						div {
+							span {
+								color: $white;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.error {
+	color: $primary-color-red;
+    font-size: $font-size-base;
+    font-family: $font-primary-medium;
+    margin-left: 15px;
+}
+
+.selected {
+	background-color: #4265ED !important;
+	color: white !important
+}
+
+
+/* Create two equal columns that floats next to each other */
+.column {
+	float: left;
+	width: 50%;
+	padding: 10px;
+	height: 300px;
+	/* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.error {
+	color: $primary-color-red;
+    font-size: $font-size-base;
+    font-family: $font-primary-medium;
+    margin-left: 15px;
+}
+
+.mat-card {
+	margin: 20px 0;
+	box-shadow: none !important;
+
+	h6.card-heading {
+		font-size: 14px;
+		text-transform: uppercase;
+		font-family: CRM-Font-Medium;
+		margin: 10px 0 30px;
+		color: #adb7c5;
+	}
+
+	h6 {
+
+		&.add-segment,
+		&.remove-segment {
+			margin: 0;
+			padding: 0;
+			font-size: ($font-size-base + 2);
+
+			a {
+				cursor: pointer;
+			}
+
+			i {
+				font-size: ($font-size-base + 16);
+			}
+
+			span {
+				display: block;
+				margin: -26px 0 0 35px;
+			}
+		}
+	}
+
+	.box-seperation {
+		border: 1px solid #ececec;
+		border-radius: 3px;
+		margin: 20px 0;
+		padding: 20px;
+	}
+}
+
+.mat-expansion-panel {
+	overflow: visible;
+}
+
+.slab-buttons {
+	.mat-card {
+		cursor: pointer;
+		text-align: center;
+		border: 1px solid #4265ed;
+		margin: 20px;
+		padding: 10px;
+	}
+}

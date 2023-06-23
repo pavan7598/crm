@@ -1,0 +1,64 @@
+<!-- <div class="crm-row">
+  <div class="crm-col-lg-4">
+    <h3>Segmentation List</h3>
+    <span>create and schedule your campaigns</span>
+  </div>
+  <div class="crm-col-lg-4">
+    <p class="go-back" (click)="goback()">Go back</p>
+  </div>
+  <div class="crm-col-lg-4">
+    <p>CAMPAIGNS/</p>
+    <P>SEGMENTS</P>
+  </div>
+</div> -->
+
+
+<div class="content--header">
+		<div class="row">
+			<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12">
+				<h5>Segmentation
+					<span>create and schedule your campaigns</span>
+				</h5>
+
+			</div>
+			<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12 text-r display-flex" >
+				<div class="actions">
+					<a href="JavaScript:Void(0)" class="" (click)="goback()"><i class="mdi mdi-view-dashboard"></i>
+						Go back</a>
+				</div>
+			</div>
+		</div>
+	</div>
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource">
+  
+      <!-- Position Column -->
+      <ng-container matColumnDef="SEGMENT NAME">
+        <th mat-header-cell *matHeaderCellDef> SEGMENT NAME </th>
+        <td mat-cell *matCellDef="let element"> {{element.segmentName}} </td>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="TYPE">
+        <th mat-header-cell *matHeaderCellDef> TYPE </th>
+        <td mat-cell *matCellDef="let element"> {{element.segmentType}} </td>
+      </ng-container>
+  
+      <!-- Weight Column -->
+      <ng-container matColumnDef="NO OF CUSTOMERS">
+        <th mat-header-cell *matHeaderCellDef> NO OF CUSTOMERS </th>
+        <td mat-cell *matCellDef="let element"> {{element.customers}} </td>
+      </ng-container>
+  
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="CREATED DATE">
+        <th mat-header-cell *matHeaderCellDef> CREATED DATE </th>
+        <td mat-cell *matCellDef="let element"> {{element.createdDate | date:'mediumDate'}} </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </div>

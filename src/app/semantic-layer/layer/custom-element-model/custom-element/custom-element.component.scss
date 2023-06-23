@@ -1,0 +1,28 @@
+button {
+    width: 100%;
+
+    mat-icon {
+        float: right;
+        margin-top: 6px;
+        margin-right: -2px;
+        color: #fff;
+    }
+}
+
+
+
+#div1,
+#div2 {
+    float: left;
+    width: 100px;
+    height: 35px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+#draggable {
+    width: 150px;
+    height: 150px;
+    padding: 0.5em;
+}

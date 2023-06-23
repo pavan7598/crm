@@ -1,0 +1,72 @@
+<!-- 
+{{show}} -->
+
+<div *ngIf="show" class="">
+    <div class="campaign--predictions">
+        <ul>
+            <li>
+                <i class="mdi mdi-circle-edit-outline"></i>
+            </li>
+            <li>
+                <h6>ROI Summary
+                    <span>For the selected segmentation</span>
+                </h6>
+            </li>
+        </ul>
+    </div>
+    <div class="campaign--prediction-values">
+        <div class="campaign--prediction-value-header">
+            <h6>COST<span>Cost spent on this campaign</span></h6>
+        </div>
+        <div class="campaign--prediction-value-numbers">
+            <h6><span>$</span>{{ROI_DATA.total_campaign_cost}}<span></span></h6>
+        </div>
+    </div>
+
+    <div class="campaign--prediction-values">
+        <div class="campaign--prediction-value-header">
+            <h6>RETURN ON INVESTMENT - ROI<span>Cost spent on this campaign</span></h6>
+        </div>
+        <div class="campaign--prediction-value-numbers">
+            <h6><span>$</span>{{ROI_DATA.total_roi}}<span></span></h6>
+        </div>
+
+        <!-- <div class="addition">
+            <i class="mdi mdi-plus"></i>
+        </div>
+
+        <div class="campaign--prediction-value-numbers">
+            <h6><span>$</span>98<span>mn</span></h6>
+        </div> -->
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div class="campaign--prediction-values">
+        <div class="campaign--prediction-value-header">
+            <h6>TOTAL PERCENTAGE OF ROI<span>Return On Investment</span></h6>
+        </div>
+        <div class="campaign--prediction-value-numbers">
+            <ul class="total-value">
+                <li>
+                    <div class="up growth">
+                        <i class="mdi mdi-debug-step-out"></i>
+                    </div>
+                </li>
+                <li>
+                    <h6>{{ROI_DATA.roi_percentage}}<span>%</span></h6>
+                    <p>Increased by</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+<!-- roi percentage 
+{{ROI_DATA.roi_percentage}}
+total_campaign_cost
+{{ROI_DATA.total_campaign_cost}}
+total_incremental_gain
+{{ROI_DATA.total_incremental_gain}}
+total_roi
+{{ROI_DATA.total_roi}} -->

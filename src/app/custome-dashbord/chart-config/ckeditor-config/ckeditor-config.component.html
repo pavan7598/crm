@@ -1,0 +1,13 @@
+<div class="ck-editor">
+	<div class="modal-header">
+		<h6>Enter your layer details here</h6>
+	</div>
+	<ck-editor name="editor1" [(ngModel)]="dataConf.value" skin="moono-lisa" language="en" [config]="config" [fullPage]="true"></ck-editor>
+
+	<div class="modal-footer">
+		<div class="footer text-r marginT30">
+			<button class="btn btn-stroke-black" (click)="close()">CANCEL</button>
+			<button class="btn btn-black" (click)="apply()">APPLY</button>
+		</div>
+	</div>
+</div>

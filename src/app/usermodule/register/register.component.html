@@ -1,0 +1,60 @@
+<div class="login--wrapper">
+	<div class="login--div">
+		<div class="row">
+			<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12">
+				<div class="login--image">
+					<img src="./assets/img/login-img.svg" alt="CRM Application" title="CRM Application" />
+				</div>
+			</div>
+
+			<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12">
+				<div class="login--form">
+					<div class="title">Signup</div>
+					<form [formGroup]="Registerform" (ngSubmit)="register()">
+
+						<!--<mat-form-field class="formfield">
+								<input matInput placeholder="your name" formControlName="username">
+								<mat-error *ngIf="Registerform.controls.username.invalid">Enter name</mat-error>
+							</mat-form-field>-->
+
+						<mat-form-field class="formfield">
+							<input matInput placeholder="your e-mail" formControlName="email">
+							<mat-error *ngIf="Registerform.controls.email.invalid">Enter Email</mat-error>
+						</mat-form-field>
+
+						<mat-form-field class="formfield">
+							<input matInput placeholder="create password" type="password" formControlName="password">
+							<mat-error *ngIf="Registerform.controls.password.invalid">Enter Password</mat-error>
+						</mat-form-field>
+
+						<mat-form-field class="formfield">
+							<input matInput placeholder="confirm password" type="password" formControlName="cnfpassword">
+							<mat-error *ngIf="Registerform.controls.cnfpassword.invalid">Enter Password</mat-error>
+						</mat-form-field>
+
+						<!--<mat-form-field class="formfield">
+							<mat-label>your role</mat-label>
+							<mat-select formControlName="role">
+								<mat-option *ngFor="let food of foods" [value]="food.value">
+									{{food.viewValue}}
+								</mat-option>
+							</mat-select>
+						</mat-form-field>-->
+
+						<button mat-raised-button color="primary">Register</button>
+						<!--<button mat-raised-button color="primary" (click)="login()">Back</button>-->
+
+					</form>
+
+					<div class="login--Or">
+						<span>Or</span>
+						<p><a  (click)="login()" target="_self" title="Signup" alt="Signup">Click here</a> if you already have an account</p>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<app-footer></app-footer>

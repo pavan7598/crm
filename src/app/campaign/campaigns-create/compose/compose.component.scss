@@ -1,0 +1,45 @@
+@import "./src/assets/scss/variables.scss";
+@import "./src/styles.scss";
+
+.newcampaign--compose {
+	color: $bluish-grey;
+
+	/*.row:first-child {
+		div {
+			border-bottom: 1px solid $greyish-grey-cement;
+			margin: 0px auto 0;
+		}
+	}*/
+
+	.row {
+		.top-running-text {
+			border-bottom: 1px solid $greyish-grey-cement;
+			margin: 30px auto 0px;
+			padding-bottom: 30px;
+		}
+
+		div {
+			.icon-circle {
+				width: 50px;
+				height: 50px;
+				border-radius: 50px;
+				background-color: $Light-blue-moon;
+				margin: 20px auto;
+				padding: 5px;
+
+				i {
+					font-size: ($font-size-base + 33);
+					color: $white;
+				}
+			}
+
+			h5 {
+				color: $bluish-grey;
+			}
+
+			.text-field {
+				width: 84%;
+			}
+		}
+	}
+}

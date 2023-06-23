@@ -1,0 +1,27 @@
+<div mat-dialog-title>
+	<h6>Create your layer Name</h6>
+</div>
+
+<form [formGroup]="layer">
+	<mat-dialog-content class="mat-typography">
+
+		<mat-form-field>
+			<input matInput placeholder="Layer Name" name="name" formControlName="layer_name">
+			<div *ngIf="layer.get('layer_name').errors">
+				<!--<mat-error *ngIf="layer.get('layer_name').errors.required&&layer.get('layer_name').touched">Layer Name required</mat-error>-->
+				<mat-error *ngIf="layer.get('layer_name').errors.name==false">Name Already Exists</mat-error>
+			</div>
+		</mat-form-field>
+
+		<mat-form-field class="textarea"> 
+			<textarea matInput placeholder="Leave a comment" formControlName="layer_text"></textarea>
+		</mat-form-field>
+
+	</mat-dialog-content>
+
+	<mat-dialog-actions align="end">
+		<button class="btn btn-black" (click)="saveLayer()" [disabled]="layer.invalid">Save</button>
+	
+		<button class="btn btn-black" [mat-dialog-close]>cancel</button>
+	</mat-dialog-actions>
+</form>

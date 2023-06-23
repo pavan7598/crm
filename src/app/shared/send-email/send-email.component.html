@@ -1,0 +1,51 @@
+<section>
+  <form>
+    <div>
+    <!-- <mat-form-field class="example-full-width">
+        <input matInput placeholder="Subject" [formControl]="Subject" [(ngModel)]="cdk.subject">
+        <mat-error *ngIf="Subject.hasError('required')">
+            Subject is <strong>required</strong>
+          </mat-error>
+    </mat-form-field> -->
+  </div>
+  <div>
+    <mat-form-field class="example-full-width">
+        <!-- <input matInput placeholder="Recipients" [formControl]="Recipients" [(ngModel)]="cdk.recipients"> -->
+            <mat-chip-list #chipList>
+              <mat-chip *ngFor="let res of cdk.recipients" [selectable]="selectable"
+                       [removable]="removable" (removed)="remove(res)">
+                {{res}}
+                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+              </mat-chip>
+              <input type="email" placeholder="Recipients"
+              [matChipInputFor]="chipList"
+              [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+              [matChipInputAddOnBlur]="addOnBlur"
+              (matChipInputTokenEnd)="add($event)" [formControl]="Recipients">
+              <mat-error *ngIf="Recipients.hasError('email') && !Recipients.hasError('required')">
+                Please enter a valid email address
+              </mat-error>
+              <mat-error *ngIf="Recipients.hasError('required') && Recipients.touched">
+                Email is <strong>required</strong>
+              </mat-error>
+            </mat-chip-list>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Subject" [formControl]="Subject" [(ngModel)]="cdk.subject">
+        <mat-error *ngIf="Subject.hasError('required')">
+            Subject is <strong>required</strong>
+          </mat-error>
+    </mat-form-field>
+  </div>
+  </form>
+  <div>
+    Message body
+    <ck-editor name="editor1" [(ngModel)]="cdk.body" skin="moono-lisa" language="en" [config]="config" [fullPage]="true"></ck-editor>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="20px">
+    <button class="mar-g" mat-stroked-button  (click)="send(cdk)">SEND</button>
+    <button class="mar-g" mat-stroked-button [mat-dialog-close]>CANCLE</button>
+  </div>
+</section>

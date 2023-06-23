@@ -1,0 +1,6 @@
+<div class="boxsize" (dragover)="dragOver($event)" (drop)="addElement($event)">    
+    <div>{{placeholder}}
+      <app-element-list [isDragable]="true" *ngFor="let ele of elements;let j=index" [data]="ele" [type]="type" (onremove)="elementRemove($event)"></app-element-list>
+    </div>
+</div>
+

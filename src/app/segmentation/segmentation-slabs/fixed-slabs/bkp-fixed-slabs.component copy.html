@@ -1,0 +1,151 @@
+<mat-accordion>
+	<mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+		<mat-expansion-panel-header>
+			<mat-panel-title>
+				Segmentation config
+			</mat-panel-title>
+		</mat-expansion-panel-header>
+		<div fxLayout="column" fxLayoutGap="5px">
+
+			<div fxLayout="row" fxLayoutGap="5px">
+				<div fxFlex="50">
+					<ng-select [items]="measureList" (change)="selectionChanged($event)" bindLabel="elementlable"
+						[(ngModel)]="common.measure" placeholder="Select Measure" [formControl]="metricSelect">
+					</ng-select>
+					<span *ngIf="metricSelect.hasError('required') && Submitted" class="error">Metric required</span>
+		<div class="row">
+			<div class="crm-col-lg-6">
+				<ng-select [items]="measureList" (change)="selectionChanged($event)" bindLabel="elementlable" [(ngModel)]="common.measure" placeholder="Select Measure" [formControl]="metricSelect">
+				</ng-select>
+				<span *ngIf="metricSelect.hasError('required') && Submitted" class="error">Metric required</span>
+			</div>
+			<div class="crm-col-lg-6">
+				<ng-select [items]="orders" bindLabel="label" [(ngModel)]="common.order" placeholder="Select Order" [formControl]="Order">
+				</ng-select>
+				<span *ngIf="Order.hasError('required') && Submitted" class="error">Order required</span>
+			</div>
+		</div>
+		<h4> SEGMENT CREATION</h4>
+		<mat-card>
+			<div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="10px">
+				<div fxFlex="20px">
+					<i (click)="addSlab()" class="material-icons"> add_circle_outline</i>
+				</div>
+				<div fxFlex="50">
+					<ng-select [items]="orders" bindLabel="label" [(ngModel)]="common.order" placeholder="Select Order"
+						[formControl]="Order">
+					</ng-select>
+					<span *ngIf="Order.hasError('required') && Submitted" class="error">Order required</span>
+				</div>
+			</div>
+			<h6> SEGMENT CREATION</h6>
+			<mat-card>
+				<div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="10px">
+					<div fxFlex="20px">
+						<i (click)="addSlab()" class="material-icons"> add_circle_outline</i>
+					</div>
+					<div fxFlex="80%">
+						<span>Add new segment</span>
+					</div>
+					<div fxFlex="40%">
+						<div class="uk-form-row">
+							<mat-form-field>
+								<input matInput [(ngModel)]="psMainObj[0].defaultSlabName" placeholder="default name">
+							</mat-form-field>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div fxLayout="row" *ngFor="let salbs of psMainObj; let i=index" fxLayoutAlign="start start" fxLayoutGap="10px">
+				<div fxFlex="100%">
+					<div class="m71">
+						<span (click)="removeSlab(i)"> <i class="material-icons"> remove_circle_outline</i> Remove
+							segment</span>
+					</div>
+				</div>
+			</mat-card>
+
+			<button mat-raised-button color="primary" (click)="SubmitFixedSlab()">Apply Config</button>
+		</div>
+
+	</mat-expansion-panel>
+	<mat-expansion-panel [disabled]="ShowPanel" [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+
+		<mat-expansion-panel-header>
+			<mat-panel-title>
+				Segmentation Result
+			</mat-panel-title>
+		</mat-expansion-panel-header>
+		<div class="fixed-slab" fxLayout="row">
+            <div fxFlex="90">
+				<div *ngFor="let slab of SlabsData;let i= index" >
+					<div *ngIf="slab.flag == true">
+						<div class="menu">
+							<i class="material-icons" [matMenuTriggerFor]="menu"> more_vert</i>
+							<mat-menu #menu="matMenu">
+								<button mat-menu-item (click)="SaveSegment(i)">Save as segment</button>
+							</mat-menu>
+						</div>
+						<app-pie-chart *ngIf="ChartType == 'pie' " [data]="slab"></app-pie-chart>
+						<app-bar-chart *ngIf="ChartType == 'bar' " [data]="slab"></app-bar-chart>
+					</div>
+				</div>
+			</div>
+
+			<div class="fixed-slab-chart" fxFlex="10">
+
+				<ul>
+
+					<li>
+						<div class="" (click)="SelectChartType('pie',data)">
+							<i class="mdi mdi-chart-pie"></i>
+						</div>
+					</li>
+
+					<li>
+						<div class="rotate45deg" (click)="SelectChartType('bar',bar_data)">
+							<i class="mdi mdi-chart-bar"></i>
+						</div>
+					</li>
+
+				</ul>
+
+			</div>
+
+		</div>
+		<mat-action-row>
+			<button mat-button color="warn" (click)="prevStep()">Previous</button>
+		</mat-action-row>
+	</mat-expansion-panel>
+</mat-accordion>
+
+
+
+
+<!-- <div class="row fixed-slab">
+	
+	<div class="crm-col-lg-10">
+		<app-echarts [chart]="options"></app-echarts>
+	</div>
+	
+	<div class="fixed-slab-chart">
+
+		<ul>
+			
+			<li>
+				<div class="" (click)="SelectChartType('pie',data)">
+					<i class="mdi mdi-chart-pie"></i>
+				</div>
+			</li>
+			
+			<li>
+				<div class="rotate45deg" (click)="SelectChartType('bar',bar_data)">
+					<i class="mdi mdi-chart-bar"></i>
+				</div>
+			</li>
+			
+		</ul>
+
+	</div>
+	
+</div> -->

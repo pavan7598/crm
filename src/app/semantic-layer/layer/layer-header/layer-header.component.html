@@ -1,0 +1,55 @@
+<div class="header">
+    <div class="row">
+        <div class="col-lg-6 col-sm-6 col-md-6 width-50">
+            <h1>semantic layer</h1>
+            <h1>Layer Name: {{name}}</h1>
+
+            <!-- <h2>layer selection</h2> -->
+        </div>
+        <div class="col-lg-6 col-sm-6 col-md-6 width-50">
+            <div class="sc-align">
+                <button mat-raised-button (click)="save()" class="bg-fs-save">Save Layer</button>
+                <button mat-raised-button (click)="cancel()" class="bg-fs-cancel">cancel</button>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="row">
+
+        <div class="col-lg-6 col-sm-6 col-md-6  width-50 ">
+            <ul>
+                <li><i class="mdi mdi-ray-start-arrow" style="color: #FF9D00;"></i>
+                    <h1>right</h1>
+                </li>
+                <li><i class="mdi mdi-ray-start-end" style="color: #B24FC9;"></i>
+                    <h1>Inner</h1>
+                </li>
+                <li><i class="mdi mdi-ray-end-arrow" style="color: #4FC4C9;"></i>
+                    <h1>left</h1>
+                </li>
+            </ul>
+        </div>
+        <div class="col-lg-6 col-sm-6 col-md-6  width-50">
+            <div *ngIf="!connectionNotCreatedFlag" class="conect-block">
+                <div class="connection">
+                    <p>Choose Connection :</p>
+                </div>
+                <div class="select-div custom-select">
+                    <mat-select class="set-dd" placeholder="" [(ngModel)]="currentSelection"
+                        (selectionChange)="connectionChanged()">
+                        <mat-option *ngFor="let con of connections" [value]="con.id">
+                            {{con.name}}
+                        </mat-option>
+                    </mat-select>
+                </div>
+
+            </div>
+            <div *ngIf="connectionNotCreatedFlag" class="conect-block">
+                <a routerLink="/connection">Create new Connection </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<mat-progress-bar *ngIf="tableAdding" mode="query"></mat-progress-bar>

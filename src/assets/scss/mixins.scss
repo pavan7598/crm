@@ -1,0 +1,399 @@
+// Button variants
+//
+// Easily pump out default styles, as well as :hover, :focus, :active,
+// and disabled options for all buttons
+
+@mixin button-variant($color, $background, $border) {
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+
+  &:focus,
+  &.focus {
+    color: $color;
+    background-color: darken($background, 10%);
+        border-color: darken($border, 25%);
+  }
+  &:hover {
+    color: $color;
+    background-color: darken($background, 10%);
+        border-color: darken($border, 12%);
+  }
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    color: $color;
+    background-color: darken($background, 10%);
+        border-color: darken($border, 12%);
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: $color;
+      background-color: darken($background, 17%);
+          border-color: darken($border, 25%);
+    }
+  }
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    background-image: none;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus,
+    &.focus {
+      background-color: $background;
+          border-color: $border;
+    }
+  }
+
+  .badge {
+    color: $background;
+    background-color: $color;
+  }
+}
+
+// Button sizes
+@mixin button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
+  padding: $padding-vertical $padding-horizontal;
+  font-size: $font-size;
+  line-height: $line-height;
+  border-radius: $border-radius;
+}
+
+// Horizontal dividers
+//
+// Dividers (basically an hr) within dropdowns and nav lists
+
+@mixin nav-divider($color: #e5e5e5) {
+  height: 1px;
+  margin: (($line-height-computed / 2) - 1) 0;
+  overflow: hidden;
+  background-color: $color;
+}
+
+// Reset filters for IE
+//
+// When you need to remove a gradient background, do not forget to use this to reset
+// the IE filter for IE9 and below.
+
+@mixin reset-filter() {
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+
+
+// Tables
+
+@mixin table-row-variant($state, $background) {
+  // Exact selectors below required to override `.table-striped` and prevent
+  // inheritance to nested tables.
+  .table > thead > tr,
+  .table > tbody > tr,
+  .table > tfoot > tr {
+    > td.#{$state},
+    > th.#{$state},
+    &.#{$state} > td,
+    &.#{$state} > th {
+      background-color: $background;
+    }
+  }
+
+  // Hover states for `.table-hover`
+  // Note: this is not available for cells or rows within `thead` or `tfoot`.
+  .table-hover > tbody > tr {
+    > td.#{$state}:hover,
+    > th.#{$state}:hover,
+    &.#{$state}:hover > td,
+    &:hover > .#{$state},
+    &.#{$state}:hover > th {
+      background-color: darken($background, 5%);
+    }
+  }
+}
+
+
+/*Card styles*/
+@mixin cardBasicStyle {
+box-shadow: $card-box-shadow;
+    /*border: $card-border;*/
+    border-radius: $card-border-radius;
+    background-color: $card-background-color;
+  }
+
+
+/* Lottery Backgrounds images */
+@mixin allLotteryBackgroundImage{
+  
+&.UKThunderBall{background:$UKThunderBall-img}
+&.UKLotto{background:$UKLotto-img}
+&.SuperEnaLotto{background:$SuperEnaLotto-img}
+&.OzLotto{background:$OzLotto-img}
+&.NewYorkLotto{background:$NewYorkLotto-img}
+&.MegaSena{background:$MegaSena-img}
+&.Lotto649{background:$Lotto649-img}
+&.IrishLotto{background:$IrishLotto-img}
+&.HotLotto{background:$HotLotto-img}
+&.HoosierLotto{background:$HoosierLotto-img}
+&.FrenchLotto{background:$FrenchLotto-img}
+&.FloridaLotto{background:$FloridaLotto-img}
+&.EuroMillions{background:$EuroMillions-img}
+&.EuroJackpot{background:$EuroJackpot-img}
+&.CaliforniaSuperLotto{background:$CaliforniaSuperLotto-img}
+&.PowerBall{background:$PowerBall-img}
+&.ElGordo{background:$ElGordo-img}
+&.EuroMillionsUK{background:$EuroMillionsUK-img}
+&.MegaMillions{background:$MegaMillions-img}
+&.PowerballAustralia{background:$PowerballAustralia-img}
+&.Tatts{background:$Tatts-img}
+&.LoteriaNacional{background:$LoteriaNacional-img}
+&.LaPrimitiva{background:$LaPrimitiva-img}
+&.BonoLotto{background:$BonoLotto-img}
+}
+ 
+@mixin allLotteryNumberColored{
+&.UKThunderBall {
+              .number {
+                background-color: $UKThunderBall-num-color;
+                color: $white;
+                &.spl-num {
+                  background-color: $UKThunderBall-num-color-spl;
+                  color: $white;
+                }
+              }
+            }
+            &.UKLotto {
+              .number {
+                background-color: $UKLotto-num-color;
+                color: $white;
+                &.spl-num {
+                  background-color: $UKLotto-num-color-spl;
+                  color: $white;
+                }
+              }
+            }
+            &.EuroMillionsUK {
+              .number {
+                background-color: $EuroMillionsUK-num-color;
+                color: $black;
+                &.spl-num {
+                  background-color: $EuroMillionsUK-num-color-spl;
+                  color: $white;
+                }
+              }
+            }
+            &.Tatts {
+              .number {
+                background-color: $Tatts-num-color;
+                color: $black;
+                &.spl-num {
+                  background-color: $Tatts-num-color-spl;
+                  color: $white;
+                }
+              }
+            }
+            &.CaliforniaSuperLotto {
+              .number {
+                background-color: $CaliforniaSuperLotto-num-color;
+                color: $black;
+                &.spl-num {
+                  background-color: $CaliforniaSuperLotto-num-color-spl;
+                  color: $white;
+                }
+              }
+            }
+            &.SuperEnaLotto {
+              .number {
+                background-color: $SuperEnaLotto-num-color;
+                color: $white;
+                &.spl-num {
+                  background-color: $SuperEnaLotto-num-color-spl;
+                  color: $white;
+                }
+              }
+            }
+            &.PowerBall {
+              .number {
+                background-color: $PowerBall-num-color;
+                color: $white;
+                &.spl-num {
+                  background-color: $PowerBall-num-color-spl;
+                  color: $white;
+                }
+              }
+            }
+            &.OzLotto {
+              .number {
+                background-color: $OzLotto-num-color;
+                color: $black;
+                &.spl-num {
+                  background-color: $OzLotto-num-color-spl;
+                  color: $white;
+                }
+              }
+            }
+            &.NewYorkLotto {
+              .number {
+                background-color: $NewYorkLotto-num-color;
+                color: $black;
+                &.spl-num {
+                  background-color: $NewYorkLotto-num-color-spl;
+                  color: $white;
+                }
+              }
+            }
+            &.MegaSena {
+              .number {
+                background-color: $MegaSena-num-color;
+                color: $black;
+                &.spl-num {
+                  background-color: $MegaSena-num-color-spl;
+                  color: $white;
+                }
+              }
+            }
+            &.MegaMillions {
+              .number {
+                background-color: $MegaMillions-num-color;
+                color: $white;
+                &.spl-num {
+                  background-color: $MegaMillions-num-color-spl;
+                  color: $white;
+                }
+              }
+            }
+            &.IrishLotto {
+              .number {
+                background-color: $IrishLotto-num-color;
+                color: $black;
+                &.spl-num {
+                  background-color: $IrishLotto-num-color-spl;
+                  color: $white;
+                }
+              }
+            }
+            &.FrenchLotto {
+              .number {
+                background-color: $FrenchLotto-num-color;
+                color: $white;
+                &.spl-num {
+                  background-color: $FrenchLotto-num-color-spl;
+                  color: $white;
+                }
+              }
+            }
+            &.Lotto649 {
+              .number {
+                background-color: $Lotto649-num-color;
+                color: $white;
+                &.spl-num {
+                  background-color: $Lotto649-num-color-spl;
+                  color: $white;
+                }
+              }
+            }
+            &.LoteriaNacional {
+              .number {
+                background-color: $LoteriaNacional-num-color;
+                color: $black;
+                &.spl-num {
+                  background-color: $LoteriaNacional-num-color-spl;
+                  color: $white;
+                }
+              }
+            }
+            &.LaPrimitiva {
+              .number {
+                background-color: $LaPrimitiva-num-color;
+                color: $black;
+                &.spl-num {
+                  background-color: $LaPrimitiva-num-color-spl;
+                  color: $white;
+                }
+              }
+            }
+            &.HotLotto {
+              .number {
+                background-color: $HotLotto-num-color;
+                color: $black;
+                &.spl-num {
+                  background-color: $HotLotto-num-color-spl;
+                  color: $white;
+                }
+              }
+            }
+            &.HoosierLotto {
+              .number {
+                background-color: $HoosierLotto-num-color;
+                color: $black;
+                &.spl-num {
+                  background-color: $HoosierLotto-num-color-spl;
+                  color: $white;
+                }
+              }
+            }
+            &.FloridaLotto {
+              .number {
+                background-color: $FloridaLotto-num-color;
+                color: $white;
+                &.spl-num {
+                  background-color: $FloridaLotto-num-color-spl;
+                  color: $white;
+                }
+              }
+            }
+            &.EuroMillions {
+              .number {
+                background-color: $EuroMillions-num-color;
+                color: $black;
+                &.spl-num {
+                  background-color: $EuroMillions-num-color-spl;
+                  color: $white;
+                }
+              }
+            }
+            &.EuroJackpot {
+              .number {
+                background-color: $EuroJackpot-num-color;
+                color: $black;
+                &.spl-num {
+                  background-color: $EuroJackpot-num-color-spl;
+                  color: $white;
+                }
+              }
+            }
+            &.ElGordo {
+              .number {
+                background-color: $ElGordo-num-color;
+                color: $white;
+                &.spl-num {
+                  background-color: $ElGordo-num-color-spl;
+                  color: $white;
+                }
+              }
+            }
+            &.PowerballAustralia {
+              .number {
+                background-color: $PowerballAustralia-num-color;
+                color: $white;
+                &.spl-num {
+                  background-color: $PowerballAustralia-num-color-spl;
+                  color: $white;
+                }
+              }
+            }
+            &.BonoLotto {
+              .number {
+                background-color: $BonoLotto-num-color;
+                color: $white;
+                &.spl-num {
+                  background-color: $BonoLotto-num-color-spl;
+                  color: $white;
+                }
+              }
+            }
+
+}
+ 

@@ -1,0 +1,224 @@
+<div class="container">
+
+	<div class="content--header">
+		<div class="row">
+			<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12">
+				<h5>Campaigns
+					<span>Overview of your campaigns</span>
+				</h5>
+
+			</div>
+			<div class="crm-col-lg-6 crm-col-md-6 crm-col-sm-12 text-r display-flex" *ngIf="ShowCampaignList">
+				<div class="actions">
+					<a href="JavaScript:Void(0)" class="" (click)="Summary()"><i class="mdi mdi-view-dashboard"></i>
+						Summary</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row marginB30" [style.display]="!ShowCampaignList ? 'block' : 'none'" >
+
+		<div class="crm-col-lg-1 crm-col-md-1 crm-col-sm-6">
+			<div class="campaign--TypeMenu">
+				<mat-card>
+					<div class="updated-details">
+						<ul>
+							<li>Last updated</li>
+							<li>12:03 AM</li>
+							<li>{{date | date:'dd-M-yyyy'}}</li>
+						</ul>
+					</div>
+
+					<div class="menu-items">
+						<ul>
+							<li (click)="SelectType({campaign_type:'conversion'})" [ngClass]="{'selected':campaignType == 'conversion'}">
+								<span><i class="mdi mdi-account-convert"></i></span>
+								<span>CONVERSION</span>
+							</li>
+							<li (click)="SelectType({campaign_type:'reactivation'})"
+								[ngClass]="{'selected':campaignType == 'reactivation'}">
+								<span><i class="mdi mdi-chess-king"></i></span>
+								<span>REACTIVATION</span>
+							</li>
+							<li (click)="SelectType({campaign_type:'churn'})" [ngClass]="{'selected':campaignType == 'churn'}">
+								<span><i class="mdi mdi-format-rotate-90"></i></span>
+								<span>CHURN</span>
+							</li>
+							<li (click)="SelectType({campaign_type:'yield'})" [ngClass]="{'selected':campaignType == 'yield'}">
+								<span><i class="mdi mdi-account-switch"></i></span>
+								<span>YIELD</span>
+							</li>
+						</ul>
+					</div>
+				</mat-card>
+			</div>
+		</div>
+
+		<div class="crm-col-lg-7 crm-col-md-1 crm-col-sm-6">
+			<div class="row campaign--status">
+
+				<mat-card (click)="revenueOverview('Active')">
+					<ul>
+						<li><i class="mdi mdi-dots-vertical" [matMenuTriggerFor]="belowMenu1"></i>
+							<mat-menu #belowMenu1="matMenu" yPosition="below">
+								<button mat-menu-item (click)="campaignDetails('active')">Details </button>
+							</mat-menu>
+						</li>
+						<li >{{active}}</li>
+						<li>
+							<div class="">
+								<b>ACTIVE</b>
+								<!-- <span>campaigns</span> -->
+							</div>
+						</li>
+					</ul>
+					<i class="mdi mdi-check-decagram"></i>
+				</mat-card>
+				<mat-card (click)="revenueOverview('in active')">
+					<ul>
+						<li><i class="mdi mdi-dots-vertical" [matMenuTriggerFor]="belowMenu2"></i>
+							<mat-menu #belowMenu2="matMenu" yPosition="below">
+								<button mat-menu-item (click)="campaignDetails('in active')">Details</button>
+							</mat-menu>
+						</li>
+						<li >{{inactive}}</li>
+						<li>
+							<div class="">
+								<b>INACTIVE</b>
+								<!-- <span>campaigns</span> -->
+							</div>
+						</li>
+					</ul>
+					<i class="mdi mdi-timer-off"></i>
+				</mat-card>
+				<mat-card (click)="revenueOverview('completed')">
+					<ul>
+						<li><i class="mdi mdi-dots-vertical" [matMenuTriggerFor]="belowMenu3"></i>
+							<mat-menu #belowMenu3="matMenu" yPosition="below">
+								<button mat-menu-item (click)="campaignDetails('completed')">Details</button>
+							</mat-menu>
+						</li>
+						<li >{{completed}}</li>
+						<li>
+							<div class="">
+								<b>COMPLETED</b>
+								<!-- <span>campaigns</span> -->
+							</div>
+						</li>
+					</ul>
+					<i class="mdi mdi-flag-checkered"></i>
+				</mat-card>
+				<mat-card (click)="revenueOverview('in progress')">
+					<ul>
+						<li><i class="mdi mdi-dots-vertical" [matMenuTriggerFor]="belowMenu"></i>
+							<mat-menu #belowMenu="matMenu" yPosition="below">
+								<button mat-menu-item (click)="campaignDetails('in progress')">Details</button>
+							</mat-menu>
+						</li>
+						<li >{{inprogress}}</li>
+						<li>
+							<div class="">
+								<b>
+									INPROGRESS
+									<!-- <i>CONVERSION</i> -->
+								</b>
+								<!--<span>campaigns</span>-->
+							</div>
+						</li>
+					</ul>
+					<i class="mdi mdi-progress-clock"></i>
+				</mat-card>
+
+			</div>
+			<div class="row campaign--tabled-graph">
+				<div class="crm-col-lg-12 crm-col-md-12 crm-col-sm-12">
+					<mat-card>
+						<app-revenue-overview [pData]="data"></app-revenue-overview>
+					</mat-card>
+				</div>
+			</div>
+
+			<div class="row campaign--report-frequency">
+				<mat-card>
+
+					<div class="values">
+						<ul>
+							<li class="heading">TARGETED USERS</li>
+							<li class="current-value">{{targated_camapigns.num_of_players | number}}</li>
+							<!-- <li class="value-day">Today income</li> -->
+						</ul>
+					</div>
+					<div class="value-icon">
+						<span class="profit">
+							<i class="mdi mdi-arrow-up"></i>
+						</span>
+					</div>
+
+					<div class="progress-bar">
+						<span class="profit"><i></i></span>
+					</div>
+				</mat-card>
+				<mat-card>
+					<div class="values">
+						<ul>
+							<li class="heading">Total NGR</li>
+							<li class="current-value">{{targated_camapigns.total_ngr | number}}</li>
+							<!-- <li class="value-day">Today income</li> -->
+						</ul>
+					</div>
+					<div class="value-icon">
+						<span class="profit">
+							<i class="mdi mdi-arrow-up"></i>
+						</span>
+					</div>
+					<div class="progress-bar">
+						<span class="profit"><i></i></span>
+					</div>
+				</mat-card>
+				<mat-card>
+					<div class="values">
+						<ul>
+							<li class="heading">% of Customers </li>
+							<li class="current-value">{{precent_targated}}%</li>
+							<!-- <li class="value-day">Today income</li> -->
+						</ul>
+					</div>
+					<div class="value-icon">
+						<span class="profit">
+							<i class="mdi mdi-arrow-up"></i>
+						</span>
+					</div>
+					<div class="progress-bar">
+						<span class="profit"><i></i></span>
+					</div>
+				</mat-card>
+			</div>
+		</div>
+
+		<div class="crm-col-lg-4 crm-col-md-1 crm-col-sm-6">
+
+			<div class="campaign--channel">
+				<mat-card *ngIf="emailSent && emailSent[0] != undefined">
+					<h6>Email Campaign</h6>
+					<label>{{emailFailed}} % (FAILED)</label>
+					<mat-progress-bar mode="determinate" value="{{emailFailed}}"></mat-progress-bar>
+					<br />
+					<label>{{emailSuccess}} % (SUCCESS)</label>
+					<mat-progress-bar mode="determinate" value="{{emailSuccess}}"></mat-progress-bar>
+
+
+				</mat-card>
+				<mat-card>
+
+					<app-messages-sent ></app-messages-sent>
+				</mat-card>
+			</div>
+		</div>
+
+	</div>
+	<div *ngIf="ShowCampaignList">
+		<app-campaign-list  ></app-campaign-list>
+	</div>
+</div>
+
+<app-footer></app-footer>
